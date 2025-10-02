@@ -4,7 +4,7 @@ const cards = [
     title: "Водолазка(normal)",
     price: '13,5',
     href: "#",
-    src: "public/images/1_Водолазка_normal__scr.jpg",
+    src: "public/images/1_Водолазка_normal__hover.jpg",
     hoverSrc:
       "public/images/1_Водолазка_normal__hover.jpg",
   },
@@ -60,9 +60,9 @@ const cards = [
     title: "Мужская рубашка(normal)",
     price: '11,00',
     href: "#",
-    src: "8_Мужская_рубашка_normal__src.jpg",
+    src: "public/images/8_Мужская_рубашка_normal__src.jpg",
     hoverSrc:
-      "8_Мужская_рубашка_normal__src.jpg",
+      "public/images/8_Мужская_рубашка_normal__src.jpg",
   },
     {
     title: "Мужской бомбер(oversize)",
