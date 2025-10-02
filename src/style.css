@@ -1,0 +1,132 @@
+@import 'tailwindcss';
+@reference "tailwindcss";
+
+* {
+  font-family: Montserrat, sans-serif !important;
+  background-color: black;
+  @apply text-white;
+}
+body,
+#app {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+button {
+  color: inherit;
+}
+.custom-container {
+  width: 90%;
+  margin: 0 auto;
+}
+.header__nav {
+}
+.masculino_logo {
+  @apply w-43;
+}
+.header__menu {
+  @apply flex items-center gap-6 ml-4 text-base;
+}
+
+.header__item {
+}
+.header__button {
+  @apply cursor-pointer duration-300 ease-in-out hover:text-amber-300;
+}
+.header__button path {
+  @apply duration-300 ease-in-out;
+}
+.header__button:hover path {
+  @apply text-amber-300;
+}
+.header {
+  @apply border-b py-6;
+}
+.main{
+  @apply mt-10
+}
+.filter-column:not(:first-child){
+  @apply pt-8
+}
+.filter-column:not(:last-child){
+  @apply pb-8 border-b
+}
+.filter-column{
+  @apply grid gap-1
+}
+.filtr__button{
+  @apply text-sm cursor-pointer hover:text-amber-300 duration-300 ease-in-out
+}
+.filtr__button.active{
+  @apply text-amber-300
+}
+/* cards container */
+.cards {
+  @apply flex flex-wrap gap-[10px];
+}
+
+/* card block */
+.card {
+  @apply relative w-[300px];
+}
+
+/* картинка */
+.card__image-block {
+  @apply relative;
+}
+
+.card__visible-img {
+  @apply block;
+}
+
+.card__hover-img {
+  @apply absolute top-0 left-0 right-0 bottom-0 opacity-0 transition-opacity duration-500 ease-in-out;
+}
+.card:hover .card__hover-img {
+  @apply opacity-100;
+}
+
+/* тело карточки */
+.card__body {
+  @apply flex flex-col gap-[10px];
+}
+
+.card__title {
+  @apply text-[16px];
+}
+
+.card__action {
+  @apply bg-transparent flex justify-end items-center border-none relative z-[2];
+}
+
+.card__link {
+  @apply absolute inset-0 opacity-0;
+}
+
+body {
+  @apply font-sans;
+}
+
+.titleXbutton {
+  @apply flex items-center justify-between;
+}
+
+.price {
+  /* можно сюда добавить @apply text-sm font-bold если надо */
+}
+
+.svg__path {
+  @apply fill-transparent transition-colors duration-200 ease-in;
+}
+
+svg:hover .svg__path {
+  @apply fill-black;
+}
+
+.card__action:hover .svg__path {
+  @apply fill-black;
+}
+
+.liked .svg__path {
+  @apply fill-yellow-300 stroke-0;
+}
