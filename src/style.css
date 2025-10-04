@@ -42,32 +42,33 @@ button {
 .header {
   @apply border-b py-6;
 }
-.main{
-  @apply mt-10
+.main {
+  @apply mt-10;
 }
-.filter-column:not(:first-child){
-  @apply pt-8
+.filter-column:not(:first-child) {
+  @apply pt-8;
 }
-.filter-column:not(:last-child){
-  @apply pb-8 border-b
+.filter-column:not(:last-child) {
+  @apply pb-8 border-b;
 }
-.filter-column{
-  @apply grid gap-1
+.filter-column {
+  @apply grid gap-1;
 }
-.filtr__button{
-  @apply text-sm cursor-pointer hover:text-amber-300 duration-300 ease-in-out
+.filtr__button {
+  @apply text-sm cursor-pointer hover:text-amber-300 duration-300 ease-in-out;
 }
-.filtr__button.active{
-  @apply text-amber-300
+.filtr__button.active {
+  @apply text-amber-300;
 }
 /* cards container */
 .cards {
-  @apply flex flex-wrap gap-[10px];
+  @apply flex flex-wrap gap-[20px];
 }
 
 /* card block */
 .card {
-  @apply relative w-[300px];
+  @apply relative;
+  width: calc((100% - (3 * 20px)) / 4);
 }
 
 /* картинка */

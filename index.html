@@ -2,7 +2,11 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="public/cropped-mscln_favicon-32x32.png" sizes="32x32">
+    <link
+      rel="icon"
+      href="public/cropped-mscln_favicon-32x32.png"
+      sizes="32x32"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
@@ -167,59 +171,52 @@
           </ul>
         </nav>
       </header>
-      <main class="custom-container main flex">
-        <aside>
-   
-            <ul class="filter-column">
-              <li><h2 class="font-medium">Фильтровать по цене</h2></li>
-              <li><button class="filtr__button">All</button></li>
-              <li><button class="filtr__button">0 $ - 50 $</button></li>
-              <li><button class="filtr__button">50 $ - 100 $</button></li>
-            </ul>
-          
-       
-            <ul class="filter-column">
-              <li><h2 class="font-medium">Категории товаров</h2></li>
-              <li><button class="filtr__button">All</button></li>
-              <li><button class="filtr__button">Весна</button></li>
-              <li><button class="filtr__button">Водолазка</button></li>
-              <li><button class="filtr__button">Водолазка</button></li>
-              <li><button class="filtr__button">Зима</button></li>
-              <li><button class="filtr__button">Кардиган</button></li>
-              <li><button class="filtr__button">Кофты</button></li>
-              <li><button class="filtr__button">Кофты</button></li>
-              <li><button class="filtr__button">Куртки</button></li>
-              <li><button class="filtr__button">Осенние куртки</button></li>
-              <li><button class="filtr__button">Осень</button></li>
-              <li><button class="filtr__button">Рубашки</button></li>
-              <li><button class="filtr__button">Спорт костюм</button></li>
-              <li><button class="filtr__button">Спорт Костюм</button></li>
-              <li><button class="filtr__button">Спорт Костюм</button></li>
-              <li><button class="filtr__button">Толстовка</button></li>
-              <li><button class="filtr__button">Трико</button></li>
-            </ul>
-    
-  
-            <ul class="filter-column">
-              <li><h2 class="font-medium">Размеры</h2></li>
-             
-              <li><button class="filtr__button">3XL</button></li>
-              <li><button  class="filtr__button">L</button></li>
-              <li><button class="filtr__button">M</button></li>
-              <li><button class="filtr__button">S</button></li>
-              <li><button class="filtr__button">S-3XL</button></li>
-              <li><button class="filtr__button"></button></li>
-              <li><button class="filtr__button"></button></li>
-            </ul>
-      
-        </aside>
-       
-        <div class="cards flex">
+      <main class="custom-container main flex gap-30">
+        <aside class="aside w-200"></aside>
 
-        </div>
+        <div class="cards flex"></div>
       </main>
       <div></div>
     </div>
+    <template id="card">
+      <article class="card">
+        <header class="card__image-block">
+          <img src="" alt="" class="card__visible-img" />
+          <img src="" alt="" class="card__hover-img" />
+        </header>
+        <div class="card__body">
+          <div class="titleXbutton">
+            <h2 class="card__title"></h2>
+            <button type="button" class="card__action">
+              <svg
+                width="16"
+                height="16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#000000"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M1.24264 8.24264L8 15L14.7574 8.24264C15.553 7.44699 16 6.36786 16 5.24264V5.05234C16 2.8143 14.1857 1 11.9477 1C10.7166 1 9.55233 1.55959 8.78331 2.52086L8 3.5L7.21669 2.52086C6.44767 1.55959 5.28338 1 4.05234 1C1.8143 1 0 2.8143 0 5.05234V5.24264C0 6.36786 0.44699 7.44699 1.24264 8.24264Z"
+                    class="svg__path"
+                  ></path>
+                </g>
+              </svg>
+            </button>
+          </div>
+          <p class="price"></p>
+        </div>
+        <footer class="footer">
+          <a class="card__link" href=""></a>
+        </footer>
+      </article>
+    </template>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
