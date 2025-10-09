@@ -171,13 +171,53 @@
           </ul>
         </nav>
       </header>
+    </div>
+    <template id="shop">
+      <main class="custom-container">
+        <section class="flex justify-between items-center">
+          <nav class="bread-crumbs">
+            <a href="#">Shop</a>
+            <span class="px-3">/</span>
+          </nav>
+          <div>
+            <a href="#"
+              ><i
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber-500 hover:bg-amber-600 transition-colors"
+                role="button"
+                aria-label="Play"
+              >
+                <span
+                  class="block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]"
+                  style="transform: rotate(180deg)"
+                ></span> </i
+            ></a>
+            <a href="#"
+              ><i
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber-500 hover:bg-amber-600 transition-colors"
+                role="button"
+                aria-label="Play"
+              >
+                <span
+                  class="block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]"
+                ></span> </i
+            ></a>
+          </div>
+        </section>
+        <section>
+          <div>
+            <div><img class="main-image" src="" alt="" /></div>
+            <ul class="images-list"></ul>
+          </div>
+        </section>
+      </main>
+    </template>
+    <template id="root">
       <main class="custom-container main flex gap-30">
         <aside class="aside w-200"></aside>
 
         <div class="cards flex"></div>
       </main>
-      <div></div>
-    </div>
+    </template>
     <template id="card">
       <article class="card">
         <header class="card__image-block">

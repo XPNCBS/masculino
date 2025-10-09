@@ -2,9 +2,12 @@ export const cards = [
   {
     title: 'Водолазка(normal)',
     price: '13,5',
-    href: '#',
+    href: '/shop?id=0',
     src: 'public/images/1_Водолазка_normal__hover.jpg',
     hoverSrc: 'public/images/1_Водолазка_normal__hover.jpg',
+    season: 'Осень',
+    category: 'Водолазка',
+    images: ['public/images/shop/1_Водолазка_normal/07.jpg'],
   },
   {
     title: 'Куртка (normal)',
