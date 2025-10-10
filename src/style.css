@@ -131,3 +131,15 @@ svg:hover .svg__path {
 .liked .svg__path {
   @apply fill-yellow-300 stroke-0;
 }
+.images-list {
+  @apply flex flex-wrap gap-[10px] mt-[10px];
+}
+.images-list li {
+  width: calc((100% - 4 * 10px) / 5);
+}
+.images-list img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}

@@ -17,14 +17,18 @@ function createBreadCrumbs(card) {
   })
 }
 function getMainImage(card, mainImage) {
-  mainImage.src = card.src
+  mainImage.src = card.images[0]
 }
-function generateImages(card, imagesList) {
+function changeImage(mainImage, image) {
+  mainImage.src = image.src
+}
+function generateImages(card, imagesList, mainImage) {
   const images = card.images
   images.forEach((img) => {
     const li = document.createElement('li')
     const image = document.createElement('img')
     image.src = img
+    image.addEventListener('click', () => changeImage(mainImage, image))
     li.appendChild(image)
     imagesList.appendChild(li)
   })
@@ -37,5 +41,5 @@ export function shopPage() {
   const imagesList = document.querySelector('.images-list')
   createBreadCrumbs(card)
   getMainImage(card, mainImage)
-  generateImages(card, imagesList)
+  generateImages(card, imagesList, mainImage)
 }
