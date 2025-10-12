@@ -8,6 +8,7 @@ const app = document.querySelector('#app')
 const rootTemplate = document.querySelector('#root')
 const shopTemplate = document.querySelector('#shop')
 if (window.location.pathname === '/' || window.location.pathname === '/#') {
+  document.title = 'Masculino — Каталог продукции для заказа'
   const rootContent = rootTemplate.content.cloneNode(true)
   app.appendChild(rootContent)
   const cardsTemplate = document.querySelector('#card')

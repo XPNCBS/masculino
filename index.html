@@ -20,11 +20,13 @@
       <header class="header">
         <nav class="custom-container flex justify-between items-center">
           <div class="flex gap-3">
-            <img
-              class="masculino_logo"
-              src="public/masculino_logo.svg"
-              alt=""
-            />
+            <a href="/">
+              <img
+                class="masculino_logo"
+                src="public/masculino_logo.svg"
+                alt=""
+              />
+            </a>
             <ul class="header__menu">
               <li class="header__item">
                 <button class="header__button">Зима</button>
@@ -180,9 +182,9 @@
             <span class="px-3">/</span>
           </nav>
           <div>
-            <a href="#"
+            <a class="prev-page" href="#"
               ><i
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber-500 hover:bg-amber-600 transition-colors"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors"
                 role="button"
                 aria-label="Play"
               >
@@ -191,9 +193,9 @@
                   style="transform: rotate(180deg)"
                 ></span> </i
             ></a>
-            <a href="#"
+            <a class="next-page" href="#"
               ><i
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber-500 hover:bg-amber-600 transition-colors"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-ful transition-colors"
                 role="button"
                 aria-label="Play"
               >
@@ -211,6 +213,24 @@
           <div class="w-[50%]">a</div>
         </section>
       </main>
+      <div class="modal">
+        <div class="modal-content relative">
+          <button
+            aria-label="Close"
+            class="close cursor-pointer absolute top-3.5 right-3.5 w-6 h-6 before:content-[''] after:content-[''] before:absolute after:absolute before:top-1/2 after:top-1/2 before:left-0 after:left-0 before:w-full after:w-full before:h-[2px] after:h-[2px] before:bg-black after:bg-black before:rotate-45 after:-rotate-45 before:translate-y-[-50%] after:translate-y-[-50%] hover:opacity-70 transition"
+          ></button>
+
+          <button
+            class="prev-arrow block w-10 h-10 border-t-2 border-r-2 border-white -rotate-135"
+          ></button>
+
+          <img class="image-modal__img" src="" alt="" />
+
+          <button
+            class="next-arrow block w-10 h-10 border-t-2 border-r-2 border-white rotate-45"
+          ></button>
+        </div>
+      </div>
     </template>
     <template id="root">
       <main class="custom-container main flex gap-30">
@@ -258,6 +278,7 @@
         </footer>
       </article>
     </template>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

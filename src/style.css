@@ -3,14 +3,16 @@
 
 * {
   font-family: Montserrat, sans-serif !important;
-  background-color: black;
+
   @apply text-white;
 }
+
 body,
 #app {
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: black;
 }
 button {
   color: inherit;
@@ -135,11 +137,32 @@ svg:hover .svg__path {
   @apply flex flex-wrap gap-[10px] mt-[10px];
 }
 .images-list li {
+  cursor: pointer;
   width: calc((100% - 4 * 10px) / 5);
 }
-.images-list img {
+.selectable-img {
   display: block;
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
+}
+.selectable-img.active {
+  opacity: 30%;
+}
+.modal {
+  @apply fixed top-0 left-0 right-0 bottom-0 h-[100vh] w-[100wv] hidden;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.modal.open {
+  @apply block;
+}
+.modal-content {
+  @apply flex items-center justify-between h-[100vh] w-[100wv] px-5;
+}
+.image-modal__img {
+  max-height: 100vh; /* вписать в высоту экрана (90% от viewport height) */
+  width: auto; /* ширина автоматически по пропорциям */
+  max-width: 90vw; /* ограничиваем ширину до 90% экрана */
+  height: auto; /* сохраняем пропорции */
+  display: block;
 }
