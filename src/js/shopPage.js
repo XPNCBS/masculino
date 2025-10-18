@@ -24,7 +24,6 @@ function getMainImage(card, mainImage) {
 function changeImage(mainImage, image, imagesArray, imagePosition, index) {
   mainImage.src = image.src
   imagePosition.value = index
-  console.log(imagePosition)
   activeImage(imagesArray, mainImage)
 }
 function activeImage(imagesArray, mainImage) {
@@ -71,7 +70,10 @@ function modalActions(
   modal,
   imageModalImg
 ) {
-  if (target.classList.contains('modal-content') || target.classList.contains('close')) {
+  if (
+    target.classList.contains('modal-content') ||
+    target.classList.contains('close')
+  ) {
     modal.classList.remove('open')
   } else if (target.classList.contains('next-arrow')) {
     imagePosition.value =
@@ -85,10 +87,22 @@ function modalActions(
     imageModalImg.src = imagesArray[imagePosition.value].src
   }
 }
-function openModal(src, modal, imageModalImg, imagesArray, imagePosition) {
+function openModal(src, modal, imageModalImg, imagePosition) {
   imageModalImg.src = src
   console.log(imagePosition)
   modal.classList.add('open')
+}
+function tableValues(card) {
+  const sizes = document.querySelector('.sizes')
+  const colors = document.querySelector('.colors')
+  const material = document.querySelector('.material')
+  const sku = document.querySelector('.SKU')
+  const categories = document.querySelector('.categories')
+  categories.textContent = `${card.season}, ${card.category}`
+  sku.textContent = card.sku
+  material.textContent = card.material
+  colors.textContent = card.colors.join(', ')
+  sizes.textContent = card.sizes.join(', ')
 }
 
 export function shopPage() {
@@ -105,7 +119,7 @@ export function shopPage() {
   const imageModalImg = document.querySelector('.image-modal__img')
   let imagePosition = { value: 0 }
   mainImage.addEventListener('click', () =>
-    openModal(mainImage.src, modal, imageModalImg, imagesArray, imagePosition)
+    openModal(mainImage.src, modal, imageModalImg, imagePosition)
   )
   modal.addEventListener('click', (e) =>
     modalActions(e.target, imagePosition, imagesArray, modal, imageModalImg)
@@ -115,4 +129,5 @@ export function shopPage() {
   getMainImage(card, mainImage)
   generateImages(card, imagesList, mainImage, imagesArray, imagePosition)
   activeImage(imagesArray, mainImage)
+  tableValues(card)
 }

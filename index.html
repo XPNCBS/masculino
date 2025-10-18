@@ -175,8 +175,8 @@
       </header>
     </div>
     <template id="shop">
-      <main class="custom-container">
-        <section class="flex justify-between items-center">
+      <main>
+        <section class="flex justify-between items-center custom-container">
           <nav class="bread-crumbs">
             <a href="#">Shop</a>
             <span class="px-3">/</span>
@@ -205,12 +205,45 @@
             ></a>
           </div>
         </section>
-        <section class="flex">
+        <section class="flex custom-container">
           <div class="w-[50%]">
             <div><img class="main-image" src="" alt="" /></div>
             <ul class="images-list"></ul>
           </div>
           <div class="w-[50%]">a</div>
+        </section>
+        <section class="Additional-information mt-20">
+          <div
+            class="custom-container flex items-center justify-center flex-col py-10"
+          >
+            <h2 class="">Additional information</h2>
+            <table>
+              <tr>
+                <td class="py-5">Цвет</td>
+                <td class="pl-30">
+                  <div class="colors"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-5">Материал</td>
+                <td class="pl-30"><div class="material"></div></td>
+              </tr>
+              <tr>
+                <td class="py-5">Размер</td>
+                <td class="pl-30"><div class="sizes"></div></td>
+              </tr>
+            </table>
+          </div>
+          <div class="border-b border-t py-5 w">
+            <div
+              class="custom-container flex items-center justify-center flex-col"
+            >
+              <div>
+                <span>SKU: <span class="SKU"></span></span>
+                <span>Categories: <span class="categories"></span></span>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
       <div class="modal">
@@ -234,7 +267,7 @@
     </template>
     <template id="root">
       <main class="custom-container main flex gap-30">
-        <aside class="aside w-200"></aside>
+        <aside class="aside"></aside>
 
         <div class="cards flex"></div>
       </main>
@@ -252,22 +285,16 @@
               <svg
                 width="16"
                 height="16"
+                viewBox="0 0 16 16"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                stroke="#000000"
+                stroke="#000"
+                class="overflow-visible"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                  <path
-                    d="M1.24264 8.24264L8 15L14.7574 8.24264C15.553 7.44699 16 6.36786 16 5.24264V5.05234C16 2.8143 14.1857 1 11.9477 1C10.7166 1 9.55233 1.55959 8.78331 2.52086L8 3.5L7.21669 2.52086C6.44767 1.55959 5.28338 1 4.05234 1C1.8143 1 0 2.8143 0 5.05234V5.24264C0 6.36786 0.44699 7.44699 1.24264 8.24264Z"
-                    class="svg__path"
-                  ></path>
-                </g>
+                <path
+                  d="M1.24264 8.24264L8 15L14.7574 8.24264C15.553 7.44699 16 6.36786 16 5.24264V5.05234C16 2.8143 14.1857 1 11.9477 1C10.7166 1 9.55233 1.55959 8.78331 2.52086L8 3.5L7.21669 2.52086C6.44767 1.55959 5.28338 1 4.05234 1C1.8143 1 0 2.8143 0 5.05234V5.24264C0 6.36786 0.44699 7.44699 1.24264 8.24264Z"
+                  class="svg__path"
+                ></path>
               </svg>
             </button>
           </div>

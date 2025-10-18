@@ -62,9 +62,12 @@ button {
 .filtr__button.active {
   @apply text-amber-300;
 }
+.aside {
+  @apply w-[20%];
+}
 /* cards container */
 .cards {
-  @apply flex flex-wrap gap-[20px];
+  @apply flex flex-wrap gap-[20px] w-[80%];
 }
 
 /* card block */
@@ -72,7 +75,10 @@ button {
   @apply relative;
   width: calc((100% - (3 * 20px)) / 4);
 }
-
+.card img {
+  display: block;
+  width: 100%;
+}
 /* картинка */
 .card__image-block {
   @apply relative;
@@ -118,18 +124,16 @@ body {
   /* можно сюда добавить @apply text-sm font-bold если надо */
 }
 
-.svg__path {
-  @apply fill-transparent transition-colors duration-200 ease-in;
-}
-
-svg:hover .svg__path {
-  @apply fill-black;
+.card__action .svg__path {
+  @apply fill-transparent stroke-amber-50 transition-colors duration-200 ease-in cursor-pointer;
 }
 
 .card__action:hover .svg__path {
-  @apply fill-black;
+  @apply fill-amber-50;
 }
-
+.liked:hover .svg__path {
+  @apply fill-yellow-300 stroke-0;
+}
 .liked .svg__path {
   @apply fill-yellow-300 stroke-0;
 }
@@ -165,4 +169,8 @@ svg:hover .svg__path {
   max-width: 90vw; /* ограничиваем ширину до 90% экрана */
   height: auto; /* сохраняем пропорции */
   display: block;
+}
+.Additional-information {
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
 }

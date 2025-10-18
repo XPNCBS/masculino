@@ -21,7 +21,15 @@ function createCard(template, tile, price, href, src, hoverSrc) {
 }
 
 export function generateCards(template, cards, container) {
+  const params = new URLSearchParams(window.location.search)
+  const category = params.get('categories')
+
   cards.forEach((cardItem) => {
+    // показываем все, если категории нет или указано "All"
+    if (category && category !== 'Все') {
+      if (cardItem.category !== category && cardItem.season !== category) return
+    }
+
     const card = createCard(
       template,
       cardItem.title,
@@ -30,6 +38,7 @@ export function generateCards(template, cards, container) {
       cardItem.src,
       cardItem.hoverSrc
     )
+
     container.appendChild(card)
   })
 }

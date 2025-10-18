@@ -8,17 +8,25 @@ export function generateAside(asideContent, aside) {
     title.textContent = asideItem.title
     li.appendChild(title)
     ul.appendChild(li)
-    generateAsideButtons(asideItem.elements, ul)
+    generateAsideLinks(asideItem.elements, ul, asideItem.href)
     aside.appendChild(ul)
   })
 }
-function generateAsideButtons(elements, ul) {
+function generateAsideLinks(elements, ul, href) {
+  const params = new URLSearchParams(window.location.search)
+  const category = params.get('categories')
   elements.forEach((element) => {
     const li = document.createElement('li')
-    const button = document.createElement('button')
-    button.classList.add('filtr__button')
-    button.textContent = element
-    li.appendChild(button)
+    const link = document.createElement('a')
+    link.href = `/?${href}=${element}`
+    link.classList.add('filtr__button')
+    if (category) {
+      if (category === element) {
+        link.classList.add('active')
+      }
+    }
+    link.textContent = element
+    li.appendChild(link)
     ul.appendChild(li)
   })
 }
