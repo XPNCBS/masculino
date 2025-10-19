@@ -14,6 +14,17 @@ body,
   overflow-x: hidden;
   background-color: black;
 }
+#app {
+  display: flex;
+  flex-direction: column;
+}
+.burger-button {
+  @apply w-10 h-10 flex flex-col items-center justify-center gap-1.5;
+  display: none;
+}
+.content {
+  flex: 1 1 auto;
+}
 button {
   color: inherit;
 }
@@ -22,6 +33,11 @@ button {
   margin: 0 auto;
 }
 .header__nav {
+  @apply flex items-center;
+}
+.header__lists {
+  @apply flex justify-between;
+  flex: 1 1 auto;
 }
 .masculino_logo {
   @apply w-43;
@@ -53,8 +69,9 @@ button {
 .filter-column:not(:last-child) {
   @apply pb-8 border-b;
 }
-.filter-column {
-  @apply grid gap-1;
+.filter-column,
+.ulInWrap {
+  @apply grid gap-5;
 }
 .filtr__button {
   @apply text-sm cursor-pointer hover:text-amber-300 duration-300 ease-in-out;
@@ -67,13 +84,14 @@ button {
 }
 /* cards container */
 .cards {
-  @apply flex flex-wrap gap-[20px] w-[80%];
+  @apply flex flex-wrap gap-x-[20px] gap-y-[20px] content-start w-[80%];
 }
 
 /* card block */
 .card {
   @apply relative;
   width: calc((100% - (3 * 20px)) / 4);
+  height: max-content;
 }
 .card img {
   display: block;
@@ -173,4 +191,75 @@ body {
 .Additional-information {
   border-bottom: 1px solid white;
   border-top: 1px solid white;
+}
+a.disabled {
+  @apply text-gray-500;
+}
+.footer {
+  @apply text-gray-500;
+}
+@media (max-width: 991px) {
+  .burger-button {
+    display: flex;
+  }
+  .header__seasons {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+  .header__menu {
+    margin-left: 0;
+  }
+  .header__nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header__interactive-items {
+    @apply flex items-center justify-between w-[100%];
+  }
+  .header__lists {
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.4s ease,
+      padding-bottom 0.3s ease;
+    flex-direction: column;
+  }
+  .cards {
+    @apply w-[100%];
+  }
+  .aside {
+    @apply w-[100%];
+  }
+  .root-container {
+    flex-direction: column;
+  }
+  .ulInWrap {
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.4s ease,
+      padding-bottom 0.3s ease;
+  }
+
+  ul.filter-column {
+    gap: 0;
+  }
+  ul.filter-column:not(:first-child) {
+    padding-top: 0;
+  }
+  ul.filter-column:not(:last-child) {
+    padding-bottom: 0;
+  }
+  .li-button {
+    @apply py-5;
+  }
+  .card {
+    width: calc((100% - (1 * 20px)) / 2);
+  }
+}
+@media (max-width: 425px) {
+  .card {
+    width: 100%;
+  }
 }

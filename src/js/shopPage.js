@@ -6,7 +6,11 @@ function createBreadCrumbs(card) {
   keys.forEach((key, index) => {
     if (card[key] !== undefined && card[key].replace(/\s+/g, '') !== '') {
       const link = document.createElement('a')
-      link.href = '#'
+      if (key !== 'title') {
+        link.href = `/?categories=${card[key]}`
+      } else {
+        link.classList.add('disabled')
+      }
       link.textContent = card[key]
       breadCrumbs.appendChild(link)
       if (index !== keys.length - 1) {

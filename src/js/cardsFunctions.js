@@ -20,14 +20,43 @@ function createCard(template, tile, price, href, src, hoverSrc) {
   return cardTemplate
 }
 
-export function generateCards(template, cards, container) {
+export function generateCards(template, cards, container, randomMode = false) {
   const params = new URLSearchParams(window.location.search)
   const category = params.get('categories')
+  const prices = params.get('prices')
 
-  cards.forEach((cardItem) => {
+  let cardsToRender = [...cards]
+
+  // если включён режим случайных карточек
+  if (randomMode) {
+    cardsToRender = cardsToRender
+      .sort(() => Math.random() - 0.5) // перемешиваем
+      .slice(0, 4) // берём первые 4
+  }
+
+  cardsToRender.forEach((cardItem) => {
     // показываем все, если категории нет или указано "All"
-    if (category && category !== 'Все') {
+    if (!randomMode && category && category !== 'Все') {
       if (cardItem.category !== category && cardItem.season !== category) return
+    }
+
+    if (!randomMode && prices && prices !== 'All') {
+      const price = parseFloat(cardItem.price.replace(',', '.'))
+      const pricesArray = prices
+        .replace(/\$/g, '')
+        .split('-')
+        .map((p) => parseFloat(p.replace(',', '.').trim()))
+
+      const minPrice = pricesArray[0]
+      const maxPrice = pricesArray[1]
+
+      // если диапазон есть
+      if (maxPrice) {
+        if (price < minPrice || price > maxPrice) return
+      } else {
+        // если только одно значение (например, "10$")
+        if (price !== minPrice) return
+      }
     }
 
     const card = createCard(
