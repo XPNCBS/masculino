@@ -173,13 +173,28 @@ body {
 }
 .modal {
   @apply fixed top-0 left-0 right-0 bottom-0 h-[100vh] w-[100wv] hidden;
+}
+.modal-blure {
+  @apply absolute top-0 left-0 right-0 bottom-0 h-[100vh] w-[100wv];
+}
+.image-modal__blure {
   background-color: rgba(255, 255, 255, 0.9);
+}
+.modal-search__blure {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-search__input {
+  flex: 1 1 auto;
+  @apply border-b;
 }
 .modal.open {
   @apply block;
 }
 .modal-content {
-  @apply flex items-center justify-between h-[100vh] w-[100wv] px-5;
+  @apply h-[100vh] w-[100wv] relative;
+}
+.image-modal__content {
+  @apply flex items-center justify-between px-5;
 }
 .image-modal__img {
   max-height: 100vh; /* вписать в высоту экрана (90% от viewport height) */

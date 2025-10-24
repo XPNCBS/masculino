@@ -69,7 +69,7 @@
 
             <ul class="header__menu">
               <li class="header__item">
-                <button class="header__button">
+                <button class="header__button search">
                   <svg
                     width="24"
                     height="24"
@@ -204,10 +204,59 @@
         </nav>
       </header>
       <main class="content"></main>
+      <div class="modal modal-search">
+        <div class="modal-content relative">
+          <div class="modal-blure modal-search__blure"></div>
+          <div class="modal-search relative z-2">
+            <header
+              class="modal-search__header flex items-center py-6 px-12 gap-3 bg-black"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M17 17L21 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  ></path>
+                </g>
+              </svg>
+              <input
+                class="modal-search__input p-2"
+                placeholder="Search products"
+                type="text"
+              />
+              <button
+                aria-label="Close"
+                class="close modal-search__close cursor-pointer relative w-6 h-6 before:content-[''] after:content-[''] before:absolute after:absolute before:top-1/2 after:top-1/2 before:left-0 after:left-0 before:w-full after:w-full before:h-[2px] after:h-[2px] before:bg-white after:bg-white before:rotate-45 after:-rotate-45 before:translate-y-[-50%] after:translate-y-[-50%] hover:opacity-70 transition"
+              ></button>
+            </header>
+            <section class="modal-search__section"></section>
+          </div>
+        </div>
+      </div>
       <footer class="custom-container footer pt-25 pb-5">
         © 2021. Kelzin Group. Все права защищены.
       </footer>
     </div>
+
     <template id="shop">
       <div>
         <section class="flex justify-between items-center custom-container">
@@ -284,21 +333,22 @@
           <div class="cards"></div>
         </section>
       </div>
-      <div class="modal">
+      <div class="modal image-modal">
         <div class="modal-content relative">
+          <div class="modal-blure image-modal__blure"></div>
           <button
             aria-label="Close"
-            class="close cursor-pointer absolute top-3.5 right-3.5 w-6 h-6 before:content-[''] after:content-[''] before:absolute after:absolute before:top-1/2 after:top-1/2 before:left-0 after:left-0 before:w-full after:w-full before:h-[2px] after:h-[2px] before:bg-black after:bg-black before:rotate-45 after:-rotate-45 before:translate-y-[-50%] after:translate-y-[-50%] hover:opacity-70 transition"
+            class="close z-2 image-modal__close cursor-pointer absolute top-3.5 right-3.5 w-6 h-6 before:content-[''] after:content-[''] before:absolute after:absolute before:top-1/2 after:top-1/2 before:left-0 after:left-0 before:w-full after:w-full before:h-[2px] after:h-[2px] before:bg-black after:bg-black before:rotate-45 after:-rotate-45 before:translate-y-[-50%] after:translate-y-[-50%] hover:opacity-70 transition"
           ></button>
 
           <button
-            class="prev-arrow block w-10 h-10 border-t-2 border-r-2 border-white -rotate-135"
+            class="prev-arrow z-2 block w-10 h-10 border-t-2 border-r-2 border-white -rotate-135"
           ></button>
 
-          <img class="image-modal__img" src="" alt="" />
+          <img class="image-modal__img z-2" src="" alt="" />
 
           <button
-            class="next-arrow block w-10 h-10 border-t-2 border-r-2 border-white rotate-45"
+            class="z-2 next-arrow block w-10 h-10 border-t-2 border-r-2 border-white rotate-45"
           ></button>
         </div>
       </div>

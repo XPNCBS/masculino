@@ -1,4 +1,5 @@
 import { cards } from './cards'
+import { openModal, closeModal } from './modal'
 function createBreadCrumbs(card) {
   const breadCrumbs = document.querySelector('.bread-crumbs')
   const keys = ['season', 'category', 'title']
@@ -67,35 +68,19 @@ function hrefGenerate(id, prevPage, nextPage) {
   prevPage.href =
     idNumber === 0 ? `shop?id=${cards.length - 1}` : `shop?id=${idNumber - 1}`
 }
-function modalActions(
-  target,
-  imagePosition,
-  imagesArray,
-  modal,
-  imageModalImg
-) {
-  if (
-    target.classList.contains('modal-content') ||
-    target.classList.contains('close')
-  ) {
-    modal.classList.remove('open')
-  } else if (target.classList.contains('next-arrow')) {
-    imagePosition.value =
-      imagePosition.value < imagesArray.length - 1 ? imagePosition.value + 1 : 0
+function nextImg(imagePosition, imagesArray, imageModalImg) {
+  imagePosition.value =
+    imagePosition.value < imagesArray.length - 1 ? imagePosition.value + 1 : 0
 
-    imageModalImg.src = imagesArray[imagePosition.value].src
-  } else if (target.classList.contains('prev-arrow')) {
-    imagePosition.value =
-      imagePosition.value > 0 ? imagePosition.value - 1 : imagesArray.length - 1
+  imageModalImg.src = imagesArray[imagePosition.value].src
+}
+function prevImg(imagePosition, imagesArray, imageModalImg) {
+  imagePosition.value =
+    imagePosition.value > 0 ? imagePosition.value - 1 : imagesArray.length - 1
 
-    imageModalImg.src = imagesArray[imagePosition.value].src
-  }
+  imageModalImg.src = imagesArray[imagePosition.value].src
 }
-function openModal(src, modal, imageModalImg, imagePosition) {
-  imageModalImg.src = src
-  console.log(imagePosition)
-  modal.classList.add('open')
-}
+
 function tableValues(card) {
   const sizes = document.querySelector('.sizes')
   const colors = document.querySelector('.colors')
@@ -119,15 +104,26 @@ export function shopPage() {
   const imagesArray = []
   const prevPage = document.querySelector('.prev-page')
   const nextPage = document.querySelector('.next-page')
-  const modal = document.querySelector('.modal')
+  const nextArrow = document.querySelector('.next-arrow')
+  const prevArrow = document.querySelector('.prev-arrow')
+  const modal = document.querySelector('.image-modal')
+  const modalBlure = document.querySelector('.image-modal__blure')
+  const modalCloseBtn = document.querySelector('.image-modal__close')
   const imageModalImg = document.querySelector('.image-modal__img')
   let imagePosition = { value: 0 }
-  mainImage.addEventListener('click', () =>
-    openModal(mainImage.src, modal, imageModalImg, imagePosition)
+
+  mainImage.addEventListener('click', () => {
+    imageModalImg.src = mainImage.src
+    openModal(modal)
+  })
+  nextArrow.addEventListener('click', () =>
+    nextImg(imagePosition, imagesArray, imageModalImg)
   )
-  modal.addEventListener('click', (e) =>
-    modalActions(e.target, imagePosition, imagesArray, modal, imageModalImg)
+  prevArrow.addEventListener('click', () =>
+    prevImg(imagePosition, imagesArray, imageModalImg)
   )
+  modalBlure.addEventListener('click', () => closeModal(modal))
+  modalCloseBtn.addEventListener('click', () => closeModal(modal))
   createBreadCrumbs(card)
   hrefGenerate(id, prevPage, nextPage)
   getMainImage(card, mainImage)

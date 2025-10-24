@@ -4,13 +4,20 @@ import { generateCards } from './js/cardsFunctions'
 import { asideContent } from './js/asideContent'
 import { generateAside } from './js/asideFunctions'
 import { shopPage } from './js/shopPage'
+import { openModal, closeModal } from './js/modal'
 const content = document.querySelector('.content')
 const rootTemplate = document.querySelector('#root')
 const shopTemplate = document.querySelector('#shop')
 
 const burgerButton = document.querySelector('.burger-button')
 const headerLists = document.querySelector('.header__lists')
-
+const modalSearch = document.querySelector('.modal-search')
+const searchBtn = document.querySelector('.search')
+const modalSearchBlure = document.querySelector('.modal-search__blure')
+const modalSearchCloseBtn = document.querySelector('.modal-search__close')
+searchBtn.addEventListener('click', () => openModal(modalSearch))
+modalSearchBlure.addEventListener('click', () => closeModal(modalSearch))
+modalSearchCloseBtn.addEventListener('click', () => closeModal(modalSearch))
 burgerButton.addEventListener('click', () => {
   const isActive = headerLists.classList.contains('active')
 
