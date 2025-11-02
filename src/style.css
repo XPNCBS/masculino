@@ -86,7 +86,9 @@ button {
 .cards {
   @apply flex flex-wrap gap-x-[20px] gap-y-[20px] content-start w-[80%];
 }
-
+.cards.cards-shop {
+  @apply w-[100%];
+}
 /* card block */
 .card {
   @apply relative;
@@ -123,7 +125,7 @@ button {
 }
 
 .card__action {
-  @apply bg-transparent flex justify-end items-center border-none relative z-[2];
+  @apply bg-transparent flex justify-end items-center border-none relative z-[1];
 }
 
 .card__link {
@@ -172,7 +174,7 @@ body {
   opacity: 30%;
 }
 .modal {
-  @apply fixed top-0 left-0 right-0 bottom-0 h-[100vh] w-[100wv] hidden;
+  @apply fixed top-0 left-0 right-0 bottom-0 h-[100vh] w-[100wv] hidden z-[3];
 }
 .modal-blure {
   @apply absolute top-0 left-0 right-0 bottom-0 h-[100vh] w-[100wv];
@@ -186,6 +188,13 @@ body {
 .modal-search__input {
   flex: 1 1 auto;
   @apply border-b;
+}
+.modal-search__input:focus,
+.modal-search__input:focus-visible {
+  outline: none;
+}
+.modal-search__section {
+  @apply flex flex-wrap gap-x-[20px] gap-y-[20px] content-start;
 }
 .modal.open {
   @apply block;

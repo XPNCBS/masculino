@@ -207,9 +207,9 @@
       <div class="modal modal-search">
         <div class="modal-content relative">
           <div class="modal-blure modal-search__blure"></div>
-          <div class="modal-search relative z-2">
+          <div class="modal-search relative z-2 bg-black">
             <header
-              class="modal-search__header flex items-center py-6 px-12 gap-3 bg-black"
+              class="modal-search__header flex items-center py-6 px-12 gap-3"
             >
               <svg
                 width="24"
@@ -248,7 +248,10 @@
                 class="close modal-search__close cursor-pointer relative w-6 h-6 before:content-[''] after:content-[''] before:absolute after:absolute before:top-1/2 after:top-1/2 before:left-0 after:left-0 before:w-full after:w-full before:h-[2px] after:h-[2px] before:bg-white after:bg-white before:rotate-45 after:-rotate-45 before:translate-y-[-50%] after:translate-y-[-50%] hover:opacity-70 transition"
               ></button>
             </header>
-            <section class="modal-search__section"></section>
+            <section class="custom-container">
+              <h2 class="modal-search__title"></h2>
+              <div class="modal-search__section"></div>
+            </section>
           </div>
         </div>
       </div>
@@ -293,7 +296,12 @@
             <div><img class="main-image" src="" alt="" /></div>
             <ul class="images-list"></ul>
           </div>
-          <div class="w-[50%]">a</div>
+          <div class="w-[50%]">
+            <div>
+              <h1></h1>
+              <p></p>
+            </div>
+          </div>
         </section>
         <section class="Additional-information mt-20">
           <div
@@ -330,11 +338,11 @@
         </section>
         <section class="custom-container">
           <h2>Related products</h2>
-          <div class="cards"></div>
+          <div class="cards cards-shop"></div>
         </section>
       </div>
       <div class="modal image-modal">
-        <div class="modal-content relative">
+        <div class="modal-content relative image-modal__content">
           <div class="modal-blure image-modal__blure"></div>
           <button
             aria-label="Close"

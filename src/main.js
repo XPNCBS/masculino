@@ -8,6 +8,7 @@ import { openModal, closeModal } from './js/modal'
 const content = document.querySelector('.content')
 const rootTemplate = document.querySelector('#root')
 const shopTemplate = document.querySelector('#shop')
+const cardsTemplate = document.querySelector('#card')
 
 const burgerButton = document.querySelector('.burger-button')
 const headerLists = document.querySelector('.header__lists')
@@ -15,6 +16,31 @@ const modalSearch = document.querySelector('.modal-search')
 const searchBtn = document.querySelector('.search')
 const modalSearchBlure = document.querySelector('.modal-search__blure')
 const modalSearchCloseBtn = document.querySelector('.modal-search__close')
+const modalSearchInput = document.querySelector('.modal-search__input')
+const modalSearchSection = document.querySelector('.modal-search__section')
+const modalSearchTitle = document.querySelector('.modal-search__title')
+modalSearchInput.addEventListener('input', (e) => {
+  generateCards(
+    cardsTemplate,
+    cards,
+    modalSearchSection,
+    false,
+    true,
+    e.target.value
+  )
+  const cardsArray = modalSearchSection.querySelectorAll('.card')
+
+  if (e.target.value.trim() === '') {
+    // если строка пустая
+    modalSearchTitle.textContent = ''
+  } else if (e.target.value.trim() !== '' && cardsArray.length < 1) {
+    // если строка не пустая и карточек нет
+    modalSearchTitle.textContent = 'Нет совпадений'
+  } else {
+    // если строка не пустая и карточки есть
+    modalSearchTitle.textContent = 'Showing all results:'
+  }
+})
 searchBtn.addEventListener('click', () => openModal(modalSearch))
 modalSearchBlure.addEventListener('click', () => closeModal(modalSearch))
 modalSearchCloseBtn.addEventListener('click', () => closeModal(modalSearch))
