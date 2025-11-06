@@ -8,15 +8,26 @@ export const cards = [
     season: 'Осень',
     category: 'Водолазка',
     colors: [
-      'Бежевый',
-      'Бирюзовый',
-      'Бордовый',
-      'Коричневый',
-      'Кофе',
-      'Петроль',
-      'Серый',
-      'Темно-синий',
-      'Черный',
+      {
+        color: 'Бежевый',
+        src: 'public/images/shop/1_Водолазка_normal/05.jpg',
+        background: '#f5f5dc',
+      }, // бежевый
+      {
+        color: 'Бирюзовый',
+        src: 'public/images/shop/1_Водолазка_normal/13.jpg',
+        background: '#40e0d0',
+      }, // бирюзовый
+      {
+        color: 'Коричневый',
+        src: 'public/images/shop/1_Водолазка_normal/09.jpg',
+        background: '#8b4513',
+      }, // коричневый
+      {
+        color: 'Бордовый',
+        src: 'public/images/shop/1_Водолазка_normal/01.jpg',
+        background: '#800000',
+      }, // бордовый
     ],
     sku: '#К-709',
     material: 'Трикотаж',
@@ -34,7 +45,6 @@ export const cards = [
       'public/images/shop/1_Водолазка_normal/10.jpg',
       'public/images/shop/1_Водолазка_normal/11.jpg',
       'public/images/shop/1_Водолазка_normal/12.jpg',
-      'public/images/shop/1_Водолазка_normal/13.jpg',
       'public/images/shop/1_Водолазка_normal/14.jpg',
       'public/images/shop/1_Водолазка_normal/15.jpg',
       'public/images/shop/1_Водолазка_normal/16.jpg',

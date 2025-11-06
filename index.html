@@ -291,15 +291,45 @@
             ></a>
           </div>
         </section>
-        <section class="flex custom-container">
+        <section class="flex custom-container gap-10">
           <div class="w-[50%]">
             <div><img class="main-image" src="" alt="" /></div>
             <ul class="images-list"></ul>
           </div>
           <div class="w-[50%]">
             <div>
-              <h1></h1>
-              <p></p>
+              <h1 class="product-title"></h1>
+              <p class="product-price"></p>
+              <div class="wrap">
+                <ul class="product-options">
+                  <li class="product-options__option rounded-t-md">
+                    <div class="product-colors product-options__pading">
+                      Цвет
+                      <div class="color-wrap"></div>
+                    </div>
+                  </li>
+                  <li class="product-sizes product-options__option">
+                    <div
+                      class="product-options__pading flex justify-between items-center"
+                    >
+                      Размер
+                      <button
+                        class="current-size-button flex items-center gap-1"
+                      >
+                        <span class="current-size-option"></span><span>▼</span>
+                      </button>
+                    </div>
+                  </li>
+                  <li class="product-quantity product-options__option">
+                    <div class="product-options__pading">Количество</div>
+                  </li>
+                  <li class="btn-wrap">
+                    <button class="add-to-cart items-center">
+                      Добавить в корзину
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>

@@ -90,8 +90,69 @@ function tableValues(card) {
   categories.textContent = `${card.season}, ${card.category}`
   sku.textContent = card.sku
   material.textContent = card.material
-  colors.textContent = card.colors.join(', ')
+  colors.textContent = card.colors.map((c) => c.color).join(', ')
   sizes.textContent = card.sizes.join(', ')
+}
+function colorsActionGenerate(card) {
+  const colorWrap = document.querySelector('.color-wrap')
+  const colors = card.colors
+  colors.forEach((color) => {
+    const div = document.createElement('div')
+    div.classList.add('color-circle')
+    div.style.backgroundColor = color.background
+    colorWrap.appendChild(div)
+  })
+}
+function getCurrentSizeOption(text) {
+  const currentSizeOption = document.querySelector('.current-size-option')
+  currentSizeOption.textContent = text
+}
+function sizesActionGenerate(card) {
+  const sizesWrap = document.querySelector('.product-sizes')
+  const ul = document.createElement('ul')
+  ul.classList.add('sizes-ul')
+  ul.classList.add('hidden')
+  sizesWrap.appendChild(ul)
+
+  const sizes = card.sizes
+
+  // первый элемент
+  const firstLi = document.createElement('li')
+  firstLi.classList.add('sizes-ul__li', 'product-options__pading', 'active')
+  firstLi.textContent = 'Выбрать опцию'
+  ul.appendChild(firstLi)
+
+  // остальные размеры
+  sizes.forEach((size) => {
+    const li = document.createElement('li')
+    li.classList.add('product-options__pading', 'sizes-ul__li')
+    li.textContent = size
+    ul.appendChild(li)
+  })
+
+  // обработка кликов
+  const allLi = ul.querySelectorAll('.sizes-ul__li')
+  allLi.forEach((li) => {
+    li.addEventListener('click', () => {
+      allLi.forEach((el) => el.classList.remove('active'))
+      li.classList.add('active')
+      ul.classList.add('hidden')
+      getCurrentSizeOption(li.textContent)
+    })
+  })
+}
+function openSizesBlock() {
+  const currentSizeOption = document.querySelector('.current-size-button')
+  const sizesUl = document.querySelector('.sizes-ul')
+  currentSizeOption.addEventListener('click', () =>
+    sizesUl.classList.toggle('hidden')
+  )
+}
+function actionBlockGenerate(card) {
+  colorsActionGenerate(card)
+  sizesActionGenerate(card)
+  getCurrentSizeOption('Выбрать опцию')
+  openSizesBlock()
 }
 
 export function shopPage() {
@@ -110,6 +171,11 @@ export function shopPage() {
   const modalBlure = document.querySelector('.image-modal__blure')
   const modalCloseBtn = document.querySelector('.image-modal__close')
   const imageModalImg = document.querySelector('.image-modal__img')
+  const productTitle = document.querySelector('.product-title')
+  const productPrice = document.querySelector('.product-price')
+  productTitle.textContent = card.title
+  productPrice.textContent = `${card.price} $`
+
   let imagePosition = { value: 0 }
 
   mainImage.addEventListener('click', () => {
@@ -130,4 +196,5 @@ export function shopPage() {
   generateImages(card, imagesList, mainImage, imagesArray, imagePosition)
   activeImage(imagesArray, mainImage)
   tableValues(card)
+  actionBlockGenerate(card)
 }
