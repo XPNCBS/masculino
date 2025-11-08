@@ -10,7 +10,7 @@ export const cards = [
     colors: [
       {
         color: 'Бежевый',
-        src: 'public/images/shop/1_Водолазка_normal/05.jpg',
+        src: 'public/images/shop/1_Водолазка_normal/07.jpg',
         background: '#f5f5dc',
       }, // бежевый
       {
@@ -45,6 +45,7 @@ export const cards = [
       'public/images/shop/1_Водолазка_normal/10.jpg',
       'public/images/shop/1_Водолазка_normal/11.jpg',
       'public/images/shop/1_Водолазка_normal/12.jpg',
+      'public/images/shop/1_Водолазка_normal/13.jpg',
       'public/images/shop/1_Водолазка_normal/14.jpg',
       'public/images/shop/1_Водолазка_normal/15.jpg',
       'public/images/shop/1_Водолазка_normal/16.jpg',
@@ -59,6 +60,30 @@ export const cards = [
     season: 'Зима',
     sku: '#88-137',
     category: 'Курки',
+    colors: [
+      {
+        color: 'Серый',
+        src: 'public/images/shop/2_Куртка__normal/01.jpeg',
+        background: '#808080', // серый
+      },
+      {
+        color: 'Каштановый',
+        src: 'public/images/shop/2_Куртка__normal/04.jpg',
+        background: '#8B4513', // каштановый (тёмно-коричневый)
+      },
+      {
+        color: 'Бордовый',
+        src: 'public/images/shop/2_Куртка__normal/07.jpg',
+        background: '#800000', // бордовый (тёмно-красный)
+      },
+      {
+        color: 'Чёрный',
+        src: 'public/images/shop/2_Куртка__normal/10.jpg',
+        background: '#2b2b2b', // чёрный
+      },
+    ],
+    sizes: ['3XL', 'L', 'M', 'S', 'S-3XL', 'XL'],
+    material: 'Полиэстер',
     images: [
       'public/images/shop/2_Куртка__normal/01.jpeg',
       'public/images/shop/2_Куртка__normal/02.jpeg',
@@ -83,9 +108,26 @@ export const cards = [
     hoverSrc: 'public/images/3_Куртка__normal__hover.jpg',
     season: 'Зима',
     category: 'Курки',
+    colors: [
+      {
+        color: 'Каштановый',
+        src: 'public/images/shop/2_Куртка__normal/04.jpg',
+        background: '#8B4513', // каштановый (тёмно-коричневый)
+      },
+      {
+        color: 'Чёрный',
+        src: 'public/images/shop/2_Куртка__normal/10.jpg',
+        background: '#2b2b2b', // чёрный
+      },
+      {
+        color: 'Бежевый',
+        src: 'public/images/shop/1_Водолазка_normal/07.jpg',
+        background: '#f5f5dc',
+      }, // бежевый
+    ],
     sku: 'N/A',
+    sizes: ['3XL', 'L', 'M', 'S', 'S-3XL', 'XL'],
     material: 'Матовая плащевка',
-    colors: ['Коричневый', 'Серый', 'Темно-серый'],
     images: [
       'public/images/shop/3_Куртка__normal/01.jpg',
       'public/images/shop/3_Куртка__normal/02.jpg',
@@ -109,14 +151,28 @@ export const cards = [
     category: 'Куртки',
     material: 'Плащевка',
     colors: [
-      'Бежевый',
-      'Ментол',
-      'Парламент',
-      'Серый',
-      'Темно-серый',
-      'Хакки',
-      'Черный',
+      {
+        color: 'Бежевый',
+        src: 'public/images/shop/4_Куртка__oversize/01.jpg',
+        background: '#f5f5dc', // бежевый
+      },
+      {
+        color: 'Чёрный',
+        src: 'public/images/shop/4_Куртка__oversize/05.jpg',
+        background: '#2b2b2b', // тёмно-серый, не сливается с фоном
+      },
+      {
+        color: 'Хаки',
+        src: 'public/images/shop/4_Куртка__oversize/06.jpg',
+        background: '#556b2f', // настоящий тёмно-зелёный (хаки)
+      },
+      {
+        color: 'Серый',
+        src: 'public/images/shop/4_Куртка__oversize/10.jpg',
+        background: '#808080', // серый
+      },
     ],
+
     sizes: ['L', 'M', 'XL', 'XXL'],
     images: [
       'public/images/shop/4_Куртка__oversize/01.jpg',
@@ -145,7 +201,25 @@ export const cards = [
     sku: '#М-795',
     category: 'Спорт костюм',
     material: 'Хлопок с флисом',
-    colors: ['Петроль', 'Фиолетовый', 'Черный'],
+
+    colors: [
+      {
+        color: 'Синий',
+        src: 'public/images/shop/5_Мужская__двойка_normal/01.jpg',
+        background: '#003366', // тёмно-синий
+      },
+      {
+        color: 'Чёрный',
+        src: 'public/images/shop/5_Мужская__двойка_normal/08.jpg',
+        background: '#2b2b2b', // тёмно-серый, не сливается с фоном
+      },
+      {
+        color: 'Бордовый',
+        src: 'public/images/shop/5_Мужская__двойка_normal/15.jpg',
+        background: '#800000', // бордовый (тёмно-красный)
+      },
+    ],
+
     sizes: ['L', 'M', 'S', 'XL', 'XXL'],
     images: [
       'public/images/shop/5_Мужская__двойка_normal/01.jpg',
@@ -181,7 +255,23 @@ export const cards = [
     sku: '#М-113',
     category: 'Кофты',
     material: 'Хлопок с флисом',
-    colors: ['Петроль', 'Фиолетовый', 'Черный'],
+    colors: [
+      {
+        color: 'Серый',
+        src: 'public/images/shop/6_Мужская_кофта_normal/01.jpg',
+        background: '#808080', // серый
+      },
+      {
+        color: 'Чёрный',
+        src: 'public/images/shop/6_Мужская_кофта_normal/02.jpg',
+        background: '#2b2b2b', // тёмно-серый, не сливается с фоном
+      },
+      {
+        color: 'gray',
+        src: 'public/images/shop/6_Мужская_кофта_normal/06.jpg',
+        background: '#2b2b2b', // тёмно-серый, не сливается с фоном
+      },
+    ],
     sizes: ['L', 'M', 'S', 'XL', 'XXL'],
 
     images: [
@@ -210,16 +300,21 @@ export const cards = [
     category: 'Кофты',
     material: 'Трикотаж',
     colors: [
-      'Антрацитовый',
-      'Красный',
-      'Серый',
-      'Синий меланж',
-      'Темно-бежевый',
-      'Темно-зеленый',
-      'Темно-серый',
-      'Темно-синий',
-      'Фиолетовый меланж',
-      'Черный',
+      {
+        color: 'Бежевый',
+        src: 'public/images/shop/7_Мужская_кофта_normal/01.jpg',
+        background: '#d9c7a3', // бежевый
+      },
+      {
+        color: 'Бордовый',
+        src: 'public/images/shop/7_Мужская_кофта_normal/06.jpg',
+        background: '#800000', // бордовый (тёмно-красный)
+      },
+      {
+        color: 'Серый',
+        src: 'public/images/shop/7_Мужская_кофта_normal/10.jpg',
+        background: '#808080', // серый
+      },
     ],
     sizes: ['3XL', 'L', 'M', 'XL', 'XXL'],
 
@@ -249,7 +344,28 @@ export const cards = [
     sku: '#4597',
     category: 'Рубашки',
     material: 'Байка',
-    colors: ['Белый', 'Темно-серый', 'Темно-синий'],
+    colors: [
+      {
+        color: 'Бежевый',
+        src: 'public/images/shop/8_Мужская_рубашка_normal/01.jpg',
+        background: '#f5f5dc', // бежевый
+      },
+      {
+        color: 'Серый',
+        src: 'public/images/shop/8_Мужская_рубашка_normal/02.jpg',
+        background: '#808080', // серый
+      },
+      {
+        color: 'Синий',
+        src: 'public/images/shop/8_Мужская_рубашка_normal/06.jpg',
+        background: '#003366', // тёмно-синий
+      },
+      {
+        color: 'Чёрный',
+        src: 'public/images/shop/8_Мужская_рубашка_normal/10.jpg',
+        background: '#2b2b2b', // тёмно-серый, не сливается с фоном
+      },
+    ],
     sizes: ['3XL', 'L', 'M', 'XL', 'XXL'],
 
     images: [
@@ -265,7 +381,6 @@ export const cards = [
       'public/images/shop/8_Мужская_рубашка_normal/10.jpg',
       'public/images/shop/8_Мужская_рубашка_normal/11.jpg',
       'public/images/shop/8_Мужская_рубашка_normal/12.jpg',
-      'public/images/shop/8_Мужская_рубашка_normal/13.jpg',
     ],
   },
   {
@@ -278,7 +393,23 @@ export const cards = [
     sku: '#4707',
     category: 'Курки',
     material: 'Альпака',
-    colors: ['Бежевый', 'Темно-серый', 'Черный'],
+    colors: [
+      {
+        color: 'белый',
+        src: 'public/images/shop/9_Мужской_бомбер_oversize/01.jpg',
+        background: '#2b2b2b',
+      },
+      {
+        color: 'Чёрный',
+        src: 'public/images/shop/9_Мужской_бомбер_oversize/02.jpg',
+        background: '#2b2b2b',
+      },
+      {
+        color: 'Серый',
+        src: 'public/images/shop/9_Мужской_бомбер_oversize/06.jpg',
+        background: '#808080',
+      },
+    ],
     sizes: ['L', 'M', 'S', 'XL'],
 
     images: [
@@ -307,11 +438,21 @@ export const cards = [
     category: 'Кардиган',
     material: 'Трикотаж',
     colors: [
-      'Айвори',
-      'Индиго Меланж',
-      'Коралловый',
-      'Светло-серый',
-      'Темно-бежевый',
+      {
+        color: 'белый',
+        src: 'public/images/shop/10_Мужской_кардиган__normal/01.jpg',
+        background: '#2b2b2b',
+      },
+      {
+        color: 'Бежевый',
+        src: 'public/images/shop/10_Мужской_кардиган__normal/02.jpg',
+        background: '#f5f5dc', // бежевый
+      },
+      {
+        color: 'Бордовый',
+        src: 'public/images/shop/10_Мужской_кардиган__normal/09.jpg',
+        background: '#800000', // бордовый (тёмно-красный)
+      },
     ],
     sizes: ['L', 'M', 'XL', 'XXL'],
 

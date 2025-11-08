@@ -33,13 +33,14 @@ function changeImage(mainImage, image, imagesArray, imagePosition, index) {
 }
 function activeImage(imagesArray, mainImage) {
   imagesArray.forEach((img) => {
-    if (img.src === mainImage.src && !img.classList.contains('active')) {
+    if (img.src === mainImage.src) {
       img.classList.add('active')
     } else {
       img.classList.remove('active')
     }
   })
 }
+
 function generateImages(
   card,
   imagesList,
@@ -93,16 +94,39 @@ function tableValues(card) {
   colors.textContent = card.colors.map((c) => c.color).join(', ')
   sizes.textContent = card.sizes.join(', ')
 }
-function colorsActionGenerate(card) {
+function colorsActionGenerate(card, params) {
   const colorWrap = document.querySelector('.color-wrap')
   const colors = card.colors
+
   colors.forEach((color) => {
     const div = document.createElement('div')
     div.classList.add('color-circle')
     div.style.backgroundColor = color.background
+    div.setAttribute('data-color', color.color)
+    div.setAttribute('data-src', color.src)
+
+    // если текущая картинка совпадает с data-src — сразу активный
+    if (color.src === params.mainImg.src) {
+      div.classList.add('active')
+    }
+
+    div.addEventListener('click', () => {
+      // убираем active у всех
+      const allColors = colorWrap.querySelectorAll('.color-circle')
+      allColors.forEach((c) => c.classList.remove('active'))
+
+      // ставим active на текущий
+      div.classList.add('active')
+
+      // меняем изображение
+      params.mainImg.src = div.dataset.src
+      activeImage(params.imagesArray, params.mainImg)
+    })
+
     colorWrap.appendChild(div)
   })
 }
+
 function getCurrentSizeOption(text) {
   const currentSizeOption = document.querySelector('.current-size-option')
   currentSizeOption.textContent = text
@@ -132,11 +156,15 @@ function sizesActionGenerate(card) {
 
   // обработка кликов
   const allLi = ul.querySelectorAll('.sizes-ul__li')
+  const productQuantity = document.querySelector('.product-quantity')
+  const btnWrap = document.querySelector('.btn-wrap')
   allLi.forEach((li) => {
     li.addEventListener('click', () => {
       allLi.forEach((el) => el.classList.remove('active'))
       li.classList.add('active')
       ul.classList.add('hidden')
+      btnWrap.classList.remove('hidden')
+      productQuantity.classList.remove('hidden')
       getCurrentSizeOption(li.textContent)
     })
   })
@@ -144,12 +172,16 @@ function sizesActionGenerate(card) {
 function openSizesBlock() {
   const currentSizeOption = document.querySelector('.current-size-button')
   const sizesUl = document.querySelector('.sizes-ul')
-  currentSizeOption.addEventListener('click', () =>
+  const productQuantity = document.querySelector('.product-quantity')
+  const btnWrap = document.querySelector('.btn-wrap')
+  currentSizeOption.addEventListener('click', () => {
     sizesUl.classList.toggle('hidden')
-  )
+    btnWrap.classList.toggle('hidden')
+    productQuantity.classList.toggle('hidden')
+  })
 }
-function actionBlockGenerate(card) {
-  colorsActionGenerate(card)
+function actionBlockGenerate(card, params) {
+  colorsActionGenerate(card, params)
   sizesActionGenerate(card)
   getCurrentSizeOption('Выбрать опцию')
   openSizesBlock()
@@ -196,5 +228,5 @@ export function shopPage() {
   generateImages(card, imagesList, mainImage, imagesArray, imagePosition)
   activeImage(imagesArray, mainImage)
   tableValues(card)
-  actionBlockGenerate(card)
+  actionBlockGenerate(card, { mainImg: mainImage, imagesArray: imagesArray })
 }

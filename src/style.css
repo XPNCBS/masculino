@@ -199,16 +199,29 @@ body {
 .sizes-ul__li.active {
   color: goldenrod;
 }
+.sizes-ul__li:hover {
+  background-color: rgba(106, 106, 106, 0.471);
+}
 .sizes-ul__li.filter-column:not(:last-child) {
   border-bottom: 1px solid white;
 }
 .color-wrap {
-  @apply flex gap-3;
+  @apply flex gap-1;
 }
 .color-circle {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-clip: content-box; /* делает padding реально видимым */
+  padding: 2px; /* зазор между цветом и рамкой */
+}
+.color-circle.active {
+  border-color: goldenrod;
+}
+.color-circle:hover {
+  border-color: goldenrod;
 }
 .add-to-cart {
   background-color: rgb(128, 102, 0);
