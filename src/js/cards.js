@@ -111,17 +111,17 @@ export const cards = [
     colors: [
       {
         color: 'Каштановый',
-        src: 'public/images/shop/2_Куртка__normal/04.jpg',
+        src: 'public/images/shop/3_Куртка__normal/01.jpg',
         background: '#8B4513', // каштановый (тёмно-коричневый)
       },
       {
         color: 'Чёрный',
-        src: 'public/images/shop/2_Куртка__normal/10.jpg',
+        src: 'public/images/shop/3_Куртка__normal/04.jpg',
         background: '#2b2b2b', // чёрный
       },
       {
         color: 'Бежевый',
-        src: 'public/images/shop/1_Водолазка_normal/07.jpg',
+        src: 'public/images/shop/3_Куртка__normal/07.jpg',
         background: '#f5f5dc',
       }, // бежевый
     ],

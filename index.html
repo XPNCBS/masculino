@@ -255,6 +255,31 @@
           </div>
         </div>
       </div>
+      <div class="cart-wrap">
+        <div class="cart-blure"></div>
+        <div class="cart">
+          <header class="cart__header cart__padding">
+            <button class="cart__close-button">Закрыть</button>
+          </header>
+          <section class="cart__body cart__padding">
+            <div class="cart__cart-empty">
+              <img src="public/icons/close-circle-svgrepo-com.svg" alt="" />
+              <p>Корзина пуста</p>
+              <button class="cart__close-button cart__continue-button">
+                Продолжить покупку
+              </button>
+            </div>
+            <div class="cart__products"></div>
+          </section>
+          <footer class="cart__footer cart__padding">
+            <p class="cart__total">
+              Промежуточный итог: <span class="cart__total-price"></span>
+            </p>
+            <a href="" class="see-cart"> Посмотреть <br />корзину</a>
+            <button class="cart__check cart__close-button">Проверить</button>
+          </footer>
+        </div>
+      </div>
       <footer class="custom-container footer pt-25 pb-5">
         © 2021. Kelzin Group. Все права защищены.
       </footer>
@@ -264,7 +289,7 @@
       <div>
         <section class="flex justify-between items-center custom-container">
           <nav class="bread-crumbs py-5">
-            <a href="/">Shop</a>
+            <a class="bread-crumbs__link" href="/">Shop</a>
             <span class="px-3">/</span>
           </nav>
           <div>
@@ -297,9 +322,9 @@
             <ul class="images-list"></ul>
           </div>
           <div class="w-[50%]">
-            <div>
-              <h1 class="product-title"></h1>
-              <p class="product-price"></p>
+            <div class="grid gap-3">
+              <h1 class="product-title font-bold text-2xl"></h1>
+              <p class="product-price text-lg"></p>
               <div class="wrap">
                 <ul class="product-options">
                   <li class="product-options__option rounded-t-md">
@@ -314,14 +339,44 @@
                     >
                       Размер
                       <button
-                        class="current-size-button flex items-center gap-1"
+                        class="current-size-button flex items-center gap-1 cursor-pointer"
                       >
                         <span class="current-size-option"></span><span>▼</span>
                       </button>
                     </div>
                   </li>
                   <li class="product-quantity product-options__option">
-                    <div class="product-options__pading">Количество</div>
+                    <div
+                      class="product-options__pading flex justify-between items-center"
+                    >
+                      Количество
+                      <div class="flex items-center">
+                        <button class="quantity-minus-button cursor-pointer">
+                          <i
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors"
+                            role="button"
+                            aria-label="Play"
+                          >
+                            <span
+                              class="block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]"
+                              style="transform: rotate(180deg)"
+                            ></span>
+                          </i>
+                        </button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-plus-button cursor-pointer">
+                          <i
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-ful transition-colors"
+                            role="button"
+                            aria-label="Play"
+                          >
+                            <span
+                              class="block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]"
+                            ></span>
+                          </i>
+                        </button>
+                      </div>
+                    </div>
                   </li>
                   <li class="btn-wrap">
                     <button class="add-to-cart items-center">

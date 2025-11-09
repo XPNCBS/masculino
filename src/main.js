@@ -41,7 +41,15 @@ modalSearchInput.addEventListener('input', (e) => {
     modalSearchTitle.textContent = 'Showing all results:'
   }
 })
-searchBtn.addEventListener('click', () => openModal(modalSearch))
+function clearSearch() {
+  modalSearchInput.value = ''
+  modalSearchTitle.textContent = ''
+  modalSearchSection.innerHTML = ''
+}
+searchBtn.addEventListener('click', () => {
+  clearSearch()
+  openModal(modalSearch)
+})
 modalSearchBlure.addEventListener('click', () => closeModal(modalSearch))
 modalSearchCloseBtn.addEventListener('click', () => closeModal(modalSearch))
 burgerButton.addEventListener('click', () => {

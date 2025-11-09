@@ -4,7 +4,7 @@
 * {
   font-family: Montserrat, sans-serif !important;
 
-  @apply text-white;
+  color: white;
 }
 
 body,
@@ -59,6 +59,58 @@ button {
 }
 .header {
   @apply border-b py-6;
+}
+.cart-wrap {
+  @apply absolute top-0 left-0 right-0 bottom-0;
+}
+.cart-blure {
+  @apply fixed top-0 left-0 right-0 bottom-0 h-[100vh] w-[100wv] z-3;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.cart {
+  background-color: black;
+  @apply absolute right-0 top-0 bottom-0 z-4 flex flex-col pb-6 w-[20%];
+}
+.cart__padding {
+  @apply px-6;
+}
+.cart__header {
+  @apply flex justify-end py-7 border-b;
+}
+.cart__close-button {
+}
+.cart__body {
+  flex: 1 1 auto;
+}
+.cart__cart-empty {
+  @apply items-center flex flex-col mt-7 gap-4;
+}
+.cart__continue-button {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 3px;
+  opacity: 0.7;
+  padding: 5px 25px;
+}
+.cart__products {
+}
+.cart__footer {
+  @apply flex flex-col gap-4;
+}
+.cart__total {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 10px 10px;
+}
+.cart__total-price {
+}
+.see-cart {
+  @apply items-center flex flex-col text-center py-1;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 7px;
+}
+.cart__check {
+  @apply rounded py-2;
+  background-color: rgb(184, 132, 1);
 }
 .main {
   @apply mt-10;
@@ -157,6 +209,12 @@ body {
 .liked .svg__path {
   @apply fill-yellow-300 stroke-0;
 }
+.bread-crumbs__link {
+  transition: color 0.2s ease-in;
+}
+.bread-crumbs__link:hover {
+  color: darkgoldenrod;
+}
 .images-list {
   @apply flex flex-wrap gap-[10px] mt-[10px];
 }
@@ -181,6 +239,9 @@ body {
 }
 .image-modal__blure {
   background-color: rgba(255, 255, 255, 0.9);
+}
+.product-price {
+  color: goldenrod;
 }
 .product-colors {
   @apply flex justify-between items-center;
@@ -225,7 +286,12 @@ body {
 }
 .add-to-cart {
   background-color: rgb(128, 102, 0);
+  cursor: pointer;
   @apply px-2 py-2 flex items-center justify-center w-[100%];
+}
+.add-to-cart.disabled {
+  background-color: gray;
+  cursor: not-allowed;
 }
 .modal-search__blure {
   background-color: rgba(0, 0, 0, 0.5);

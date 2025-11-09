@@ -9,6 +9,7 @@ function createBreadCrumbs(card) {
       const link = document.createElement('a')
       if (key !== 'title') {
         link.href = `/?categories=${card[key]}`
+        link.classList.add('bread-crumbs__link')
       } else {
         link.classList.add('disabled')
       }
@@ -94,20 +95,24 @@ function tableValues(card) {
   colors.textContent = card.colors.map((c) => c.color).join(', ')
   sizes.textContent = card.sizes.join(', ')
 }
-function colorsActionGenerate(card, params) {
+function colorsActionGenerate(card, params, product) {
   const colorWrap = document.querySelector('.color-wrap')
   const colors = card.colors
-
   colors.forEach((color) => {
     const div = document.createElement('div')
     div.classList.add('color-circle')
     div.style.backgroundColor = color.background
     div.setAttribute('data-color', color.color)
     div.setAttribute('data-src', color.src)
-
     // если текущая картинка совпадает с data-src — сразу активный
-    if (color.src === params.mainImg.src) {
+    const currentImgName = params.mainImg.src.split('/').pop()
+    const colorImgName = color.src.split('/').pop()
+
+    // если имя файла совпадает — активный
+    if (colorImgName === currentImgName) {
       div.classList.add('active')
+      product.color = color.color
+      product.src = color.src
     }
 
     div.addEventListener('click', () => {
@@ -117,6 +122,8 @@ function colorsActionGenerate(card, params) {
 
       // ставим active на текущий
       div.classList.add('active')
+      product.color = color.color
+      product.src = color.src
 
       // меняем изображение
       params.mainImg.src = div.dataset.src
@@ -131,7 +138,7 @@ function getCurrentSizeOption(text) {
   const currentSizeOption = document.querySelector('.current-size-option')
   currentSizeOption.textContent = text
 }
-function sizesActionGenerate(card) {
+function sizesActionGenerate(card, product) {
   const sizesWrap = document.querySelector('.product-sizes')
   const ul = document.createElement('ul')
   ul.classList.add('sizes-ul')
@@ -142,14 +149,23 @@ function sizesActionGenerate(card) {
 
   // первый элемент
   const firstLi = document.createElement('li')
-  firstLi.classList.add('sizes-ul__li', 'product-options__pading', 'active')
+  firstLi.classList.add(
+    'sizes-ul__li',
+    'product-options__pading',
+    'active',
+    'cursor-pointer'
+  )
   firstLi.textContent = 'Выбрать опцию'
   ul.appendChild(firstLi)
 
   // остальные размеры
   sizes.forEach((size) => {
     const li = document.createElement('li')
-    li.classList.add('product-options__pading', 'sizes-ul__li')
+    li.classList.add(
+      'product-options__pading',
+      'sizes-ul__li',
+      'cursor-pointer'
+    )
     li.textContent = size
     ul.appendChild(li)
   })
@@ -165,6 +181,7 @@ function sizesActionGenerate(card) {
       ul.classList.add('hidden')
       btnWrap.classList.remove('hidden')
       productQuantity.classList.remove('hidden')
+      product.size = li.textContent
       getCurrentSizeOption(li.textContent)
     })
   })
@@ -180,11 +197,95 @@ function openSizesBlock() {
     productQuantity.classList.toggle('hidden')
   })
 }
+function changeQuantity(card, product) {
+  const quantityMinusButton = document.querySelector('.quantity-minus-button')
+  const quantity = document.querySelector('.quantity')
+  const quantityPlusbutton = document.querySelector('.quantity-plus-button')
+  quantityMinusButton.addEventListener('click', () => {
+    const currentQuantity = Number(quantity.textContent)
+    if (currentQuantity > 1) {
+      quantity.textContent = currentQuantity - 1
+      const changedQuantity = Number(quantity.textContent)
+      product.quantity = changedQuantity
+      product.price = Number(card.price.replace(',', '.')) * changedQuantity
+    }
+  })
+  quantityPlusbutton.addEventListener('click', () => {
+    const currentQuantity = Number(quantity.textContent)
+    quantity.textContent = currentQuantity + 1
+    const changedQuantity = Number(quantity.textContent)
+    product.quantity = changedQuantity
+    product.price = Number(card.price.replace(',', '.')) * changedQuantity
+  })
+}
+function addToCart(product) {
+  const addToCartBtn = document.querySelector('.add-to-cart')
+
+  // Обновление состояния кнопки
+  function updateButtonState() {
+    if (product.size === 'Выбрать опцию') {
+      addToCartBtn.classList.add('disabled')
+      addToCartBtn.disabled = true
+    } else {
+      addToCartBtn.classList.remove('disabled')
+      addToCartBtn.disabled = false
+    }
+  }
+
+  // Обработчик клика
+  addToCartBtn.addEventListener('click', () => {
+    if (product.size === 'Выбрать опцию') return
+
+    // Получаем существующую корзину из localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || []
+
+    // Добавляем новый продукт
+    cart.push({ ...product }) // создаём копию, чтобы не было ссылок на объект
+
+    // Сохраняем обратно
+    localStorage.setItem('cart', JSON.stringify(cart))
+  })
+
+  // Первичная проверка состояния кнопки
+  updateButtonState()
+
+  return updateButtonState
+}
+
 function actionBlockGenerate(card, params) {
-  colorsActionGenerate(card, params)
-  sizesActionGenerate(card)
+  // Обычный объект
+  const product = {
+    src: '',
+    title: card.title,
+    color: null,
+    size: 'Выбрать опцию',
+    quantity: 1,
+    price: 0,
+  }
+
+  // Превращаем в Proxy, чтобы отлавливать изменения
+  const productProxy = new Proxy(product, {
+    set(target, key, value) {
+      target[key] = value
+
+      // Если изменился size — обновляем кнопку
+      if (key === 'size' && typeof updateButtonState === 'function') {
+        updateButtonState()
+      }
+
+      return true
+    },
+  })
+
+  // Генерация остальных блоков
+  colorsActionGenerate(card, params, productProxy)
+  sizesActionGenerate(card, productProxy)
   getCurrentSizeOption('Выбрать опцию')
   openSizesBlock()
+  changeQuantity(card, productProxy)
+
+  // Инициализация кнопки
+  const updateButtonState = addToCart(productProxy)
 }
 
 export function shopPage() {
