@@ -486,6 +486,66 @@
         </footer>
       </article>
     </template>
+    <template id="product">
+      <article class="product">
+        <div class="product__image-wrap">
+          <img class="product__img" src="" alt="" />
+        </div>
+        <div class="product__info">
+          <header class="product__header">
+            <h2 class="product__title"></h2>
+            <button>
+              <div class="relative w-5 h-5 cursor-pointer">
+                <span
+                  class="absolute inset-0 bg-white h-[2px] rotate-45 top-1/2 block"
+                ></span>
+                <span
+                  class="absolute inset-0 bg-white h-[2px] -rotate-45 top-1/2 block"
+                ></span>
+              </div>
+            </button>
+          </header>
+          <div class="product__body">
+            <p class="product__color"></p>
+            <p class="product__size-wrap">
+              Размер <span class="product__size"></span>
+            </p>
+          </div>
+          <footer class="product__footer">
+            <div class="product__quantity-wrap">
+              <p>Qty</p>
+              <div>
+                <button>
+                  <i
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors"
+                    role="button"
+                    aria-label="Play"
+                  >
+                    <span
+                      class="block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]"
+                      style="transform: rotate(180deg)"
+                    ></span>
+                  </i>
+                </button>
+                <span class="product__quantity"></span>
+                <button>
+                  <i
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-ful transition-colors"
+                    role="button"
+                    aria-label="Play"
+                  >
+                    <span
+                      class="block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]"
+                    ></span>
+                  </i>
+                </button>
+              </div>
+            </div>
+            <p><span class="product__price"></span>$</p>
+          </footer>
+        </div>
+      </article>
+    </template>
 
     <script type="module" src="/src/main.js"></script>
   </body>

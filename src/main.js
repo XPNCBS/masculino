@@ -9,6 +9,7 @@ const content = document.querySelector('.content')
 const rootTemplate = document.querySelector('#root')
 const shopTemplate = document.querySelector('#shop')
 const cardsTemplate = document.querySelector('#card')
+const productTemplate = document.querySelector('#product')
 
 const burgerButton = document.querySelector('.burger-button')
 const headerLists = document.querySelector('.header__lists')
