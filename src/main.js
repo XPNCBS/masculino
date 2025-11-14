@@ -5,6 +5,7 @@ import { asideContent } from './js/asideContent'
 import { generateAside } from './js/asideFunctions'
 import { shopPage } from './js/shopPage'
 import { openModal, closeModal } from './js/modal'
+import { generateProduct } from './js/productFunctions'
 const content = document.querySelector('.content')
 const rootTemplate = document.querySelector('#root')
 const shopTemplate = document.querySelector('#shop')
@@ -20,6 +21,32 @@ const modalSearchCloseBtn = document.querySelector('.modal-search__close')
 const modalSearchInput = document.querySelector('.modal-search__input')
 const modalSearchSection = document.querySelector('.modal-search__section')
 const modalSearchTitle = document.querySelector('.modal-search__title')
+const cartProducts = document.querySelector('.cart__products')
+const openCartBtn = document.querySelector('.open-cart')
+const cartWrap = document.querySelector('.cart-wrap')
+const cartBlure = document.querySelector('.cart-blure')
+const cartCloseBtns = document.querySelectorAll('.cart__close-button')
+cartCloseBtns.forEach((btn)=>
+{btn.addEventListener('click',()=>{
+  closeModal(cartWrap)
+})}
+)
+
+cartBlure.addEventListener('click',()=>{
+  closeModal(cartWrap)
+})
+openCartBtn.addEventListener('click',()=>{
+  openModal(cartWrap)
+})
+
+function loadProductsToCart() {
+  const storedCart = localStorage.getItem('cart')
+  const cart = storedCart ? JSON.parse(storedCart) : []
+  console.log(cart)
+  generateProduct(productTemplate,cart,cartProducts)
+}
+
+loadProductsToCart()
 modalSearchInput.addEventListener('input', (e) => {
   generateCards(
     cardsTemplate,
@@ -42,6 +69,7 @@ modalSearchInput.addEventListener('input', (e) => {
     modalSearchTitle.textContent = 'Showing all results:'
   }
 })
+
 function clearSearch() {
   modalSearchInput.value = ''
   modalSearchTitle.textContent = ''

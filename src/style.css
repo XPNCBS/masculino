@@ -62,14 +62,29 @@ button {
 }
 .cart-wrap {
   @apply absolute top-0 left-0 right-0 bottom-0;
+  pointer-events: none;
+}
+.cart-wrap.open{
+  pointer-events: auto;
 }
 .cart-blure {
   @apply fixed top-0 left-0 right-0 bottom-0 h-[100vh] w-[100wv] z-3;
   background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 .cart {
   background-color: black;
   @apply absolute right-0 top-0 bottom-0 z-4 flex flex-col pb-6 w-[25%];
+  transform: translateX(200%);
+  transition: transform 0.3s ease;
+  
+}
+.cart-wrap.open .cart-blure{
+  opacity: 1;
+}
+.cart-wrap.open .cart{
+  transform: none;
 }
 .cart__padding {
   @apply px-6;
@@ -78,6 +93,7 @@ button {
   @apply flex justify-end py-7 border-b;
 }
 .cart__close-button {
+  cursor: pointer;
 }
 .cart__body {
   flex: 1 1 auto;
