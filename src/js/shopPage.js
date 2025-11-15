@@ -1,5 +1,6 @@
 import { cards } from './cards'
 import { openModal, closeModal } from './modal'
+import { addToCart } from './cartFunctions'
 function createBreadCrumbs(card) {
   const breadCrumbs = document.querySelector('.bread-crumbs')
   const keys = ['season', 'category', 'title']
@@ -202,7 +203,8 @@ function changeQuantity(card, product) {
   const quantity = document.querySelector('.quantity')
   const quantityPlusbutton = document.querySelector('.quantity-plus-button')
   quantityMinusButton.addEventListener('click', () => {
-    const currentQuantity = Number(quantity.textContent)
+  const currentQuantity = Number(quantity.textContent)
+  product.quantity = currentQuantity
     if (currentQuantity > 1) {
       quantity.textContent = currentQuantity - 1
       const changedQuantity = Number(quantity.textContent)
@@ -218,39 +220,11 @@ function changeQuantity(card, product) {
     product.price = Number(card.price.replace(',', '.')) * changedQuantity
   })
 }
-function addToCart(product) {
-  const addToCartBtn = document.querySelector('.add-to-cart')
 
-  // Обновление состояния кнопки
-  function updateButtonState() {
-    if (product.size === 'Выбрать опцию') {
-      addToCartBtn.classList.add('disabled')
-      addToCartBtn.disabled = true
-    } else {
-      addToCartBtn.classList.remove('disabled')
-      addToCartBtn.disabled = false
-    }
-  }
 
-  // Обработчик клика
-  addToCartBtn.addEventListener('click', () => {
-    if (product.size === 'Выбрать опцию') return
 
-    // Получаем существующую корзину из localStorage
-    let cart = JSON.parse(localStorage.getItem('cart')) || []
 
-    // Добавляем новый продукт
-    cart.push({ ...product }) // создаём копию, чтобы не было ссылок на объект
 
-    // Сохраняем обратно
-    localStorage.setItem('cart', JSON.stringify(cart))
-  })
-
-  // Первичная проверка состояния кнопки
-  updateButtonState()
-
-  return updateButtonState
-}
 
 function actionBlockGenerate(card, params) {
   // Обычный объект
@@ -260,7 +234,8 @@ function actionBlockGenerate(card, params) {
     color: null,
     size: 'Выбрать опцию',
     quantity: 1,
-    price: 0,
+    price: Number(card.price.replace(',', '.')),
+    id:null
   }
 
   // Превращаем в Proxy, чтобы отлавливать изменения
@@ -285,7 +260,7 @@ function actionBlockGenerate(card, params) {
   changeQuantity(card, productProxy)
 
   // Инициализация кнопки
-  const updateButtonState = addToCart(productProxy)
+  const updateButtonState = addToCart(productProxy,card)
 }
 
 export function shopPage() {

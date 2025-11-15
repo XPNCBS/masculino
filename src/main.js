@@ -5,7 +5,7 @@ import { asideContent } from './js/asideContent'
 import { generateAside } from './js/asideFunctions'
 import { shopPage } from './js/shopPage'
 import { openModal, closeModal } from './js/modal'
-import { generateProduct } from './js/productFunctions'
+import { loadProductsToCart } from './js/cartFunctions'
 const content = document.querySelector('.content')
 const rootTemplate = document.querySelector('#root')
 const shopTemplate = document.querySelector('#shop')
@@ -39,14 +39,8 @@ openCartBtn.addEventListener('click',()=>{
   openModal(cartWrap)
 })
 
-function loadProductsToCart() {
-  const storedCart = localStorage.getItem('cart')
-  const cart = storedCart ? JSON.parse(storedCart) : []
-  console.log(cart)
-  generateProduct(productTemplate,cart,cartProducts)
-}
 
-loadProductsToCart()
+loadProductsToCart(productTemplate,cartProducts)
 modalSearchInput.addEventListener('input', (e) => {
   generateCards(
     cardsTemplate,
