@@ -203,8 +203,8 @@ function changeQuantity(card, product) {
   const quantity = document.querySelector('.quantity')
   const quantityPlusbutton = document.querySelector('.quantity-plus-button')
   quantityMinusButton.addEventListener('click', () => {
-  const currentQuantity = Number(quantity.textContent)
-  product.quantity = currentQuantity
+    const currentQuantity = Number(quantity.textContent)
+    product.quantity = currentQuantity
     if (currentQuantity > 1) {
       quantity.textContent = currentQuantity - 1
       const changedQuantity = Number(quantity.textContent)
@@ -221,11 +221,6 @@ function changeQuantity(card, product) {
   })
 }
 
-
-
-
-
-
 function actionBlockGenerate(card, params) {
   // Обычный объект
   const product = {
@@ -234,8 +229,9 @@ function actionBlockGenerate(card, params) {
     color: null,
     size: 'Выбрать опцию',
     quantity: 1,
+    startPrice: Number(card.price.replace(',', '.')),
     price: Number(card.price.replace(',', '.')),
-    id:null
+    id: null,
   }
 
   // Превращаем в Proxy, чтобы отлавливать изменения
@@ -260,7 +256,7 @@ function actionBlockGenerate(card, params) {
   changeQuantity(card, productProxy)
 
   // Инициализация кнопки
-  const updateButtonState = addToCart(productProxy,card)
+  const updateButtonState = addToCart(productProxy, card)
 }
 
 export function shopPage() {

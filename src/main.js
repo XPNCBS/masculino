@@ -26,21 +26,20 @@ const openCartBtn = document.querySelector('.open-cart')
 const cartWrap = document.querySelector('.cart-wrap')
 const cartBlure = document.querySelector('.cart-blure')
 const cartCloseBtns = document.querySelectorAll('.cart__close-button')
-cartCloseBtns.forEach((btn)=>
-{btn.addEventListener('click',()=>{
-  closeModal(cartWrap)
-})}
-)
+cartCloseBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    closeModal(cartWrap)
+  })
+})
 
-cartBlure.addEventListener('click',()=>{
+cartBlure.addEventListener('click', () => {
   closeModal(cartWrap)
 })
-openCartBtn.addEventListener('click',()=>{
+openCartBtn.addEventListener('click', () => {
   openModal(cartWrap)
 })
 
-
-loadProductsToCart(productTemplate,cartProducts)
+loadProductsToCart(productTemplate, cartProducts)
 modalSearchInput.addEventListener('input', (e) => {
   generateCards(
     cardsTemplate,
