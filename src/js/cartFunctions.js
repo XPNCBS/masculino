@@ -16,8 +16,9 @@ export function loadProductsToCart(productTemplate, cartProducts) {
   changeCartMode(cart)
   getTotalPrice()
 }
-export function changeProductQuantityInCart(cart, id, newQuantity, newPrice) {
+export function changeProductQuantityInCart(id, newQuantity, newPrice) {
   // Находим индекс продукта
+  const cart = JSON.parse(localStorage.getItem('cart')) || []
   const productIndex = cart.findIndex((item) => item.id === id)
 
   // Если продукт не найден — выходим
@@ -32,6 +33,7 @@ export function changeProductQuantityInCart(cart, id, newQuantity, newPrice) {
   const updatedCart = JSON.parse(localStorage.getItem('cart')) || []
   loadTotalCartQuantity(updatedCart)
   getTotalPrice()
+
   return cart
 }
 
@@ -117,9 +119,11 @@ export function addToCart(product, card) {
   updateButtonState()
   return updateButtonState
 }
-export function deleteProduct(cart, id) {
+export function deleteProduct(id) {
   // Фильтруем корзину
+  const cart = JSON.parse(localStorage.getItem('cart')) || []
   const updatedCart = cart.filter((item) => item.id !== id)
+  cart.forEach((i) => {})
 
   // Сохраняем обратно в localStorage
   localStorage.setItem('cart', JSON.stringify(updatedCart))

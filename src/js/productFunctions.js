@@ -9,8 +9,7 @@ export function createProduct(
   price,
   color,
   size,
-  id,
-  cart
+  id
 ) {
   const productTemplate = template.content.cloneNode(true)
   const root = productTemplate.querySelector('.product')
@@ -31,7 +30,7 @@ export function createProduct(
     '.product__quantity-plus'
   )
   productDeleteBtn.addEventListener('click', () => {
-    deleteProduct(cart, id)
+    deleteProduct(id)
     root.remove()
   })
   productImg.src = src
@@ -47,7 +46,7 @@ export function createProduct(
     const newPrice = startPrice * newQuantity
     productQuantity.textContent = newQuantity
     productPrice.textContent = newPrice
-    changeProductQuantityInCart(cart, id, newQuantity, newPrice)
+    changeProductQuantityInCart(id, newQuantity, newPrice)
   })
   productQuantityMinus.addEventListener('click', () => {
     const currentQuantity = Number(productQuantity.textContent)
@@ -56,7 +55,7 @@ export function createProduct(
       const newPrice = startPrice * newQuantity
       productQuantity.textContent = newQuantity
       productPrice.textContent = newPrice
-      changeProductQuantityInCart(cart, id, newQuantity, newPrice)
+      changeProductQuantityInCart(id, newQuantity, newPrice)
     }
   })
   return productTemplate
@@ -73,8 +72,7 @@ export function generateProduct(template, cart, container) {
       productItem.price,
       productItem.color,
       productItem.size,
-      productItem.id,
-      cart
+      productItem.id
     )
     container.appendChild(product)
   })
