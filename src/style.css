@@ -385,6 +385,94 @@ body {
   height: auto; /* сохраняем пропорции */
   display: block;
 }
+.modal-profile.open {
+  display: block;
+}
+.modal-profile-content {
+  @apply items-center justify-center flex min-h-[100vh];
+}
+.modal-profile__header {
+  border-bottom: 1px solid #dee2e6;
+  @apply flex justify-end;
+}
+.form-content {
+  @apply grid gap-3;
+}
+.form-padding {
+  @apply p-4;
+}
+.modal-profile__blure {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-profile__close {
+}
+.modal-profile__close::before {
+  background-color: #9b9b9b;
+}
+.modal-profile__close::after {
+  background-color: #9b9b9b;
+}
+.modal-profile__form {
+  background-color: white;
+  border-radius: 10px;
+  width: 500px;
+}
+.profil-form__input {
+  border: 1px solid #dee2e6;
+}
+.forget-password {
+  color: rgb(0, 102, 255);
+}
+.form-button {
+  color: black;
+  border: 1px solid #dee2e6;
+}
+.singin {
+}
+.form-ls-or {
+  color: black;
+  @apply flex justify-between items-center;
+}
+.singup {
+}
+.form-label {
+  @apply grid gap-1;
+  color: black;
+}
+.form-label-last {
+  @apply flex;
+}
+.dashboard {
+  padding: 20px 50px;
+}
+.dashboard__header {
+  padding: 20px 0;
+}
+.profile-icon {
+  @apply w-20;
+}
+.dashboard__header-p {
+  font-size: 12px;
+}
+.account-menu {
+  @apply grid gap-4;
+}
+.account-menu__item {
+}
+.account-menu__item.active {
+  width: max-content;
+  border-bottom: 1px solid white;
+}
+.account-menu__item:hover {
+  cursor: pointer;
+}
+.profile-content {
+  @apply pt-10 text-xs;
+}
+.yellow-text {
+  color: rgb(186, 124, 0);
+}
+
 .Additional-information {
   border-bottom: 1px solid white;
   border-top: 1px solid white;
@@ -459,4 +547,9 @@ a.disabled {
   .card {
     width: 100%;
   }
+}
+.line {
+  width: 40%;
+  height: 1px;
+  background-color: #dee2e6;
 }

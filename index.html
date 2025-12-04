@@ -123,7 +123,7 @@
                 </button>
               </li>
               <li class="header__item">
-                <button class="header__button">
+                <button class="header__button profile-open">
                   <svg
                     width="24"
                     height="24"
@@ -548,6 +548,108 @@
         </div>
       </article>
     </template>
+    <template id="profile">
+      <div class="custom-container flex">
+        <div class="">
+          <header class="dashboard__header">
+            <img
+              class="profile-icon"
+              src="public/icons/profile-default-svgrepo-com.svg"
+              alt="profile-icon"
+            />
+            <p class="dashboard__header-p">Hello,</p>
+            <p class="dashboard__header-p">d6412248@gmail.com</p>
+          </header>
+          <ul class="account-menu">
+            <li class="account-menu__item">Dashboard</li>
+            <li class="account-menu__item">Orders</li>
+            <li class="account-menu__item">Downloads</li>
+            <li class="account-menu__item">Adress</li>
+            <li class="account-menu__item">
+              Account<span class="opacity-0">_</span>details
+            </li>
+            <li class="account-menu__item">Logout</li>
+          </ul>
+        </div>
+
+        <div class="profile-content flex-1"></div>
+      </div>
+    </template>
+    <template id="dashboard">
+      <p class="dasbord-text">
+        From your account dashboard you can view your
+        <a class="yellow-text" href="/profile?id=orders">recent orders</a> ,
+        manage your
+        <a class="yellow-text" href="/profile?id=adress">billing address</a>,
+        and
+        <a class="yellow-text" href="/profile?id=account_details"
+          >edit your password and account details</a
+        >.
+      </p>
+    </template>
+    <template id="orders">
+      <p>No order has been made yet.</p>
+    </template>
+    <template id="downloads">
+      <p>No downloads available yet.</p>
+    </template>
+    <template id="adress">
+      <div class="flex justify-center">
+        <div class="flex-col flex gap-4">
+          <p class="text-base">
+            The following addresses will be used on the checkout page by
+            default.
+          </p>
+          <p class="text-2xl">Billing address</p>
+          <p class="text-base">You have not set up this type of address yet.</p>
+          <p class="yellow-text" href="/profile?id=account_details">Add</p>
+        </div>
+      </div>
+    </template>
+    <template id="account_details">
+      <p>Orders</p>
+    </template>
+
+    <div class="modal modal-profile">
+      <div class="modal-content modal-profile-content relative">
+        <div class="modal-blure modal-profile__blure"></div>
+
+        <form class="modal-profile__form relative z-2">
+          <header
+            class="modal-profile__header form-padding flex items-center gap-3 justify-between"
+          >
+            <button
+              aria-label="Close"
+              class="close modal-profile__close cursor-pointer relative w-6 h-6 before:content-[''] after:content-[''] before:absolute after:absolute before:top-1/2 after:top-1/2 before:left-0 after:left-0 before:w-full after:w-full before:h-[2px] after:h-[2px] before:rotate-45 after:-rotate-45 before:translate-y-[-50%] after:translate-y-[-50%] hover:opacity-70 transition"
+            ></button>
+          </header>
+          <div class="form-content form-padding">
+            <label class="form-label">
+              Имя пользователя или Email *
+              <input class="profil-form__input" type="email" />
+            </label>
+            <label class="form-label">
+              Пароль
+              <input class="profil-form__input" type="password" />
+            </label>
+            <div class="flex justify-between items-center">
+              <label class="form-label form-label-last">
+                <input class="profil-form__input" type="checkbox" />
+                Запомнить меня
+              </label>
+              <a class="forget-password" href="">Забыли свой пароль</a>
+            </div>
+            <button class="form-button singin">Войти</button>
+            <div class="form-ls-or">
+              <div class="line"></div>
+              <span style="color: black">Или</span>
+              <div class="line"></div>
+            </div>
+            <button class="form-button singup">Создать аккаунт</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <script type="module" src="/src/main.js"></script>
   </body>

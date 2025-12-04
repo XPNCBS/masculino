@@ -6,11 +6,13 @@ import { generateAside } from './js/asideFunctions'
 import { shopPage } from './js/shopPage'
 import { openModal, closeModal } from './js/modal'
 import { loadProductsToCart } from './js/cartFunctions'
+import { profilePage } from './js/profileFunctions'
 const content = document.querySelector('.content')
 const rootTemplate = document.querySelector('#root')
 const shopTemplate = document.querySelector('#shop')
 const cardsTemplate = document.querySelector('#card')
 const productTemplate = document.querySelector('#product')
+const profileTemplate = document.querySelector('#profile')
 
 const burgerButton = document.querySelector('.burger-button')
 const headerLists = document.querySelector('.header__lists')
@@ -26,6 +28,19 @@ const openCartBtn = document.querySelector('.open-cart')
 const cartWrap = document.querySelector('.cart-wrap')
 const cartBlure = document.querySelector('.cart-blure')
 const cartCloseBtns = document.querySelectorAll('.cart__close-button')
+const profileOpen = document.querySelector('.profile-open')
+const profileModal = document.querySelector('.modal-profile')
+const modalProfileClose = document.querySelector('.modal-profile__close')
+const modalProfileBlure = document.querySelector('.modal-profile__blure')
+profileOpen.addEventListener('click', () => {
+  openModal(profileModal)
+})
+modalProfileClose.addEventListener('click', () => {
+  closeModal(profileModal)
+})
+modalProfileBlure.addEventListener('click', () => {
+  closeModal(profileModal)
+})
 cartCloseBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     closeModal(cartWrap)
@@ -115,4 +130,9 @@ if (window.location.pathname === '/' || window.location.pathname === '/#') {
   const cardsTemplate = document.querySelector('#card')
   const cardsContainer = document.querySelector('.cards')
   generateCards(cardsTemplate, cards, cardsContainer, true)
+} else if (window.location.pathname === '/profile') {
+  document.title = 'Masculino — Профиль'
+  const profileContent = profileTemplate.content.cloneNode(true)
+  content.appendChild(profileContent)
+  profilePage()
 }
