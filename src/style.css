@@ -472,6 +472,61 @@ body {
 .yellow-text {
   color: rgb(186, 124, 0);
 }
+.account_details-form {
+  @apply w-[80%] grid gap-10;
+}
+.account_details-label {
+  @apply grid text-sm gap-5;
+}
+.account_details-input {
+  @apply border p-2;
+}
+.form-button-singup {
+  @apply text-white py-2 px-4 text-base;
+  background-color: rgb(186, 124, 0);
+  width: max-content;
+}
+.signin-form {
+  width: 30%;
+  margin: 0 auto;
+  font-size: 14px;
+}
+.signin-form-content {
+  @apply flex flex-col gap-5;
+}
+.signin-form-padding {
+}
+.signin-form-label {
+}
+.signin-profil-form__input {
+  display: block;
+  background-color: white;
+  width: 100%;
+  @apply p-2;
+}
+
+.signin-form-label-last input {
+  display: inline;
+  width: auto;
+}
+
+.signin-form-label-last {
+  width: max-content;
+  @apply flex items-center gap-2;
+}
+.signin-forget-password {
+}
+.signin-form-button {
+}
+.singin {
+}
+.signin-form-ls-or {
+  @apply flex justify-between items-center;
+}
+.line {
+}
+.singup {
+}
 
 .Additional-information {
   border-bottom: 1px solid white;

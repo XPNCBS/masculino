@@ -10,7 +10,7 @@ function setActiveMenuItem(accountMenuItems, id) {
 function changeProfileId(accountMenuItems) {
   accountMenuItems.forEach((item) => {
     item.addEventListener('click', () => {
-      const newId = item.textContent.toLowerCase()
+      const newId = item.textContent.toLowerCase().replace(/\s+/g, '')
       window.location.href = '/profile?id=' + newId
     })
   })

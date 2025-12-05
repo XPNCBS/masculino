@@ -13,6 +13,9 @@ const shopTemplate = document.querySelector('#shop')
 const cardsTemplate = document.querySelector('#card')
 const productTemplate = document.querySelector('#product')
 const profileTemplate = document.querySelector('#profile')
+const signin = document.querySelector('#signin')
+const signup = document.querySelector('#signup')
+const resetpassword = document.querySelector('#resetpassword')
 
 const burgerButton = document.querySelector('.burger-button')
 const headerLists = document.querySelector('.header__lists')
@@ -135,4 +138,16 @@ if (window.location.pathname === '/' || window.location.pathname === '/#') {
   const profileContent = profileTemplate.content.cloneNode(true)
   content.appendChild(profileContent)
   profilePage()
+} else if (window.location.pathname === '/signin') {
+  document.title = 'Masculino — Войти'
+  const signinContent = signin.content.cloneNode(true)
+  content.appendChild(signinContent)
+} else if (window.location.pathname === '/signup') {
+  document.title = 'Masculino — Регистрация'
+  const signupContent = signup.content.cloneNode(true)
+  content.appendChild(signupContent)
+} else if (window.location.pathname === '/resetpassword') {
+  document.title = 'Masculino — Сброс пароля'
+  const resetpasswordContent = resetpassword.content.cloneNode(true)
+  content.appendChild(resetpasswordContent)
 }

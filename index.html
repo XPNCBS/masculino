@@ -607,8 +607,85 @@
       </div>
     </template>
     <template id="account_details">
-      <p>Orders</p>
+      <div class="flex justify-center">
+        <form class="account_details-form">
+          <div class="flex items-center justify-between gap-2">
+            <label class="account_details-label w-[47%]">
+              First name *
+              <input
+                type="text"
+                id="first_name*"
+                class="account_details-input"
+              />
+            </label>
+            <label class="account_details-label w-[47%]">
+              Last name *
+              <input
+                type="text"
+                id="last_name*"
+                class="account_details-input"
+              />
+            </label>
+          </div>
+          <label class="account_details-label"
+            >Display name *
+            <input type="text" class="account_details-input" /><span
+              >This will be how your name will be displayed in the account
+              section and in reviews</span
+            ></label
+          >
+          <label class="account_details-label"
+            >Email adress * <input type="email" class="account_details-input"
+          /></label>
+          <label class="account_details-label"
+            >Current password (leave blank to leave unchanged) *<input
+              type="password"
+              class="account_details-input"
+          /></label>
+          <label class="account_details-label"
+            >New password (leave blank to leave unchanged) *<input
+              type="password"
+              class="account_details-input"
+          /></label>
+          <label class="account_details-label"
+            >Confirm new password *
+            <input type="password" class="account_details-input"
+          /></label>
+          <button class="form-button-singup">Save changes</button>
+        </form>
+      </div>
     </template>
+    <template id="signin">
+      <form class="custom-container signin-form">
+        <div class="signin-form-content signin-form-padding">
+          <h2>Войти</h2>
+          <label class="signin-form-label">
+            Имя пользователя или Email *
+            <input class="signin-profil-form__input" type="email" />
+          </label>
+          <label class="signin-form-label">
+            Пароль
+            <input class="signin-profil-form__input" type="password" />
+          </label>
+          <div class="flex justify-between items-center">
+            <label class="signin-form-label signin-form-label-last">
+              <input class="signin-profil-form__input" type="checkbox" />
+              Запомнить меня
+            </label>
+            <a class="signin-forget-password" href="">Забыли свой пароль</a>
+          </div>
+          <button class="signin-form-button singin">Войти</button>
+          <div class="signin-form-ls-or">
+            <div class="line"></div>
+            <span style="color: rgb(255, 255, 255)">Или</span>
+            <div class="line"></div>
+          </div>
+          <button class="signin-form-button singup">Создать аккаунт</button>
+        </div>
+      </form>
+    </template>
+    <template id="signup"> </template>
+    <template id="resetpassword"> </template>
 
     <div class="modal modal-profile">
       <div class="modal-content modal-profile-content relative">
