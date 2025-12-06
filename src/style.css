@@ -118,6 +118,36 @@ button {
 .cart__products {
   @apply mt-5 grid gap-2.5;
 }
+.shopping-cart {
+   @apply mt-10 grid;
+}
+.div-shopping-cart-content {
+
+}
+.div-shopcart-btns {
+
+}
+.shopcart-btn {
+
+}
+.cart-totals {
+
+}
+.div-subtotal-counter {
+
+}
+.subtotal-counter {
+
+}
+.div-total-counter {
+
+}
+.total-counter {
+
+}
+.text-ptc {
+
+}
 .product {
   @apply flex gap-3 w-[100%];
 }
@@ -494,10 +524,6 @@ body {
 .signin-form-content {
   @apply flex flex-col gap-5;
 }
-.signin-form-padding {
-}
-.signin-form-label {
-}
 .signin-profil-form__input {
   display: block;
   background-color: white;
@@ -514,18 +540,41 @@ body {
   width: max-content;
   @apply flex items-center gap-2;
 }
-.signin-forget-password {
-}
-.signin-form-button {
+.password-form-lost-text {
+  font-size: 16px;
 }
 .singin {
+  background-color: rgb(186, 124, 0);
+  padding: 10px;
+  font-size: 16px;
 }
 .signin-form-ls-or {
   @apply flex justify-between items-center;
 }
-.line {
-}
 .singup {
+  border: 1px solid white;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+}
+.go-home {
+  @apply flex items-center gap-2 text-white mt-5 p-2;
+  background-color: rgb(184, 132, 1);
+}
+.create-account {
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  @apply p-10;
+}
+.signup-form-policy-text {
+  @apply p-2;
+}
+.policy-link {
+  color: rgb(186, 124, 0);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .Additional-information {

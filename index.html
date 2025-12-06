@@ -672,7 +672,9 @@
               <input class="signin-profil-form__input" type="checkbox" />
               Запомнить меня
             </label>
-            <a class="signin-forget-password" href="">Забыли свой пароль</a>
+            <a class="signin-forget-password" href="/resetpassword"
+              >Забыли свой пароль</a
+            >
           </div>
           <button class="signin-form-button singin">Войти</button>
           <div class="signin-form-ls-or">
@@ -680,12 +682,88 @@
             <span style="color: rgb(255, 255, 255)">Или</span>
             <div class="line"></div>
           </div>
-          <button class="signin-form-button singup">Создать аккаунт</button>
+          <a href="/signup" class="signin-form-button singup"
+            >Создать аккаунт</a
+          >
         </div>
       </form>
     </template>
-    <template id="signup"> </template>
-    <template id="resetpassword"> </template>
+    <template id="signup">
+      <form class="custom-container signin-form">
+        <div class="signin-form-content signin-form-padding">
+          <h2 class="create-account">Создать аккаунт</h2>
+          <label class="signin-form-label">
+            Имя пользователя *
+            <input class="signin-profil-form__input" type="text" />
+          </label>
+          <label class="signin-form-label">
+            Email *
+            <input class="signin-profil-form__input" type="email" />
+          </label>
+          <label class="signin-form-label">
+            Пароль *
+            <input class="signin-profil-form__input" type="password" />
+          </label>
+          <p class="signup-form-policy-text">
+            Ваши личные данные будут использоваться для упрощения вашего
+            дальнейшего взаимодействия с сайтом, управления доступом к вашему
+            аккаунту и других целей, описанных в документе privacy
+            <a href="policy" class="policy-link">policy.</a>
+          </p>
+          <button class="signin-form-button singup">Создать аккаунт</button>
+          <div class="signin-form-ls-or">
+            <div class="line"></div>
+            <span style="color: rgb(255, 255, 255)">Или</span>
+            <div class="line"></div>
+          </div>
+          <a
+            href="/signin"
+            class="signin-form-button singin flex justify-center"
+            >Войти</a
+          >
+        </div>
+      </form>
+    </template>
+    <template id="resetpassword">
+      <form class="custom-container signin-form">
+        <div class="signin-form-content signin-form-padding mt-10">
+          <div class="">
+            <p class="password-form-lost-text">
+              Lost your password? Please enter your username or email address.
+              You will receive a link to create a new password via email.
+            </p>
+            <label class="signin-form-label grid gap-5 mt-5 text-xs">
+              Username or email
+              <input class="signin-profil-form__input" type="password" />
+            </label>
+          </div>
+          <button class="signin-form-button singin">Reset password</button>
+        </div>
+      </form>
+    </template>
+    <template id="error">
+      <div class="flex flex-col items-center justify-center gap-5 mt-10">
+        <img src="public/icons/close-circle-svgrepo-com.svg" alt="error-icon" />
+        <p class="text-xl">Page not found.</p>
+        <p class="text-xs">
+          It looks like nothing was found at this location. Click the link below
+          to return home.
+        </p>
+        <a href="/" class="go-home"> ← Home</a>
+      </div>
+    </template>
+    <template id="cart">
+      <section class="shopping-cart">
+        <h2 class="cart-title">Shopping Cart</h2>
+        <div class="div-shopping-cart-content"></div>
+        <div class="div-shopcart-btns"><button class="shopcart-btn"> Continue shopping</button><button class="shopcart-btn">Update cart</button></div>
+      </section>
+      <section class="cart-totals"><h2 class="cart-title">Cart totals</h2>
+        <div class="div-subtotal-counter"><span>Subtotal</span><span class="subtotal-counter"></span></div>
+        <div class="div-total-counter"><span>Total</span><span class="total-counter"></span></div>
+        <span class="text-ptc">Proceed to checkout</span>
+      </section>
+    </template>
 
     <div class="modal modal-profile">
       <div class="modal-content modal-profile-content relative">
@@ -716,7 +794,7 @@
               </label>
               <a class="forget-password" href="">Забыли свой пароль</a>
             </div>
-            <button class="form-button singin">Войти</button>
+            <a href="/signin" class="form-button signin">Войти</a>
             <div class="form-ls-or">
               <div class="line"></div>
               <span style="color: black">Или</span>

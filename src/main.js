@@ -150,4 +150,15 @@ if (window.location.pathname === '/' || window.location.pathname === '/#') {
   document.title = 'Masculino — Сброс пароля'
   const resetpasswordContent = resetpassword.content.cloneNode(true)
   content.appendChild(resetpasswordContent)
+  
+} else if (window.location.pathname === '/cart') {
+  document.title = 'Masculino — Корзина'
+  const cartContent = document.querySelector('#cart').content.cloneNode(true)
+  content.appendChild(cartContent)
+ }else {
+  const errorTemplate = document.querySelector('#error')
+  const errorContent = errorTemplate.content.cloneNode(true)
+  content.appendChild(errorContent)
+  document.title = 'Masculino — 404 Not Found'
 }
+
