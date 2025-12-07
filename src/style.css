@@ -118,35 +118,44 @@ button {
 .cart__products {
   @apply mt-5 grid gap-2.5;
 }
+.cart-div {
+  @apply grid grid-cols-3 items-center gap-10 mt-20;
+}
 .shopping-cart {
-   @apply mt-10 grid;
+  @apply flex flex-col;
+  grid-column: span 2;
+  min-height: 100%;
+}
+.cart-title {
+  @apply text-2xl;
+  font-weight: 600;
 }
 .div-shopping-cart-content {
-
+  @apply flex-auto;
 }
 .div-shopcart-btns {
-
+  @apply grid grid-cols-2 gap-5;
 }
 .shopcart-btn {
-
+  @apply py-1 px-15 border;
 }
 .cart-totals {
-
-}
-.div-subtotal-counter {
-
 }
 .subtotal-counter {
-
 }
-.div-total-counter {
-
+.div-totals-counter {
+  @apply bg-white p-4 flex justify-between items-center;
 }
+.div-totals-counter span {
+  color: black;
+  font-weight: 600;
+}
+
 .total-counter {
-
 }
 .text-ptc {
-
+  @apply block w-[100%] p-4;
+  background-color: rgb(186, 124, 0);
 }
 .product {
   @apply flex gap-3 w-[100%];
