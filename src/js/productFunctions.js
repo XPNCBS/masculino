@@ -31,7 +31,7 @@ export function createProduct(
   )
   productDeleteBtn.addEventListener('click', () => {
     deleteProduct(id)
-    root.remove()
+    globalProductDelete(id)
   })
   productImg.src = src
   productImg.alt = `${title} ${color} ${size}`
@@ -44,8 +44,7 @@ export function createProduct(
     const currentQuantity = Number(productQuantity.textContent)
     const newQuantity = currentQuantity + 1
     const newPrice = startPrice * newQuantity
-    productQuantity.textContent = newQuantity
-    productPrice.textContent = newPrice
+    globalUpdateQuantityAndPrice(id, newQuantity, newPrice)
     changeProductQuantityInCart(id, newQuantity, newPrice)
   })
   productQuantityMinus.addEventListener('click', () => {
@@ -53,8 +52,7 @@ export function createProduct(
     if (currentQuantity > 1) {
       const newQuantity = currentQuantity - 1
       const newPrice = startPrice * newQuantity
-      productQuantity.textContent = newQuantity
-      productPrice.textContent = newPrice
+      globalUpdateQuantityAndPrice(id, newQuantity, newPrice)
       changeProductQuantityInCart(id, newQuantity, newPrice)
     }
   })
@@ -76,4 +74,22 @@ export function generateProduct(template, cart, container) {
     )
     container.appendChild(product)
   })
+  
+}
+function globalUpdateQuantityAndPrice(id, newQuantity, newPrice) {
+  const products = document.querySelectorAll(`[data-id="${id}"]`);
+  products.forEach((product) => {
+    const quantityElement = product.querySelector('.product__quantity');
+    const priceElement = product.querySelector('.product__price');
+    quantityElement.textContent = newQuantity;
+    priceElement.textContent = newPrice;
+  });
+
+
+}
+function globalProductDelete(id) {
+  const products = document.querySelectorAll(`[data-id="${id}"]`);
+  products.forEach((product) => {
+    product.remove();
+  });
 }

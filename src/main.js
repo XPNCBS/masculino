@@ -12,6 +12,7 @@ const rootTemplate = document.querySelector('#root')
 const shopTemplate = document.querySelector('#shop')
 const cardsTemplate = document.querySelector('#card')
 const productTemplate = document.querySelector('#product')
+
 const profileTemplate = document.querySelector('#profile')
 const signin = document.querySelector('#signin')
 const signup = document.querySelector('#signup')
@@ -154,6 +155,8 @@ if (window.location.pathname === '/' || window.location.pathname === '/#') {
   document.title = 'Masculino — Корзина'
   const cartContent = document.querySelector('#cart').content.cloneNode(true)
   content.appendChild(cartContent)
+  const divShoppingCartContent = document.querySelector('.div-shopping-cart-content')
+  loadProductsToCart(productTemplate, divShoppingCartContent)
 } else {
   const errorTemplate = document.querySelector('#error')
   const errorContent = errorTemplate.content.cloneNode(true)

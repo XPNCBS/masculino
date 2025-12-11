@@ -123,9 +123,9 @@ export function deleteProduct(id) {
   // Фильтруем корзину
   const cart = JSON.parse(localStorage.getItem('cart')) || []
   const updatedCart = cart.filter((item) => item.id !== id)
-  cart.forEach((i) => {})
 
   // Сохраняем обратно в localStorage
+  
   localStorage.setItem('cart', JSON.stringify(updatedCart))
   loadTotalCartQuantity(updatedCart)
   // Возвращаем обновлённую корзину (если нужно дальше использовать)
@@ -141,10 +141,12 @@ function changeCartMode(cart) {
 }
 function getTotalPrice() {
   const cart = JSON.parse(localStorage.getItem('cart')) || []
-  const cartTotalPrice = document.querySelector('.cart__total-price')
+  const cartTotalPrice = document.querySelectorAll('.cart__total-price')
   let sum = 0
   cart.forEach((product) => {
     sum += product.price
   })
-  cartTotalPrice.textContent = sum + '$'
+  cartTotalPrice.forEach((priceElement) => {
+    priceElement.textContent = sum + '$'
+  })
 }
