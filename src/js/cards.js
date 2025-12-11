@@ -2,7 +2,7 @@ export const cards = [
   {
     title: 'Водолазка(normal)',
     price: '13,5',
-    href: '/shop?id=0',
+    href: '/masculino/shop?id=0',
     src: 'https://drive.google.com/uc?export=view&id=17DwtCaLiM_F_FA-MyA9L_kSwmMPs98Ve',
     hoverSrc: 'https://drive.google.com/uc?export=view&id=1By60Tsy8ToxwDAiK0hq4jbQ3MyhKjOJJ',
     season: 'Осень',
@@ -54,7 +54,7 @@ export const cards = [
   {
     title: 'Куртка (normal)',
     price: '49,00',
-    href: '/shop?id=1',
+    href: '/masculino/shop?id=1',
     src: 'public/images/2_Куртка__normal__src.jpeg',
     hoverSrc: 'https://drive.google.com/file/d/1muui5je8pgOipL4ee9tZFyPGRQnIUnF9/view?usp=sharing',
     season: 'Зима',
@@ -103,7 +103,7 @@ export const cards = [
   {
     title: 'Куртка (normal)',
     price: '49,50',
-    href: '/shop?id=2',
+    href: '/masculino/shop?id=2',
     src: 'public/images/3_Куртка__normal__src.jpg',
     hoverSrc: 'public/images/3_Куртка__normal__hover.jpg',
     season: 'Зима',
@@ -143,7 +143,7 @@ export const cards = [
   {
     title: 'Куртка (oversize)',
     price: '32,00',
-    href: '/shop?id=3',
+    href: '/masculino/shop?id=3',
     src: 'public/images/4_Куртка__oversize__src.jpg',
     hoverSrc: 'public/images/4_Куртка__oversize__hover.jpg',
     season: 'Зима',
@@ -194,7 +194,7 @@ export const cards = [
   {
     title: 'Мужская двойка(normal)',
     price: '29,00',
-    href: '/shop?id=4',
+    href: '/masculino/shop?id=4',
     src: 'public/images/5_Мужская_двойка_normal__hover.jpg',
     hoverSrc: 'public/images/5_Мужская_двойка_normal__hover.jpg',
     season: 'Осень',
@@ -248,7 +248,7 @@ export const cards = [
   {
     title: 'Мужская кофта(normal)',
     price: '10,50',
-    href: '/shop?id=5',
+    href: '/masculino/shop?id=5',
     src: 'public/images/6_Мужская_кофта_normal__src.jpg',
     hoverSrc: 'public/images/6_Мужская_кофта_normal__hover.jpg',
     season: 'Осень',
@@ -292,7 +292,7 @@ export const cards = [
   {
     title: 'Мужская кофта(normal)',
     price: '12,00',
-    href: '/shop?id=6',
+    href: '/masculino/shop?id=6',
     src: 'public/images/7_Мужская_кофта_normal__src.jpg',
     hoverSrc: 'public/images/7_Мужская_кофта_normal__hover.jpg',
     season: 'Осень',
@@ -337,7 +337,7 @@ export const cards = [
   {
     title: 'Мужская рубашка(normal)',
     price: '11,00',
-    href: '/shop?id=7',
+    href: '/masculino/shop?id=7',
     src: 'public/images/8_Мужская_рубашка_normal__src.jpg',
     hoverSrc: 'public/images/8_Мужская_рубашка_normal__src.jpg',
     season: '',
@@ -386,7 +386,7 @@ export const cards = [
   {
     title: 'Мужской бомбер(oversize)',
     price: '29,00',
-    href: '/shop?id=8',
+    href: '/masculino/shop?id=8',
     src: 'public/images/9_Мужской_бомбер_oversize__src.jpg',
     hoverSrc: 'public/images/9_Мужской_бомбер_oversize__hover.jpg',
     season: 'Зима',
@@ -430,7 +430,7 @@ export const cards = [
   {
     title: 'Мужской кардиган (normal)',
     price: '15,50',
-    href: '/shop?id=9',
+    href: '/masculino/shop?id=9',
     src: 'public/images/10_Мужской_кардиган__normal__src.jpg',
     hoverSrc: 'public/images/10_Мужской_кардиган__normal__hover.jpg',
     season: 'Зима',
