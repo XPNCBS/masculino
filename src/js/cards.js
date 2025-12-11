@@ -3,7 +3,7 @@ export const cards = [
     title: 'Водолазка(normal)',
     price: '13,5',
     href: '/shop?id=0',
-    src: 'public/images/1_Водолазка_normal__src.jpg',
+    src: 'https://drive.google.com/uc?export=view&id=17DwtCaLiM_F_FA-MyA9L_kSwmMPs98Ve',
     hoverSrc: 'public/images/1_Водолазка_normal__hover.jpg',
     season: 'Осень',
     category: 'Водолазка',
