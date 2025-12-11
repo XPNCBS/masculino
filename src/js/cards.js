@@ -4,7 +4,7 @@ export const cards = [
     price: '13,5',
     href: '/shop?id=0',
     src: 'https://drive.google.com/uc?export=view&id=17DwtCaLiM_F_FA-MyA9L_kSwmMPs98Ve',
-    hoverSrc: 'public/images/1_Водолазка_normal__hover.jpg',
+    hoverSrc: 'https://drive.google.com/uc?export=view&id=1By60Tsy8ToxwDAiK0hq4jbQ3MyhKjOJJ',
     season: 'Осень',
     category: 'Водолазка',
     colors: [
@@ -56,7 +56,7 @@ export const cards = [
     price: '49,00',
     href: '/shop?id=1',
     src: 'public/images/2_Куртка__normal__src.jpeg',
-    hoverSrc: 'public/images/2_Куртка__normal__hover.jpeg',
+    hoverSrc: 'https://drive.google.com/file/d/1muui5je8pgOipL4ee9tZFyPGRQnIUnF9/view?usp=sharing',
     season: 'Зима',
     sku: '#88-137',
     category: 'Курки',
