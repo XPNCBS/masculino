@@ -106,8 +106,8 @@ burgerButton.addEventListener('click', () => {
     headerLists.style.maxHeight = headerLists.scrollHeight + 'px'
   }
 })
-
-if (window.location.pathname === '/masculino/' || window.location.pathname === '/masculino/#') {
+const hash = window.location.hash
+if (window.location.pathname === '/masculino/' && !hash) {
   const header = document.querySelector('.header')
   const headerLinks = header.querySelectorAll('.filtr__button')
   const params = new URLSearchParams(window.location.search)
@@ -127,31 +127,31 @@ if (window.location.pathname === '/masculino/' || window.location.pathname === '
   const aside = document.querySelector('.aside')
   generateAside(asideContent, aside)
   generateCards(cardsTemplate, cards, cardsContainer)
-} else if (window.location.pathname === '/masculino/shop') {
+} else if (hash === '#/shop') {
   const shopContent = shopTemplate.content.cloneNode(true)
   content.appendChild(shopContent)
   shopPage()
   const cardsTemplate = document.querySelector('#card')
   const cardsContainer = document.querySelector('.cards')
   generateCards(cardsTemplate, cards, cardsContainer, true)
-} else if (window.location.pathname === '/masculino/profile') {
+} else if (hash === '#/profile') {
   document.title = 'Masculino — Профиль'
   const profileContent = profileTemplate.content.cloneNode(true)
   content.appendChild(profileContent)
   profilePage()
-} else if (window.location.pathname === '/masculino/signin') {
+} else if (hash === '#/signin') {
   document.title = 'Masculino — Войти'
   const signinContent = signin.content.cloneNode(true)
   content.appendChild(signinContent)
-} else if (window.location.pathname === '/masculino/signup') {
+} else if (hash === '#/signup') {
   document.title = 'Masculino — Регистрация'
   const signupContent = signup.content.cloneNode(true)
   content.appendChild(signupContent)
-} else if (window.location.pathname === '/masculino/resetpassword') {
+} else if (hash === '#/resetpassword') {
   document.title = 'Masculino — Сброс пароля'
   const resetpasswordContent = resetpassword.content.cloneNode(true)
   content.appendChild(resetpasswordContent)
-} else if (window.location.pathname === '/masculino/cart') {
+} else if (hash === '#/cart') {
   document.title = 'Masculino — Корзина'
   const cartContent = document.querySelector('#cart').content.cloneNode(true)
   content.appendChild(cartContent)

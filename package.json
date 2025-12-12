@@ -1,5 +1,6 @@
 {
   "name": "masculino",
+  "homepage": "https://xpncbs.github.io/masculino/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.13",
@@ -17,5 +19,8 @@
     "tailwindcss": "^4.1.13",
     "vite": "^7.1.7",
     "vite-plugin-html": "^3.2.2"
+  },
+  "dependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
