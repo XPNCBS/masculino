@@ -125,7 +125,7 @@ export function deleteProduct(id) {
   const updatedCart = cart.filter((item) => item.id !== id)
 
   // Сохраняем обратно в localStorage
-  
+
   localStorage.setItem('cart', JSON.stringify(updatedCart))
   loadTotalCartQuantity(updatedCart)
   // Возвращаем обновлённую корзину (если нужно дальше использовать)

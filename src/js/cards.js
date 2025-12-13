@@ -4,7 +4,8 @@ export const cards = [
     price: '13,5',
     href: '/masculino/?id=0#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/1_%D0%92%D0%BE%D0%B4%D0%BE%D0%BB%D0%B0%D0%B7%D0%BA%D0%B0_normal__src.jpg',
-    hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/1_%D0%92%D0%BE%D0%B4%D0%BE%D0%BB%D0%B0%D0%B7%D0%BA%D0%B0_normal__hover.jpg',
+    hoverSrc:
+      'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/1_%D0%92%D0%BE%D0%B4%D0%BE%D0%BB%D0%B0%D0%B7%D0%BA%D0%B0_normal__hover.jpg',
     season: 'Осень',
     category: 'Водолазка',
     colors: [
@@ -56,7 +57,8 @@ export const cards = [
     price: '49,00',
     href: '/masculino/?id=1#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/2_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__normal__src.jpeg',
-    hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/2_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__normal__hover.jpeg',
+    hoverSrc:
+      'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/2_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__normal__hover.jpeg',
     season: 'Зима',
     sku: '#88-137',
     category: 'Курки',
@@ -105,7 +107,8 @@ export const cards = [
     price: '49,50',
     href: '/masculino/?id=2#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/3_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__normal__src.jpg',
-    hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/3_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__normal__hover.jpg',
+    hoverSrc:
+      'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/3_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__normal__hover.jpg',
     season: 'Зима',
     category: 'Курки',
     colors: [
@@ -145,7 +148,8 @@ export const cards = [
     price: '32,00',
     href: '/masculino/?id=3#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/4_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__oversize__src.jpg',
-    hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/4_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__oversize__hover.jpg',
+    hoverSrc:
+      'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/4_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__oversize__hover.jpg',
     season: 'Зима',
     sku: '#М-795',
     category: 'Куртки',
@@ -196,7 +200,8 @@ export const cards = [
     price: '29,00',
     href: '/masculino/?id=4#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/5_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B2%D0%BE%D0%B9%D0%BA%D0%B0_normal__src.jpg',
-    hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/5_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B2%D0%BE%D0%B9%D0%BA%D0%B0_normal__hover.jpg',
+    hoverSrc:
+      'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/5_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B2%D0%BE%D0%B9%D0%BA%D0%B0_normal__hover.jpg',
     season: 'Осень',
     sku: '#М-795',
     category: 'Спорт костюм',
@@ -250,7 +255,8 @@ export const cards = [
     price: '10,50',
     href: '/masculino/?id=5#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/6_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BE%D1%84%D1%82%D0%B0_normal__src.jpg',
-    hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/6_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BE%D1%84%D1%82%D0%B0_normal__hover.jpg',
+    hoverSrc:
+      'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/6_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BE%D1%84%D1%82%D0%B0_normal__hover.jpg',
     season: 'Осень',
     sku: '#М-113',
     category: 'Кофты',
@@ -294,7 +300,8 @@ export const cards = [
     price: '12,00',
     href: '/masculino/?id=6#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/7_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BE%D1%84%D1%82%D0%B0_normal__src.jpg',
-    hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/7_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BE%D1%84%D1%82%D0%B0_normal__hover.jpg',
+    hoverSrc:
+      'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/7_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BE%D1%84%D1%82%D0%B0_normal__hover.jpg',
     season: 'Осень',
     sku: '#21-0000154',
     category: 'Кофты',
@@ -339,7 +346,8 @@ export const cards = [
     price: '11,00',
     href: '/masculino/?id=7#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/8_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D1%83%D0%B1%D0%B0%D1%88%D0%BA%D0%B0_normal__hover.jpg',
-    hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/8_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D1%83%D0%B1%D0%B0%D1%88%D0%BA%D0%B0_normal__hover.jpg',
+    hoverSrc:
+      'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/8_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D1%83%D0%B1%D0%B0%D1%88%D0%BA%D0%B0_normal__hover.jpg',
     season: '',
     sku: '#4597',
     category: 'Рубашки',
@@ -388,7 +396,8 @@ export const cards = [
     price: '29,00',
     href: '/masculino/?id=8#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/9_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%BE%D0%B9_%D0%B1%D0%BE%D0%BC%D0%B1%D0%B5%D1%80_oversize__src.jpg',
-    hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/9_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%BE%D0%B9_%D0%B1%D0%BE%D0%BC%D0%B1%D0%B5%D1%80_oversize__hover.jpg',
+    hoverSrc:
+      'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/9_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%BE%D0%B9_%D0%B1%D0%BE%D0%BC%D0%B1%D0%B5%D1%80_oversize__hover.jpg',
     season: 'Зима',
     sku: '#4707',
     category: 'Курки',
@@ -432,7 +441,8 @@ export const cards = [
     price: '15,50',
     href: '/masculino/?id=9#/shop',
     src: 'https://github.com/XPNCBS/masculino-img/blob/main/10_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%B0%D1%80%D0%B4%D0%B8%D0%B3%D0%B0%D0%BD__normal__src.jpg?raw=true',
-    hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/10_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%B0%D1%80%D0%B4%D0%B8%D0%B3%D0%B0%D0%BD__normal__hover.jpg',
+    hoverSrc:
+      'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/10_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%B0%D1%80%D0%B4%D0%B8%D0%B3%D0%B0%D0%BD__normal__hover.jpg',
     season: 'Зима',
     sku: '#К-702',
     category: 'Кардиган',
@@ -475,21 +485,29 @@ export const cards = [
 
 // Нормализуем ссылки: локальные `public/images/shop/...` и GitHub `blob` -> raw.githubusercontent
 const toRaw = (s) => {
-  if (typeof s !== 'string') return s;
+  if (typeof s !== 'string') return s
   if (s.startsWith('public/images/shop/')) {
-    return 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/shop/' + s.replace('public/images/shop/', '');
+    return (
+      'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/shop/' +
+      s.replace('public/images/shop/', '')
+    )
   }
   if (s.startsWith('https://github.com/')) {
-    return s.replace('https://github.com/XPNCBS/masculino-img/blob/main/', 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/').replace('?raw=true', '');
+    return s
+      .replace(
+        'https://github.com/XPNCBS/masculino-img/blob/main/',
+        'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/'
+      )
+      .replace('?raw=true', '')
   }
-  return s;
-};
+  return s
+}
 
 for (const card of cards) {
-  card.src = toRaw(card.src);
-  card.hoverSrc = toRaw(card.hoverSrc);
-  if (Array.isArray(card.images)) card.images = card.images.map(toRaw);
+  card.src = toRaw(card.src)
+  card.hoverSrc = toRaw(card.hoverSrc)
+  if (Array.isArray(card.images)) card.images = card.images.map(toRaw)
   if (Array.isArray(card.colors)) {
-    card.colors = card.colors.map(col => ({ ...col, src: toRaw(col.src) }));
+    card.colors = card.colors.map((col) => ({ ...col, src: toRaw(col.src) }))
   }
 }

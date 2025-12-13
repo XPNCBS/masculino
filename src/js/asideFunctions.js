@@ -56,13 +56,39 @@ function generateAsideLinks(elements, ul, hrefKey) {
   elements.forEach((element) => {
     const li = document.createElement('li')
     const link = document.createElement('a')
+   const newParams = new URLSearchParams(params)
+    if (hrefKey === 'sizes') {
 
-    // создаём копию текущих параметров
-    const newParams = new URLSearchParams(params)
-    newParams.set(hrefKey, element) // добавляем или обновляем нужный параметр
+      if (!currentValue){
+        addParamsToLink(newParams, link, hrefKey, element)
+      }
+      else{
+       
+        const selectedSizes = currentValue.split(',') // получаем массив выбранных размеров
+               if (selectedSizes.includes(element)){
+                link.classList.add('active')
+                const newSelectedSizes = selectedSizes.filter(size => size !== element); // удаляем размер
+                newParams.set(hrefKey, newSelectedSizes.join(',')) // обновляем параметр
+              if (newSelectedSizes.length === 0){
+                link.href = `/masculino/` // если размеров нет, убираем параметр из ссылки
+              }
+              else{
+                link.href = `/masculino/?${newParams.toString()}`
+              }
+               }
+                else{ 
+                            selectedSizes.push(element) // добавляем новый размер
+          newParams.set(hrefKey, selectedSizes.join(',')) // обновляем параметр
+          link.href = `/masculino/?${newParams.toString()}`}
+          
+      }
+    } else {
+      // создаём копию текущих параметров
+      addParamsToLink(newParams, link, hrefKey, element)
+    }
 
     // генерируем новую ссылку с сохранением остальных параметров
-    link.href = `/?${newParams.toString()}`
+
     link.classList.add('filtr__button')
 
     // если текущий параметр активен — подсвечиваем
@@ -74,4 +100,9 @@ function generateAsideLinks(elements, ul, hrefKey) {
     li.appendChild(link)
     ul.appendChild(li)
   })
+}
+function addParamsToLink(newParams, link, hrefKey,element){
+   
+      newParams.set(hrefKey, element) // добавляем или обновляем нужный параметр
+      link.href = `/masculino/?${newParams.toString()}`
 }

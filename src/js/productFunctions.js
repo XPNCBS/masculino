@@ -74,22 +74,19 @@ export function generateProduct(template, cart, container) {
     )
     container.appendChild(product)
   })
-  
 }
 function globalUpdateQuantityAndPrice(id, newQuantity, newPrice) {
-  const products = document.querySelectorAll(`[data-id="${id}"]`);
+  const products = document.querySelectorAll(`[data-id="${id}"]`)
   products.forEach((product) => {
-    const quantityElement = product.querySelector('.product__quantity');
-    const priceElement = product.querySelector('.product__price');
-    quantityElement.textContent = newQuantity;
-    priceElement.textContent = newPrice;
-  });
-
-
+    const quantityElement = product.querySelector('.product__quantity')
+    const priceElement = product.querySelector('.product__price')
+    quantityElement.textContent = newQuantity
+    priceElement.textContent = newPrice
+  })
 }
 function globalProductDelete(id) {
-  const products = document.querySelectorAll(`[data-id="${id}"]`);
+  const products = document.querySelectorAll(`[data-id="${id}"]`)
   products.forEach((product) => {
-    product.remove();
-  });
+    product.remove()
+  })
 }

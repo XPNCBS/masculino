@@ -155,7 +155,9 @@ if (window.location.pathname === '/masculino/' && !hash) {
   document.title = 'Masculino — Корзина'
   const cartContent = document.querySelector('#cart').content.cloneNode(true)
   content.appendChild(cartContent)
-  const divShoppingCartContent = document.querySelector('.div-shopping-cart-content')
+  const divShoppingCartContent = document.querySelector(
+    '.div-shopping-cart-content'
+  )
   loadProductsToCart(productTemplate, divShoppingCartContent)
 } else {
   const errorTemplate = document.querySelector('#error')
