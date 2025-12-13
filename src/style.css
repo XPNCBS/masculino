@@ -232,6 +232,17 @@ button {
 .filtr__button.active {
   @apply text-amber-300;
 }
+.filtr__button--size.active{
+  @apply px-3 py-1 border-r flex items-center border border-amber-300;
+  width: max-content;
+  border-radius: 15px;
+  
+
+}
+.filtr__button--size.active::before{
+  @apply content-['X'] mr-1;
+  
+}
 .aside {
   @apply w-[20%];
 }

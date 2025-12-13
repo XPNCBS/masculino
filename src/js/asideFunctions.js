@@ -58,7 +58,7 @@ function generateAsideLinks(elements, ul, hrefKey) {
     const link = document.createElement('a')
    const newParams = new URLSearchParams(params)
     if (hrefKey === 'sizes') {
-
+     link.classList.add('filtr__button--size')
       if (!currentValue){
         addParamsToLink(newParams, link, hrefKey, element)
       }
