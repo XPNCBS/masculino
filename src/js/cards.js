@@ -54,7 +54,7 @@ export const cards = [
   {
     title: 'Куртка (normal)',
     price: '49,00',
-    href: '/masculino/shop?id=1',
+    href: '/masculino/?id=1#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/2_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__normal__src.jpeg',
     hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/2_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__normal__hover.jpeg',
     season: 'Зима',
@@ -103,7 +103,7 @@ export const cards = [
   {
     title: 'Куртка (normal)',
     price: '49,50',
-    href: '/masculino/shop?id=2',
+    href: '/masculino/?id=2#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/3_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__normal__src.jpg',
     hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/3_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__normal__hover.jpg',
     season: 'Зима',
@@ -143,7 +143,7 @@ export const cards = [
   {
     title: 'Куртка (oversize)',
     price: '32,00',
-    href: '/masculino/shop?id=3',
+    href: '/masculino/?id=3#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/4_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__oversize__src.jpg',
     hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/4_%D0%9A%D1%83%D1%80%D1%82%D0%BA%D0%B0__oversize__hover.jpg',
     season: 'Зима',
@@ -194,7 +194,7 @@ export const cards = [
   {
     title: 'Мужская двойка(normal)',
     price: '29,00',
-    href: '/masculino/shop?id=4',
+    href: '/masculino/?id=4#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/5_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B2%D0%BE%D0%B9%D0%BA%D0%B0_normal__src.jpg',
     hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/5_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B2%D0%BE%D0%B9%D0%BA%D0%B0_normal__hover.jpg',
     season: 'Осень',
@@ -248,7 +248,7 @@ export const cards = [
   {
     title: 'Мужская кофта(normal)',
     price: '10,50',
-    href: '/masculino/shop?id=5',
+    href: '/masculino/?id=5#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/6_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BE%D1%84%D1%82%D0%B0_normal__src.jpg',
     hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/6_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BE%D1%84%D1%82%D0%B0_normal__hover.jpg',
     season: 'Осень',
@@ -292,7 +292,7 @@ export const cards = [
   {
     title: 'Мужская кофта(normal)',
     price: '12,00',
-    href: '/masculino/shop?id=6',
+    href: '/masculino/?id=6#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/7_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BE%D1%84%D1%82%D0%B0_normal__src.jpg',
     hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/7_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BE%D1%84%D1%82%D0%B0_normal__hover.jpg',
     season: 'Осень',
@@ -337,7 +337,7 @@ export const cards = [
   {
     title: 'Мужская рубашка(normal)',
     price: '11,00',
-    href: '/masculino/shop?id=7',
+    href: '/masculino/?id=7#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/8_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D1%83%D0%B1%D0%B0%D1%88%D0%BA%D0%B0_normal__hover.jpg',
     hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/8_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D1%83%D0%B1%D0%B0%D1%88%D0%BA%D0%B0_normal__hover.jpg',
     season: '',
@@ -386,7 +386,7 @@ export const cards = [
   {
     title: 'Мужской бомбер(oversize)',
     price: '29,00',
-    href: '/masculino/shop?id=8',
+    href: '/masculino/?id=8#/shop',
     src: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/9_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%BE%D0%B9_%D0%B1%D0%BE%D0%BC%D0%B1%D0%B5%D1%80_oversize__src.jpg',
     hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/9_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%BE%D0%B9_%D0%B1%D0%BE%D0%BC%D0%B1%D0%B5%D1%80_oversize__hover.jpg',
     season: 'Зима',
@@ -430,7 +430,7 @@ export const cards = [
   {
     title: 'Мужской кардиган (normal)',
     price: '15,50',
-    href: '/masculino/shop?id=9',
+    href: '/masculino/?id=9#/shop',
     src: 'https://github.com/XPNCBS/masculino-img/blob/main/10_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%B0%D1%80%D0%B4%D0%B8%D0%B3%D0%B0%D0%BD__normal__src.jpg?raw=true',
     hoverSrc: 'https://raw.githubusercontent.com/XPNCBS/masculino-img/refs/heads/main/10_%D0%9C%D1%83%D0%B6%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D0%B0%D1%80%D0%B4%D0%B8%D0%B3%D0%B0%D0%BD__normal__hover.jpg',
     season: 'Зима',
