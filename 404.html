@@ -13,11 +13,51 @@
       rel="stylesheet"
     />
     <title>Masculino — 404</title>
-    <link rel="stylesheet" crossorigin href="/masculino/assets/index-C80hM1b7.css">
+    <style>      body {
+        background-color: black;
+        color: white;
+        font-family: Montserrat, sans-serif;
+        overflow: hidden;
+        min-height: 100vh;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+      }
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .go-home {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        margin-top: 1.25rem;
+        padding: 0.5rem;
+        background-color: rgb(184, 132, 1);
+        text-decoration: none;
+
+}
+.error-page-div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+}
+.text-xl{
+        font-size: 1.25rem;
+}
+.text-xs{
+        font-size: 0.75rem;
+}
+      </style>
+
+
   </head>
 <body>
-  <div class="error-page">
-    <div class="flex flex-col items-center justify-center gap-5 ">
+    <div class="error-page-div flex flex-col items-center justify-center gap-5 ">
         <img src="data:image/svg+xml,%3c?xml%20version=%271.0%27%20encoding=%27utf-8%27?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width=%2750px%27%20height=%2750px%27%20viewBox=%270%200%2024%2024%27%20fill=%27none%27%20xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath%20d=%27M12%202C6.49%202%202%206.49%202%2012C2%2017.51%206.49%2022%2012%2022C17.51%2022%2022%2017.51%2022%2012C22%206.49%2017.51%202%2012%202ZM15.36%2014.3C15.65%2014.59%2015.65%2015.07%2015.36%2015.36C15.21%2015.51%2015.02%2015.58%2014.83%2015.58C14.64%2015.58%2014.45%2015.51%2014.3%2015.36L12%2013.06L9.7%2015.36C9.55%2015.51%209.36%2015.58%209.17%2015.58C8.98%2015.58%208.79%2015.51%208.64%2015.36C8.35%2015.07%208.35%2014.59%208.64%2014.3L10.94%2012L8.64%209.7C8.35%209.41%208.35%208.93%208.64%208.64C8.93%208.35%209.41%208.35%209.7%208.64L12%2010.94L14.3%208.64C14.59%208.35%2015.07%208.35%2015.36%208.64C15.65%208.93%2015.65%209.41%2015.36%209.7L13.06%2012L15.36%2014.3Z%27%20fill=%27%23292D32%27/%3e%3c/svg%3e" alt="error-icon" />
         <p class="text-xl">Page not found.</p>
         <p class="text-xs">
@@ -26,6 +66,5 @@
         </p>
         <a href="/masculino/" class="go-home"> ← Home</a>
       </div>
-    </div>
 </body>
 </html>
