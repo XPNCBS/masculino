@@ -1,4 +1,4 @@
-export function generateAside(asideContent, aside) {
+export function generateAside(asideContent, aside,func) {
   asideContent.forEach((asideItem) => {
     const ul = document.createElement('ul')
     const liWrap = document.createElement('li')
@@ -44,12 +44,12 @@ export function generateAside(asideContent, aside) {
     ul.appendChild(li)
     ul.appendChild(liWrap)
 
-    generateAsideLinks(asideItem.elements, ulInLiWrap, asideItem.href)
+    generateAsideLinks(asideItem.elements, ulInLiWrap, asideItem.href,func)
     aside.appendChild(ul)
   })
 }
 
-function generateAsideLinks(elements, ul, hrefKey) {
+function generateAsideLinks(elements, ul, hrefKey, func) {
   const params = new URLSearchParams(window.location.search)
   const currentValue = params.get(hrefKey)
 
@@ -95,8 +95,14 @@ function generateAsideLinks(elements, ul, hrefKey) {
     if (currentValue === element) {
       link.classList.add('active')
     }
-
     link.textContent = element
+    link.addEventListener('click', (e) => {
+       e.preventDefault() // отключаем переход по ссылке для тестов
+        history.pushState(null, '', link.href) // обновляем URL без перезагрузки страницы
+        func() // вызываем функцию перезагрузки карточек
+        link.classList.add('active')  
+    })
+    
     li.appendChild(link)
     ul.appendChild(li)
   })

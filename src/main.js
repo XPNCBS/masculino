@@ -125,8 +125,13 @@ if (window.location.pathname === '/masculino/' && !hash) {
   const cardsTemplate = document.querySelector('#card')
   const cardsContainer = document.querySelector('.cards')
   const aside = document.querySelector('.aside')
-  generateAside(asideContent, aside)
+  function cardsReload() {
+    cardsContainer.innerHTML = ''
+    generateCards(cardsTemplate, cards, cardsContainer)
+  }
+  generateAside(asideContent, aside, cardsReload)
   generateCards(cardsTemplate, cards, cardsContainer)
+
 } else if (hash === '#/shop') {
   const shopContent = shopTemplate.content.cloneNode(true)
   content.appendChild(shopContent)
