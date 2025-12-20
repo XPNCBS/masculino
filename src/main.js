@@ -7,6 +7,8 @@ import { shopPage } from './js/shopPage'
 import { openModal, closeModal } from './js/modal'
 import { loadProductsToCart } from './js/cartFunctions'
 import { profilePage } from './js/profileFunctions'
+import { listenOfhistoryChange } from './js/utils/listenOfHistoryChange'
+import { showActiveLinks } from './js/asideFunctions'
 const content = document.querySelector('.content')
 const rootTemplate = document.querySelector('#root')
 const shopTemplate = document.querySelector('#shop')
@@ -36,6 +38,7 @@ const profileOpen = document.querySelector('.profile-open')
 const profileModal = document.querySelector('.modal-profile')
 const modalProfileClose = document.querySelector('.modal-profile__close')
 const modalProfileBlure = document.querySelector('.modal-profile__blure')
+listenOfhistoryChange()
 profileOpen.addEventListener('click', () => {
   openModal(profileModal)
 })
@@ -129,7 +132,11 @@ if (window.location.pathname === '/masculino/' && !hash) {
     cardsContainer.innerHTML = ''
     generateCards(cardsTemplate, cards, cardsContainer)
   }
-  generateAside(asideContent, aside, cardsReload)
+  window.addEventListener('URLChange', () => {
+   cardsReload()
+   showActiveLinks()
+  })
+  generateAside(asideContent, aside)
   generateCards(cardsTemplate, cards, cardsContainer)
 
 } else if (hash === '#/shop') {
