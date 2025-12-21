@@ -9,7 +9,7 @@ function createBreadCrumbs(card) {
     if (card[key] !== undefined && card[key].replace(/\s+/g, '') !== '') {
       const link = document.createElement('a')
       if (key !== 'title') {
-        link.href = `/?categories=${card[key]}`
+        link.href = `/masculino/?categories=${card[key]}`
         link.classList.add('bread-crumbs__link')
       } else {
         link.classList.add('disabled')
@@ -67,9 +67,9 @@ function generateImages(
 function hrefGenerate(id, prevPage, nextPage) {
   const idNumber = Number(id)
   nextPage.href =
-    cards.length - 1 > idNumber ? `shop?id=${idNumber + 1}` : `shop?id=0`
+    cards.length - 1 > idNumber ? `?id=${idNumber + 1}#/shop` : `?id=0#/shop`
   prevPage.href =
-    idNumber === 0 ? `shop?id=${cards.length - 1}` : `shop?id=${idNumber - 1}`
+    idNumber === 0 ? `?id=${cards.length - 1}#/shop` : `?id=${idNumber - 1}#/shop`
 }
 function nextImg(imagePosition, imagesArray, imageModalImg) {
   imagePosition.value =

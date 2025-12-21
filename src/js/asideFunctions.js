@@ -238,7 +238,13 @@ function generateAsideLinks(elements, ul, hrefKey) {
               url.searchParams.delete('sizes')
               
                 history.pushState(null, '', url)
-             }}
+             }
+            else{
+                const value = filtered.join(',')
+                const url = createNewUrl(hrefKey, value)
+            
+            history.pushState(null, '', url)
+            }}
              else{
                 selectedSizes.push(size)
                 const value = selectedSizes.join(',')
@@ -246,6 +252,7 @@ function generateAsideLinks(elements, ul, hrefKey) {
             
             history.pushState(null, '', url)
              }
+             
       }
 
       } else {
