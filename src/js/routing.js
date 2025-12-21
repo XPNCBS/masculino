@@ -1,22 +1,22 @@
 const onUrlChange = () => {
   if (location.pathname === '/profile') {
-    console.log('Профиль открыт');
+    console.log('Профиль открыт')
   }
-};
+}
 
 // back / forward
-window.addEventListener('popstate', onUrlChange);
+window.addEventListener('popstate', onUrlChange)
 
 // перехват pushState
-const pushState = history.pushState;
+const pushState = history.pushState
 history.pushState = function (...args) {
-  pushState.apply(this, args);
-  onUrlChange();
-};
+  pushState.apply(this, args)
+  onUrlChange()
+}
 
 // перехват replaceState
-const replaceState = history.replaceState;
+const replaceState = history.replaceState
 history.replaceState = function (...args) {
-  replaceState.apply(this, args);
-  onUrlChange();
-};
+  replaceState.apply(this, args)
+  onUrlChange()
+}

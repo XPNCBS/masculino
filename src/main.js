@@ -133,12 +133,11 @@ if (window.location.pathname === '/masculino/' && !hash) {
     generateCards(cardsTemplate, cards, cardsContainer)
   }
   window.addEventListener('URLChange', () => {
-   cardsReload()
-   showActiveLinks()
+    cardsReload()
+    showActiveLinks()
   })
   generateAside(asideContent, aside)
   generateCards(cardsTemplate, cards, cardsContainer)
-
 } else if (hash === '#/shop') {
   const shopContent = shopTemplate.content.cloneNode(true)
   content.appendChild(shopContent)

@@ -64,7 +64,7 @@
 //         addParamsToLink(newParams, link, hrefKey, element)
 //       }
 //       else{
-       
+
 //         const selectedSizes = currentValue.split(',') // получаем массив выбранных размеров
 //                if (selectedSizes.includes(element)){
 //                 link.classList.add('active')
@@ -77,11 +77,11 @@
 //                 link.href = `/masculino/?${newParams.toString()}`
 //               }
 //                }
-//                 else{ 
+//                 else{
 //                             selectedSizes.push(element) // добавляем новый размер
 //           newParams.set(hrefKey, selectedSizes.join(',')) // обновляем параметр
 //           link.href = `/masculino/?${newParams.toString()}`}
-          
+
 //       }
 //     } else {
 //       // создаём копию текущих параметров
@@ -100,16 +100,16 @@
 //     link.addEventListener('click', (e) => {
 //        e.preventDefault() // отключаем переход по ссылке для тестов
 //         history.pushState(null, '', link.href) // обновляем URL без перезагрузки страницы
-      
-//         link.classList.add('active')  
+
+//         link.classList.add('active')
 //     })
-    
+
 //     li.appendChild(link)
 //     ul.appendChild(li)
 //   })
 // }
 // function addParamsToLink(newParams, link, hrefKey,element){
-   
+
 //       newParams.set(hrefKey, element) // добавляем или обновляем нужный параметр
 //       link.href = `/masculino/?${newParams.toString()}`
 // }
@@ -194,7 +194,7 @@ function generateAsideLinks(elements, ul, hrefKey) {
         const selectedSizes = currentValue.split(',')
 
         if (selectedSizes.includes(element)) {
-          const filtered = selectedSizes.filter(size => size !== element)
+          const filtered = selectedSizes.filter((size) => size !== element)
 
           if (filtered.length === 0) {
             link.href = `/masculino/`
@@ -216,54 +216,46 @@ function generateAsideLinks(elements, ul, hrefKey) {
 
     link.addEventListener('click', (e) => {
       e.preventDefault()
-      
-         const newParams = new URLSearchParams(window.location.search)
+
+      const newParams = new URLSearchParams(window.location.search)
 
       if (hrefKey === 'sizes') {
-        
-                if (!newParams.get('sizes')) {
-                  const url = createNewUrl(hrefKey, link.textContent)
-            
-            history.pushState(null, '', url)
-      }
-      else{
-                  const currentValue = newParams.get(hrefKey)
-           const selectedSizes = currentValue.split(',')
-           const size = link.textContent
-           
-           if (selectedSizes.includes(size)) {
-             const filtered = selectedSizes.filter(s => s !== size)
-             if (filtered.length === 0) {
+        if (!newParams.get('sizes')) {
+          const url = createNewUrl(hrefKey, link.textContent)
+
+          history.pushState(null, '', url)
+        } else {
+          const currentValue = newParams.get(hrefKey)
+          const selectedSizes = currentValue.split(',')
+          const size = link.textContent
+
+          if (selectedSizes.includes(size)) {
+            const filtered = selectedSizes.filter((s) => s !== size)
+            if (filtered.length === 0) {
               const url = new URL(window.location.href)
               url.searchParams.delete('sizes')
-              
-                history.pushState(null, '', url)
-             }
-            else{
-                const value = filtered.join(',')
-                const url = createNewUrl(hrefKey, value)
-            
-            history.pushState(null, '', url)
-            }}
-             else{
-                selectedSizes.push(size)
-                const value = selectedSizes.join(',')
-                const url = createNewUrl(hrefKey, value)
-            
-            history.pushState(null, '', url)
-             }
-             
-      }
 
+              history.pushState(null, '', url)
+            } else {
+              const value = filtered.join(',')
+              const url = createNewUrl(hrefKey, value)
+
+              history.pushState(null, '', url)
+            }
+          } else {
+            selectedSizes.push(size)
+            const value = selectedSizes.join(',')
+            const url = createNewUrl(hrefKey, value)
+
+            history.pushState(null, '', url)
+          }
+        }
       } else {
         const url = createNewUrl(hrefKey, link.textContent)
-            
-            history.pushState(null, '', url)
-            
-      }
 
+        history.pushState(null, '', url)
+      }
     })
-    
 
     li.appendChild(link)
     ul.appendChild(li)

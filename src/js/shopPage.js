@@ -69,7 +69,9 @@ function hrefGenerate(id, prevPage, nextPage) {
   nextPage.href =
     cards.length - 1 > idNumber ? `?id=${idNumber + 1}#/shop` : `?id=0#/shop`
   prevPage.href =
-    idNumber === 0 ? `?id=${cards.length - 1}#/shop` : `?id=${idNumber - 1}#/shop`
+    idNumber === 0
+      ? `?id=${cards.length - 1}#/shop`
+      : `?id=${idNumber - 1}#/shop`
 }
 function nextImg(imagePosition, imagesArray, imageModalImg) {
   imagePosition.value =
