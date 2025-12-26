@@ -4,12 +4,25 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"node scripts/generateViewList.mjs\" \"vite\"",
+    "generateViewList": "node scripts/generateViewList.mjs",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
+    "@types/node": "^25.0.3",
+    "chokidar": "^5.0.0",
+    "concurrently": "^9.2.1",
+    "prettier": "^3.7.4",
     "typescript": "~5.9.3",
-    "vite": "^7.2.4"
+    "vite": "^7.3.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5"
   }
 }
