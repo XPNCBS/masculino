@@ -1,0 +1,33 @@
+<template id="signin">
+  <form class="custom-container signin-form">
+    <div class="signin-form-content signin-form-padding">
+      <h2>Войти</h2>
+      <label class="signin-form-label">
+        Имя пользователя или Email *
+        <input class="signin-profil-form__input" type="email" />
+      </label>
+      <label class="signin-form-label">
+        Пароль
+        <input class="signin-profil-form__input" type="password" />
+      </label>
+      <div class="flex justify-between items-center">
+        <label class="signin-form-label signin-form-label-last">
+          <input class="signin-profil-form__input" type="checkbox" />
+          Запомнить меня
+        </label>
+        <a class="signin-forget-password" href="/masculino#/resetpassword"
+          >Забыли свой пароль</a
+        >
+      </div>
+      <button class="signin-form-button singin">Войти</button>
+      <div class="signin-form-ls-or">
+        <div class="line"></div>
+        <span style="color: rgb(255, 255, 255)">Или</span>
+        <div class="line"></div>
+      </div>
+      <a href="/masculino#/signup" class="signin-form-button singup"
+        >Создать аккаунт</a
+      >
+    </div>
+  </form>
+</template>

@@ -1,0 +1,40 @@
+<template id="account_details">
+  <div class="flex justify-center">
+    <form class="account_details-form">
+      <div class="flex items-center justify-between gap-2">
+        <label class="account_details-label w-[47%]">
+          First name *
+          <input type="text" id="first_name*" class="account_details-input" />
+        </label>
+        <label class="account_details-label w-[47%]">
+          Last name *
+          <input type="text" id="last_name*" class="account_details-input" />
+        </label>
+      </div>
+      <label class="account_details-label"
+        >Display name * <input type="text" class="account_details-input" /><span
+          >This will be how your name will be displayed in the account section
+          and in reviews</span
+        ></label
+      >
+      <label class="account_details-label"
+        >Email adress * <input type="email" class="account_details-input"
+      /></label>
+      <label class="account_details-label"
+        >Current password (leave blank to leave unchanged) *<input
+          type="password"
+          class="account_details-input"
+      /></label>
+      <label class="account_details-label"
+        >New password (leave blank to leave unchanged) *<input
+          type="password"
+          class="account_details-input"
+      /></label>
+      <label class="account_details-label"
+        >Confirm new password *
+        <input type="password" class="account_details-input"
+      /></label>
+      <button class="form-button-singup">Save changes</button>
+    </form>
+  </div>
+</template>

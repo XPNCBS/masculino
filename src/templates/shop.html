@@ -1,0 +1,161 @@
+<template id="shop">
+  <div>
+    <section
+      class="section-breadcrumbs flex justify-between items-center custom-container"
+    >
+      <nav class="bread-crumbs py-5">
+        <a class="bread-crumbs__link" href="/masculino/">Shop</a>
+        <span class="px-3">/</span>
+      </nav>
+      <div>
+        <a class="prev-page" href="#"
+          ><i
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors"
+            role="button"
+            aria-label="Play"
+          >
+            <span
+              class="block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]"
+              style="transform: rotate(180deg)"
+            ></span> </i
+        ></a>
+        <a class="next-page" href="#"
+          ><i
+            class="inline-flex items-center justify-center w-10 h-10 rounded-ful transition-colors"
+            role="button"
+            aria-label="Play"
+          >
+            <span
+              class="block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]"
+            ></span> </i
+        ></a>
+      </div>
+    </section>
+    <section class="product-description custom-container">
+      <div class="product-description__block">
+        <div><img class="main-image" src="" alt="" /></div>
+        <ul class="images-list"></ul>
+      </div>
+      <div class="product-description__block product-descriptionright__block">
+        <div class="grid gap-3">
+          <h1 class="product-title font-bold text-2xl"></h1>
+          <p class="product-price text-lg"></p>
+          <div class="wrap">
+            <ul class="product-options">
+              <li class="product-options__option rounded-t-md">
+                <div class="product-colors product-options__pading">
+                  Цвет
+                  <div class="color-wrap"></div>
+                </div>
+              </li>
+              <li class="product-sizes product-options__option">
+                <div
+                  class="product-options__pading flex justify-between items-center"
+                >
+                  Размер
+                  <button
+                    class="current-size-button flex items-center gap-1 cursor-pointer"
+                  >
+                    <span class="current-size-option"></span><span>▼</span>
+                  </button>
+                </div>
+              </li>
+              <li class="product-quantity product-options__option">
+                <div
+                  class="product-options__pading flex justify-between items-center"
+                >
+                  Количество
+                  <div class="flex items-center">
+                    <button class="quantity-minus-button cursor-pointer">
+                      <i
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors"
+                        role="button"
+                        aria-label="Play"
+                      >
+                        <span
+                          class="block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]"
+                          style="transform: rotate(180deg)"
+                        ></span>
+                      </i>
+                    </button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-plus-button cursor-pointer">
+                      <i
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-ful transition-colors"
+                        role="button"
+                        aria-label="Play"
+                      >
+                        <span
+                          class="block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]"
+                        ></span>
+                      </i>
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <li class="btn-wrap">
+                <button class="add-to-cart items-center">
+                  Добавить в корзину
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="Additional-information mt-20">
+      <div
+        class="custom-container flex items-center justify-center flex-col py-10"
+      >
+        <h2 class="">Additional information</h2>
+        <table>
+          <tr>
+            <td class="py-5">Цвет</td>
+            <td class="pl-30">
+              <div class="colors"></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-5">Материал</td>
+            <td class="pl-30"><div class="material"></div></td>
+          </tr>
+          <tr>
+            <td class="py-5">Размер</td>
+            <td class="pl-30"><div class="sizes"></div></td>
+          </tr>
+        </table>
+      </div>
+      <div class="border-b border-t py-5 w">
+        <div class="custom-container flex items-center justify-center flex-col">
+          <div>
+            <span>SKU: <span class="SKU"></span></span>
+            <span>Categories: <span class="categories"></span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="custom-container">
+      <h2>Related products</h2>
+      <div class="cards cards-shop"></div>
+    </section>
+  </div>
+  <div class="modal image-modal">
+    <div class="modal-content relative image-modal__content">
+      <div class="modal-blure image-modal__blure"></div>
+      <button
+        aria-label="Close"
+        class="close z-2 image-modal__close cursor-pointer absolute top-3.5 right-3.5 w-6 h-6 before:content-[''] after:content-[''] before:absolute after:absolute before:top-1/2 after:top-1/2 before:left-0 after:left-0 before:w-full after:w-full before:h-[2px] after:h-[2px] before:bg-black after:bg-black before:rotate-45 after:-rotate-45 before:translate-y-[-50%] after:translate-y-[-50%] hover:opacity-70 transition"
+      ></button>
+
+      <button
+        class="prev-arrow z-2 block w-10 h-10 border-t-2 border-r-2 border-white -rotate-135"
+      ></button>
+
+      <img class="image-modal__img z-2" src="" alt="" />
+
+      <button
+        class="z-2 next-arrow block w-10 h-10 border-t-2 border-r-2 border-white rotate-45"
+      ></button>
+    </div>
+  </div>
+</template>

@@ -1,6 +1,7 @@
 import { defineConfig, Plugin } from 'vite'
 import fs from 'fs'
 import path from 'path'
+import tailwindcss from '@tailwindcss/vite'
 
 function templatesToBodyEnd(): Plugin {
   const templatesDir = path.resolve(__dirname, 'src/templates')
@@ -35,5 +36,5 @@ function templatesToBodyEnd(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [templatesToBodyEnd()],
+  plugins: [templatesToBodyEnd(), tailwindcss()],
 })
