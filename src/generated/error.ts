@@ -1,79 +1,43 @@
 // Автогенерированный класс для шаблона: error
-export class Error {
-  private _elements = new Map<string, HTMLElement>();
+import { BaseView } from './base-view';
 
-
+export class Error extends BaseView {
   public root!: HTMLDivElement;
-  public flex!: HTMLDivElement;
-  public img!: HTMLImageElement;
-  public textXl!: HTMLParagraphElement;
-  public textXs!: HTMLParagraphElement;
-  public goHome!: HTMLAnchorElement;
+  // Нет элементов с data-element
 
   constructor(data: Record<string, any> = {}) {
-    // Создаём элементы
-    this.flex = document.createElement('div') as HTMLDivElement;
-    this.img = document.createElement('img') as HTMLImageElement;
-    this.textXl = document.createElement('p') as HTMLParagraphElement;
-    this.textXs = document.createElement('p') as HTMLParagraphElement;
-    this.goHome = document.createElement('a') as HTMLAnchorElement;
+    super();
+    
+    this.root = this._createRootElement() as HTMLDivElement;
+    
+    // Нет элементов для инициализации
 
-    // Настраиваем элементы (классы, текст и т.д.)
-    this.flex.className = '\bflex\b \bflex\b-\bcol\b \bitems\b-\bcenter\b \bjustify\b-\bcenter\b \bgap\b-\b5\b \bmt\b-\b10\b';
-    this.textXl.className = '\btext\b-\bxl\b';
-    this.textXl.textContent = '\bPage\b \bnot\b \bfound\b.';
-    this.textXs.className = '\btext\b-\bxs\b';
-    this.textXs.textContent = '\bIt\b \blooks\b \blike\b \bnothing\b \bwas\b \bfound\b \bat\b \bthis\b \blocation\b. \bClick\b \bthe\b \blink\b \bbelow\b \bto\b\\bn\b      \breturn\b \bhome\b.';
-    this.goHome.className = '\bgo\b-\bhome\b';
-    this.goHome.textContent = '← \bHome\b';
-
-
-    // Строим иерархию
-    this.root = this.flex;
-    this.flex.appendChild(this.img);
-    this.flex.appendChild(this.textXl);
-    this.flex.appendChild(this.textXs);
-    this.flex.appendChild(this.goHome);
-
-
-    // Регистрируем элементы
     this._elements.set('root', this.root);
-    this._elements.set('flex', this.flex);
-    this._elements.set('img', this.img);
-    this._elements.set('textXl', this.textXl);
-    this._elements.set('textXs', this.textXs);
-    this._elements.set('goHome', this.goHome);
+    // Нет элементов для регистрации
 
-    // Применяем начальные данные
     this.update(data);
   }
 
-  // Иерархическая структура
-  get structure(): Record<string, any> {
-    return {
-      flex: this.flex,
-      img: this.img,
-      textXl: this.textXl,
-      textXs: this.textXs,
-      goHome: this.goHome
-    };
-  }
-
-  mount(parent: Element): Error {
-    parent.appendChild(this.root);
-    return this;
-  }
-
-  getElement(name: string): HTMLElement | undefined {
-    return this._elements.get(name);
-  }
-
-  update(data: Record<string, any>): void {
-    Object.entries(data).forEach(([key, value]) => {
-      const element = this._elements.get(key);
-      if (element) {
-        element.textContent = value.toString();
-      }
-    });
+  private _createRootElement(): HTMLElement {
+    const root = document.createElement('div');
+    root.className = "flex flex-col items-center justify-center gap-5 mt-10";
+    const el1 = document.createElement('img');
+    el1.setAttribute("src", "public/icons/close-circle-svgrepo-com.svg");
+    el1.setAttribute("alt", "error-icon");
+    root.appendChild(el1);
+    const el2 = document.createElement('p');
+    el2.className = "text-xl";
+    root.appendChild(el2);
+        el2.appendChild(document.createTextNode("Page not found."));
+    const el3 = document.createElement('p');
+    el3.className = "text-xs";
+    root.appendChild(el3);
+        el3.appendChild(document.createTextNode("\n      It looks like nothing was found at this location. Click the link below to\n      return home.\n    "));
+    const el4 = document.createElement('a');
+    el4.setAttribute("href", "/masculino/");
+    el4.className = "go-home";
+    root.appendChild(el4);
+        el4.appendChild(document.createTextNode(" ← Home"));
+    return root;
   }
 }

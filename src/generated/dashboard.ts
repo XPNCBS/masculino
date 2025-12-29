@@ -1,74 +1,45 @@
 // Автогенерированный класс для шаблона: dashboard
-export class Dashboard {
-  private _elements = new Map<string, HTMLElement>();
+import { BaseView } from './base-view';
 
-
+export class Dashboard extends BaseView {
   public root!: HTMLParagraphElement;
-  public dasbordText!: HTMLParagraphElement;
-  public yellowText!: HTMLAnchorElement;
-  public yellowText1!: HTMLAnchorElement;
-  public yellowText2!: HTMLAnchorElement;
+  // Нет элементов с data-element
 
   constructor(data: Record<string, any> = {}) {
-    // Создаём элементы
-    this.dasbordText = document.createElement('p') as HTMLParagraphElement;
-    this.yellowText = document.createElement('a') as HTMLAnchorElement;
-    this.yellowText1 = document.createElement('a') as HTMLAnchorElement;
-    this.yellowText2 = document.createElement('a') as HTMLAnchorElement;
+    super();
+    
+    this.root = this._createRootElement() as HTMLParagraphElement;
+    
+    // Нет элементов для инициализации
 
-    // Настраиваем элементы (классы, текст и т.д.)
-    this.dasbordText.className = '\bdasbord\b-\btext\b';
-    this.yellowText.className = '\byellow\b-\btext\b';
-    this.yellowText.textContent = '\brecent\b \borders\b';
-    this.yellowText1.className = '\byellow\b-\btext\b';
-    this.yellowText1.textContent = '\bbilling\b \baddress\b';
-    this.yellowText2.className = '\byellow\b-\btext\b';
-    this.yellowText2.textContent = '\bedit\b \byour\b \bpassword\b \band\b \baccount\b \bdetails\b';
-
-
-    // Строим иерархию
-    this.root = this.dasbordText;
-    this.dasbordText.appendChild(this.yellowText);
-    this.dasbordText.appendChild(this.yellowText);
-    this.dasbordText.appendChild(this.yellowText);
-
-
-    // Регистрируем элементы
     this._elements.set('root', this.root);
-    this._elements.set('dasbordText', this.dasbordText);
-    this._elements.set('yellowText', this.yellowText);
-    this._elements.set('yellowText1', this.yellowText1);
-    this._elements.set('yellowText2', this.yellowText2);
+    // Нет элементов для регистрации
 
-    // Применяем начальные данные
     this.update(data);
   }
 
-  // Иерархическая структура
-  get structure(): Record<string, any> {
-    return {
-      dasbordText: this.dasbordText,
-      yellowText: this.yellowText,
-      yellowText1: this.yellowText1,
-      yellowText2: this.yellowText2
-    };
-  }
-
-  mount(parent: Element): Dashboard {
-    parent.appendChild(this.root);
-    return this;
-  }
-
-  getElement(name: string): HTMLElement | undefined {
-    return this._elements.get(name);
-  }
-
-  update(data: Record<string, any>): void {
-    Object.entries(data).forEach(([key, value]) => {
-      const element = this._elements.get(key);
-      if (element) {
-        element.textContent = value.toString();
-      }
-    });
+  private _createRootElement(): HTMLElement {
+    const root = document.createElement('p');
+    root.className = "dasbord-text";
+    root.appendChild(document.createTextNode("\n    From your account dashboard you can view your\n    "));
+    const el1 = document.createElement('a');
+    el1.className = "yellow-text";
+    el1.setAttribute("href", "/masculino#/profile?id=orders");
+    root.appendChild(el1);
+        el1.appendChild(document.createTextNode("recent orders"));
+    root.appendChild(document.createTextNode("\n    , manage your\n    "));
+    const el2 = document.createElement('a');
+    el2.className = "yellow-text";
+    el2.setAttribute("href", "/masculino#/profile?id=adress");
+    root.appendChild(el2);
+        el2.appendChild(document.createTextNode("billing address"));
+    root.appendChild(document.createTextNode(", and\n    "));
+    const el3 = document.createElement('a');
+    el3.className = "yellow-text";
+    el3.setAttribute("href", "/masculino#/profile?id=account_details");
+    root.appendChild(el3);
+        el3.appendChild(document.createTextNode("edit your password and account details"));
+    root.appendChild(document.createTextNode(".\n  "));
+    return root;
   }
 }

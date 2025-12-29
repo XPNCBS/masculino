@@ -1,3 +1,4 @@
+export { BaseView } from './base-view';
 export { Account_details } from './account_details';
 export { Adress } from './adress';
 export { Card } from './card';
@@ -7,6 +8,7 @@ export { Downloads } from './downloads';
 export { Error } from './error';
 export { Footer } from './footer';
 export { Header } from './header';
+export { Main } from './main';
 export { Orders } from './orders';
 export { Product } from './product';
 export { Profile } from './profile';

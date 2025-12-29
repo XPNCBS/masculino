@@ -1,6 +1,5 @@
 import './style.css'
-import { Footer } from './generated'
-const footer = new Footer()
-const app = document.querySelector('#app') as HTMLDivElement
-footer.mount(app)
-
+import { router } from './router/router'
+import listenOfhistoryChange from './configs/listenOfhistoryChange'
+listenOfhistoryChange()
+router()

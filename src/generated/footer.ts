@@ -1,54 +1,27 @@
 // Автогенерированный класс для шаблона: footer
-export class Footer {
-  private _elements = new Map<string, HTMLElement>();
+import { BaseView } from './base-view';
 
-
+export class Footer extends BaseView {
   public root!: HTMLElement;
-  public customContainer!: HTMLElement;
+  // Нет элементов с data-element
 
   constructor(data: Record<string, any> = {}) {
-    // Создаём элементы
-    this.customContainer = document.createElement('footer') as HTMLElement;
+    super();
+    
+    this.root = this._createRootElement() as HTMLElement;
+    
+    // Нет элементов для инициализации
 
-    // Настраиваем элементы (классы, текст и т.д.)
-    this.customContainer.className = '\bcustom\b-\bcontainer\b \bfooter\b \bpt\b-\b25\b \bpb\b-\b5\b';
-    this.customContainer.textContent = '© \b2021\b. \bKelzin\b \bGroup\b. Все права защищены.';
-
-
-    // Строим иерархию
-    this.root = this.customContainer;
-
-
-    // Регистрируем элементы
     this._elements.set('root', this.root);
-    this._elements.set('customContainer', this.customContainer);
+    // Нет элементов для регистрации
 
-    // Применяем начальные данные
     this.update(data);
   }
 
-  // Иерархическая структура
-  get structure(): Record<string, any> {
-    return {
-      customContainer: this.customContainer
-    };
-  }
-
-  mount(parent: Element): Footer {
-    parent.appendChild(this.root);
-    return this;
-  }
-
-  getElement(name: string): HTMLElement | undefined {
-    return this._elements.get(name);
-  }
-
-  update(data: Record<string, any>): void {
-    Object.entries(data).forEach(([key, value]) => {
-      const element = this._elements.get(key);
-      if (element) {
-        element.textContent = value.toString();
-      }
-    });
+  private _createRootElement(): HTMLElement {
+    const root = document.createElement('footer');
+    root.className = "custom-container footer pt-25 pb-5";
+    root.appendChild(document.createTextNode("\n    © 2021. Kelzin Group. Все права защищены.\n  "));
+    return root;
   }
 }

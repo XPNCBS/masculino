@@ -1,53 +1,26 @@
 // Автогенерированный класс для шаблона: downloads
-export class Downloads {
-  private _elements = new Map<string, HTMLElement>();
+import { BaseView } from './base-view';
 
-
+export class Downloads extends BaseView {
   public root!: HTMLParagraphElement;
-  public p!: HTMLParagraphElement;
+  // Нет элементов с data-element
 
   constructor(data: Record<string, any> = {}) {
-    // Создаём элементы
-    this.p = document.createElement('p') as HTMLParagraphElement;
+    super();
+    
+    this.root = this._createRootElement() as HTMLParagraphElement;
+    
+    // Нет элементов для инициализации
 
-    // Настраиваем элементы (классы, текст и т.д.)
-    this.p.textContent = '\bNo\b \bdownloads\b \bavailable\b \byet\b.';
-
-
-    // Строим иерархию
-    this.root = this.p;
-
-
-    // Регистрируем элементы
     this._elements.set('root', this.root);
-    this._elements.set('p', this.p);
+    // Нет элементов для регистрации
 
-    // Применяем начальные данные
     this.update(data);
   }
 
-  // Иерархическая структура
-  get structure(): Record<string, any> {
-    return {
-      p: this.p
-    };
-  }
-
-  mount(parent: Element): Downloads {
-    parent.appendChild(this.root);
-    return this;
-  }
-
-  getElement(name: string): HTMLElement | undefined {
-    return this._elements.get(name);
-  }
-
-  update(data: Record<string, any>): void {
-    Object.entries(data).forEach(([key, value]) => {
-      const element = this._elements.get(key);
-      if (element) {
-        element.textContent = value.toString();
-      }
-    });
+  private _createRootElement(): HTMLElement {
+    const root = document.createElement('p');
+    root.appendChild(document.createTextNode("No downloads available yet."));
+    return root;
   }
 }

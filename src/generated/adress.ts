@@ -1,87 +1,46 @@
 // Автогенерированный класс для шаблона: adress
-export class Adress {
-  private _elements = new Map<string, HTMLElement>();
+import { BaseView } from './base-view';
 
-
+export class Adress extends BaseView {
   public root!: HTMLDivElement;
-  public flex!: HTMLDivElement;
-  public flexCol!: HTMLDivElement;
-  public textBase!: HTMLParagraphElement;
-  public text2xl!: HTMLParagraphElement;
-  public textBase1!: HTMLParagraphElement;
-  public yellowText!: HTMLParagraphElement;
+  // Нет элементов с data-element
 
   constructor(data: Record<string, any> = {}) {
-    // Создаём элементы
-    this.flex = document.createElement('div') as HTMLDivElement;
-    this.flexCol = document.createElement('div') as HTMLDivElement;
-    this.textBase = document.createElement('p') as HTMLParagraphElement;
-    this.text2xl = document.createElement('p') as HTMLParagraphElement;
-    this.textBase1 = document.createElement('p') as HTMLParagraphElement;
-    this.yellowText = document.createElement('p') as HTMLParagraphElement;
+    super();
+    
+    this.root = this._createRootElement() as HTMLDivElement;
+    
+    // Нет элементов для инициализации
 
-    // Настраиваем элементы (классы, текст и т.д.)
-    this.flex.className = '\bflex\b \bjustify\b-\bcenter\b';
-    this.flexCol.className = '\bflex\b-\bcol\b \bflex\b \bgap\b-\b4\b';
-    this.textBase.className = '\btext\b-\bbase\b';
-    this.textBase.textContent = '\bThe\b \bfollowing\b \baddresses\b \bwill\b \bbe\b \bused\b \bon\b \bthe\b \bcheckout\b \bpage\b \bby\b \bdefault\b.';
-    this.text2xl.className = '\btext\b-\b2xl\b';
-    this.text2xl.textContent = '\bBilling\b \baddress\b';
-    this.textBase1.className = '\btext\b-\bbase\b';
-    this.textBase1.textContent = '\bYou\b \bhave\b \bnot\b \bset\b \bup\b \bthis\b \btype\b \bof\b \baddress\b \byet\b.';
-    this.yellowText.className = '\byellow\b-\btext\b';
-    this.yellowText.textContent = '\bAdd\b';
-
-
-    // Строим иерархию
-    this.root = this.flex;
-    this.flex.appendChild(this.flexCol);
-    this.flexCol.appendChild(this.textBase);
-    this.flexCol.appendChild(this.text2xl);
-    this.flexCol.appendChild(this.textBase);
-    this.flexCol.appendChild(this.yellowText);
-
-
-    // Регистрируем элементы
     this._elements.set('root', this.root);
-    this._elements.set('flex', this.flex);
-    this._elements.set('flexCol', this.flexCol);
-    this._elements.set('textBase', this.textBase);
-    this._elements.set('text2xl', this.text2xl);
-    this._elements.set('textBase1', this.textBase1);
-    this._elements.set('yellowText', this.yellowText);
+    // Нет элементов для регистрации
 
-    // Применяем начальные данные
     this.update(data);
   }
 
-  // Иерархическая структура
-  get structure(): Record<string, any> {
-    return {
-      flex: this.flex,
-      flexCol: this.flexCol,
-      textBase: this.textBase,
-      text2xl: this.text2xl,
-      textBase1: this.textBase1,
-      yellowText: this.yellowText
-    };
-  }
-
-  mount(parent: Element): Adress {
-    parent.appendChild(this.root);
-    return this;
-  }
-
-  getElement(name: string): HTMLElement | undefined {
-    return this._elements.get(name);
-  }
-
-  update(data: Record<string, any>): void {
-    Object.entries(data).forEach(([key, value]) => {
-      const element = this._elements.get(key);
-      if (element) {
-        element.textContent = value.toString();
-      }
-    });
+  private _createRootElement(): HTMLElement {
+    const root = document.createElement('div');
+    root.className = "flex justify-center";
+    const el1 = document.createElement('div');
+    el1.className = "flex-col flex gap-4";
+    root.appendChild(el1);
+        const el2 = document.createElement('p');
+        el2.className = "text-base";
+        el1.appendChild(el2);
+            el2.appendChild(document.createTextNode("\n        The following addresses will be used on the checkout page by default.\n      "));
+        const el3 = document.createElement('p');
+        el3.className = "text-2xl";
+        el1.appendChild(el3);
+            el3.appendChild(document.createTextNode("Billing address"));
+        const el4 = document.createElement('p');
+        el4.className = "text-base";
+        el1.appendChild(el4);
+            el4.appendChild(document.createTextNode("You have not set up this type of address yet."));
+        const el5 = document.createElement('p');
+        el5.className = "yellow-text";
+        el5.setAttribute("href", "/masculino#/profile?id=account_details");
+        el1.appendChild(el5);
+            el5.appendChild(document.createTextNode("\n        Add\n      "));
+    return root;
   }
 }

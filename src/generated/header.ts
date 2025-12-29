@@ -1,388 +1,262 @@
 // Автогенерированный класс для шаблона: header
-export class Header {
-  private _elements = new Map<string, HTMLElement>();
+import { BaseView } from './base-view';
 
-
+export class Header extends BaseView {
   public root!: HTMLElement;
-  public header!: HTMLElement;
-  public customContainer!: HTMLElement;
-  public headerinteractiveItems!: HTMLDivElement;
-  public a!: HTMLAnchorElement;
-  public masculinoLogo!: HTMLImageElement;
-  public burger!: HTMLButtonElement;
-  public block!: HTMLSpanElement;
-  public block1!: HTMLSpanElement;
-  public block2!: HTMLSpanElement;
-  public headerlists!: HTMLDivElement;
-  public headermenu!: HTMLUListElement;
-  public headeritem!: HTMLLIElement;
-  public headerbutton!: HTMLAnchorElement;
-  public headeritem1!: HTMLLIElement;
-  public headerbutton1!: HTMLAnchorElement;
-  public headeritem2!: HTMLLIElement;
-  public headerbutton2!: HTMLAnchorElement;
-  public headeritem3!: HTMLLIElement;
-  public headerbutton3!: HTMLAnchorElement;
-  public headermenu1!: HTMLUListElement;
-  public headeritem4!: HTMLLIElement;
-  public headerbutton4!: HTMLButtonElement;
-  public svg!: HTMLElement;
-  public SVGRepoBgCarrier!: HTMLElement;
-  public SVGRepoTracerCarrier!: HTMLElement;
-  public SVGRepoIconCarrier!: HTMLElement;
-  public path!: HTMLElement;
-  public path1!: HTMLElement;
-  public headeritem5!: HTMLLIElement;
-  public headerbutton5!: HTMLButtonElement;
-  public fillCurrent!: HTMLElement;
-  public SVGRepoBgCarrier1!: HTMLElement;
-  public SVGRepoTracerCarrier1!: HTMLElement;
-  public SVGRepoIconCarrier1!: HTMLElement;
-  public path2!: HTMLElement;
-  public headeritem6!: HTMLLIElement;
-  public headerbutton6!: HTMLButtonElement;
-  public svg1!: HTMLElement;
-  public SVGRepoBgCarrier2!: HTMLElement;
-  public SVGRepoTracerCarrier2!: HTMLElement;
-  public SVGRepoIconCarrier2!: HTMLElement;
-  public g!: HTMLElement;
-  public rect!: HTMLElement;
-  public g1!: HTMLElement;
-  public path3!: HTMLElement;
-  public defs!: HTMLElement;
-  public filter0D1582!: HTMLElement;
-  public feflood!: HTMLElement;
-  public fecolormatrix!: HTMLElement;
-  public feoffset!: HTMLElement;
-  public fegaussianblur!: HTMLElement;
-  public fecolormatrix1!: HTMLElement;
-  public feblend!: HTMLElement;
-  public feblend1!: HTMLElement;
-  public clip01582!: HTMLElement;
-  public rect1!: HTMLElement;
-  public headeritem7!: HTMLLIElement;
-  public headerbutton7!: HTMLButtonElement;
-  public totalCartQuantity!: HTMLElement;
+  public burger!: HTMLButtonElement & ReturnType<BaseView['_createElementWithHandlers']>;
+  public burgerMenu!: HTMLDivElement & ReturnType<BaseView['_createElementWithHandlers']>;
 
   constructor(data: Record<string, any> = {}) {
-    // Создаём элементы
-    this.header = document.createElement('header') as HTMLElement;
-    this.customContainer = document.createElement('nav') as HTMLElement;
-    this.headerinteractiveItems = document.createElement('div') as HTMLDivElement;
-    this.a = document.createElement('a') as HTMLAnchorElement;
-    this.masculinoLogo = document.createElement('img') as HTMLImageElement;
-    this.burger = document.createElement('button') as HTMLButtonElement;
-    this.block = document.createElement('span') as HTMLSpanElement;
-    this.block1 = document.createElement('span') as HTMLSpanElement;
-    this.block2 = document.createElement('span') as HTMLSpanElement;
-    this.headerlists = document.createElement('div') as HTMLDivElement;
-    this.headermenu = document.createElement('ul') as HTMLUListElement;
-    this.headeritem = document.createElement('li') as HTMLLIElement;
-    this.headerbutton = document.createElement('a') as HTMLAnchorElement;
-    this.headeritem1 = document.createElement('li') as HTMLLIElement;
-    this.headerbutton1 = document.createElement('a') as HTMLAnchorElement;
-    this.headeritem2 = document.createElement('li') as HTMLLIElement;
-    this.headerbutton2 = document.createElement('a') as HTMLAnchorElement;
-    this.headeritem3 = document.createElement('li') as HTMLLIElement;
-    this.headerbutton3 = document.createElement('a') as HTMLAnchorElement;
-    this.headermenu1 = document.createElement('ul') as HTMLUListElement;
-    this.headeritem4 = document.createElement('li') as HTMLLIElement;
-    this.headerbutton4 = document.createElement('button') as HTMLButtonElement;
-    this.svg = document.createElement('svg') as HTMLElement;
-    this.SVGRepoBgCarrier = document.createElement('g') as HTMLElement;
-    this.SVGRepoTracerCarrier = document.createElement('g') as HTMLElement;
-    this.SVGRepoIconCarrier = document.createElement('g') as HTMLElement;
-    this.path = document.createElement('path') as HTMLElement;
-    this.path1 = document.createElement('path') as HTMLElement;
-    this.headeritem5 = document.createElement('li') as HTMLLIElement;
-    this.headerbutton5 = document.createElement('button') as HTMLButtonElement;
-    this.fillCurrent = document.createElement('svg') as HTMLElement;
-    this.SVGRepoBgCarrier1 = document.createElement('g') as HTMLElement;
-    this.SVGRepoTracerCarrier1 = document.createElement('g') as HTMLElement;
-    this.SVGRepoIconCarrier1 = document.createElement('g') as HTMLElement;
-    this.path2 = document.createElement('path') as HTMLElement;
-    this.headeritem6 = document.createElement('li') as HTMLLIElement;
-    this.headerbutton6 = document.createElement('button') as HTMLButtonElement;
-    this.svg1 = document.createElement('svg') as HTMLElement;
-    this.SVGRepoBgCarrier2 = document.createElement('g') as HTMLElement;
-    this.SVGRepoTracerCarrier2 = document.createElement('g') as HTMLElement;
-    this.SVGRepoIconCarrier2 = document.createElement('g') as HTMLElement;
-    this.g = document.createElement('g') as HTMLElement;
-    this.rect = document.createElement('rect') as HTMLElement;
-    this.g1 = document.createElement('g') as HTMLElement;
-    this.path3 = document.createElement('path') as HTMLElement;
-    this.defs = document.createElement('defs') as HTMLElement;
-    this.filter0D1582 = document.createElement('filter') as HTMLElement;
-    this.feflood = document.createElement('feFlood') as HTMLElement;
-    this.fecolormatrix = document.createElement('feColorMatrix') as HTMLElement;
-    this.feoffset = document.createElement('feOffset') as HTMLElement;
-    this.fegaussianblur = document.createElement('feGaussianBlur') as HTMLElement;
-    this.fecolormatrix1 = document.createElement('feColorMatrix') as HTMLElement;
-    this.feblend = document.createElement('feBlend') as HTMLElement;
-    this.feblend1 = document.createElement('feBlend') as HTMLElement;
-    this.clip01582 = document.createElement('clipPath') as HTMLElement;
-    this.rect1 = document.createElement('rect') as HTMLElement;
-    this.headeritem7 = document.createElement('li') as HTMLLIElement;
-    this.headerbutton7 = document.createElement('button') as HTMLButtonElement;
-    this.totalCartQuantity = document.createElement('sup') as HTMLElement;
+    super();
+    
+    this.root = this._createRootElement() as HTMLElement;
+    
+    this.burger = this._createElementWithHandlers('burger', this.root.querySelector('[data-element="burger"]')!);
+    this.burgerMenu = this._createElementWithHandlers('burgerMenu', this.root.querySelector('[data-element="burger-menu"]')!);
 
-    // Настраиваем элементы (классы, текст и т.д.)
-    this.header.className = '\bheader\b';
-    this.customContainer.className = '\bcustom\b-\bcontainer\b \bheader__nav\b';
-    this.headerinteractiveItems.className = '\bheader__interactive\b-\bitems\b';
-    this.masculinoLogo.className = '\bmasculino_logo\b';
-    this.burger.className = '\bburger\b-\bbutton\b';
-    this.burger.id = '\bburger\b';
-    this.block.className = '\bblock\b \bw\b-\b6\b \bh\b-[\b2px\b] \bbg\b-\bgray\b-\b800\b \btransition\b-\btransform\b \bduration\b-\b300\b';
-    this.block1.className = '\bblock\b \bw\b-\b6\b \bh\b-[\b2px\b] \bbg\b-\bgray\b-\b800\b \btransition\b-\bopacity\b \bduration\b-\b300\b';
-    this.block2.className = '\bblock\b \bw\b-\b6\b \bh\b-[\b2px\b] \bbg\b-\bgray\b-\b800\b \btransition\b-\btransform\b \bduration\b-\b300\b';
-    this.headerlists.className = '\bheader__lists\b';
-    this.headermenu.className = '\bheader__menu\b \bheader__seasons\b';
-    this.headeritem.className = '\bheader__item\b';
-    this.headerbutton.className = '\bheader__button\b \bfiltr__button\b';
-    this.headerbutton.textContent = 'Зима';
-    this.headeritem1.className = '\bheader__item\b';
-    this.headerbutton1.className = '\bheader__button\b \bfiltr__button\b';
-    this.headerbutton1.textContent = 'Весна';
-    this.headeritem2.className = '\bheader__item\b';
-    this.headerbutton2.className = '\bheader__button\b \bfiltr__button\b';
-    this.headerbutton2.textContent = 'Лето';
-    this.headeritem3.className = '\bheader__item\b';
-    this.headerbutton3.className = '\bheader__button\b \bfiltr__button\b';
-    this.headerbutton3.textContent = 'Осень';
-    this.headermenu1.className = '\bheader__menu\b';
-    this.headeritem4.className = '\bheader__item\b';
-    this.headerbutton4.className = '\bheader__button\b \bsearch\b';
-    this.SVGRepoBgCarrier.id = '\bSVGRepo_bgCarrier\b';
-    this.SVGRepoTracerCarrier.id = '\bSVGRepo_tracerCarrier\b';
-    this.SVGRepoIconCarrier.id = '\bSVGRepo_iconCarrier\b';
-    this.headeritem5.className = '\bheader__item\b';
-    this.headerbutton5.className = '\bheader__button\b';
-    this.fillCurrent.className = '\bfill\b-\bcurrent\b';
-    this.SVGRepoBgCarrier1.id = '\bSVGRepo_bgCarrier\b';
-    this.SVGRepoTracerCarrier1.id = '\bSVGRepo_tracerCarrier\b';
-    this.SVGRepoIconCarrier1.id = '\bSVGRepo_iconCarrier\b';
-    this.headeritem6.className = '\bheader__item\b';
-    this.headerbutton6.className = '\bheader__button\b \bprofile\b-\bopen\b';
-    this.SVGRepoBgCarrier2.id = '\bSVGRepo_bgCarrier\b';
-    this.SVGRepoTracerCarrier2.id = '\bSVGRepo_tracerCarrier\b';
-    this.SVGRepoIconCarrier2.id = '\bSVGRepo_iconCarrier\b';
-    this.filter0D1582.id = '\bfilter0_d_15_82\b';
-    this.clip01582.id = '\bclip0_15_82\b';
-    this.headeritem7.className = '\bheader__item\b';
-    this.headerbutton7.className = '\bheader__button\b \bopen\b-\bcart\b';
-    this.totalCartQuantity.className = '\btotal\b-\bcart\b-\bquantity\b';
-    this.totalCartQuantity.textContent = '\b0\b';
-
-
-    // Строим иерархию
-    this.root = this.header;
-    this.header.appendChild(this.customContainer);
-    this.customContainer.appendChild(this.headerinteractiveItems);
-    this.headerinteractiveItems.appendChild(this.a);
-    this.a.appendChild(this.masculinoLogo);
-    this.headerinteractiveItems.appendChild(this.burger);
-    this.burger.appendChild(this.block);
-    this.burger.appendChild(this.block);
-    this.burger.appendChild(this.block);
-    this.customContainer.appendChild(this.headerlists);
-    this.headerlists.appendChild(this.headermenu);
-    this.headermenu.appendChild(this.headeritem);
-    this.headeritem.appendChild(this.headerbutton);
-    this.headermenu.appendChild(this.headeritem);
-    this.headeritem.appendChild(this.headerbutton);
-    this.headermenu.appendChild(this.headeritem);
-    this.headeritem.appendChild(this.headerbutton);
-    this.headermenu.appendChild(this.headeritem);
-    this.headeritem.appendChild(this.headerbutton);
-    this.headerlists.appendChild(this.headermenu);
-    this.headermenu.appendChild(this.headeritem);
-    this.headeritem.appendChild(this.headerbutton);
-    this.headerbutton.appendChild(this.svg);
-    this.svg.appendChild(this.SVGRepoBgCarrier);
-    this.svg.appendChild(this.SVGRepoTracerCarrier);
-    this.svg.appendChild(this.SVGRepoIconCarrier);
-    this.SVGRepoIconCarrier.appendChild(this.path);
-    this.SVGRepoIconCarrier.appendChild(this.path);
-    this.headermenu.appendChild(this.headeritem);
-    this.headeritem.appendChild(this.headerbutton);
-    this.headerbutton.appendChild(this.fillCurrent);
-    this.fillCurrent.appendChild(this.SVGRepoBgCarrier);
-    this.fillCurrent.appendChild(this.SVGRepoTracerCarrier);
-    this.fillCurrent.appendChild(this.SVGRepoIconCarrier);
-    this.SVGRepoIconCarrier.appendChild(this.path);
-    this.headermenu.appendChild(this.headeritem);
-    this.headeritem.appendChild(this.headerbutton);
-    this.headerbutton.appendChild(this.svg);
-    this.svg.appendChild(this.SVGRepoBgCarrier);
-    this.svg.appendChild(this.SVGRepoTracerCarrier);
-    this.svg.appendChild(this.SVGRepoIconCarrier);
-    this.SVGRepoIconCarrier.appendChild(this.g);
-    this.g.appendChild(this.rect);
-    this.g.appendChild(this.g);
-    this.g.appendChild(this.path);
-    this.SVGRepoIconCarrier.appendChild(this.defs);
-    this.defs.appendChild(this.filter0D1582);
-    this.filter0D1582.appendChild(this.feflood);
-    this.filter0D1582.appendChild(this.fecolormatrix);
-    this.filter0D1582.appendChild(this.feoffset);
-    this.filter0D1582.appendChild(this.fegaussianblur);
-    this.filter0D1582.appendChild(this.fecolormatrix);
-    this.filter0D1582.appendChild(this.feblend);
-    this.filter0D1582.appendChild(this.feblend);
-    this.defs.appendChild(this.clip01582);
-    this.clip01582.appendChild(this.rect);
-    this.headermenu.appendChild(this.headeritem);
-    this.headeritem.appendChild(this.headerbutton);
-    this.headerbutton.appendChild(this.totalCartQuantity);
-
-
-    // Регистрируем элементы
     this._elements.set('root', this.root);
-    this._elements.set('header', this.header);
-    this._elements.set('customContainer', this.customContainer);
-    this._elements.set('headerinteractiveItems', this.headerinteractiveItems);
-    this._elements.set('a', this.a);
-    this._elements.set('masculinoLogo', this.masculinoLogo);
     this._elements.set('burger', this.burger);
-    this._elements.set('block', this.block);
-    this._elements.set('block1', this.block1);
-    this._elements.set('block2', this.block2);
-    this._elements.set('headerlists', this.headerlists);
-    this._elements.set('headermenu', this.headermenu);
-    this._elements.set('headeritem', this.headeritem);
-    this._elements.set('headerbutton', this.headerbutton);
-    this._elements.set('headeritem1', this.headeritem1);
-    this._elements.set('headerbutton1', this.headerbutton1);
-    this._elements.set('headeritem2', this.headeritem2);
-    this._elements.set('headerbutton2', this.headerbutton2);
-    this._elements.set('headeritem3', this.headeritem3);
-    this._elements.set('headerbutton3', this.headerbutton3);
-    this._elements.set('headermenu1', this.headermenu1);
-    this._elements.set('headeritem4', this.headeritem4);
-    this._elements.set('headerbutton4', this.headerbutton4);
-    this._elements.set('svg', this.svg);
-    this._elements.set('SVGRepoBgCarrier', this.SVGRepoBgCarrier);
-    this._elements.set('SVGRepoTracerCarrier', this.SVGRepoTracerCarrier);
-    this._elements.set('SVGRepoIconCarrier', this.SVGRepoIconCarrier);
-    this._elements.set('path', this.path);
-    this._elements.set('path1', this.path1);
-    this._elements.set('headeritem5', this.headeritem5);
-    this._elements.set('headerbutton5', this.headerbutton5);
-    this._elements.set('fillCurrent', this.fillCurrent);
-    this._elements.set('SVGRepoBgCarrier1', this.SVGRepoBgCarrier1);
-    this._elements.set('SVGRepoTracerCarrier1', this.SVGRepoTracerCarrier1);
-    this._elements.set('SVGRepoIconCarrier1', this.SVGRepoIconCarrier1);
-    this._elements.set('path2', this.path2);
-    this._elements.set('headeritem6', this.headeritem6);
-    this._elements.set('headerbutton6', this.headerbutton6);
-    this._elements.set('svg1', this.svg1);
-    this._elements.set('SVGRepoBgCarrier2', this.SVGRepoBgCarrier2);
-    this._elements.set('SVGRepoTracerCarrier2', this.SVGRepoTracerCarrier2);
-    this._elements.set('SVGRepoIconCarrier2', this.SVGRepoIconCarrier2);
-    this._elements.set('g', this.g);
-    this._elements.set('rect', this.rect);
-    this._elements.set('g1', this.g1);
-    this._elements.set('path3', this.path3);
-    this._elements.set('defs', this.defs);
-    this._elements.set('filter0D1582', this.filter0D1582);
-    this._elements.set('feflood', this.feflood);
-    this._elements.set('fecolormatrix', this.fecolormatrix);
-    this._elements.set('feoffset', this.feoffset);
-    this._elements.set('fegaussianblur', this.fegaussianblur);
-    this._elements.set('fecolormatrix1', this.fecolormatrix1);
-    this._elements.set('feblend', this.feblend);
-    this._elements.set('feblend1', this.feblend1);
-    this._elements.set('clip01582', this.clip01582);
-    this._elements.set('rect1', this.rect1);
-    this._elements.set('headeritem7', this.headeritem7);
-    this._elements.set('headerbutton7', this.headerbutton7);
-    this._elements.set('totalCartQuantity', this.totalCartQuantity);
+    this._elements.set('burgerMenu', this.burgerMenu);
 
-    // Применяем начальные данные
     this.update(data);
   }
 
-  // Иерархическая структура
-  get structure(): Record<string, any> {
-    return {
-      header: this.header,
-      customContainer: this.customContainer,
-      headerinteractiveItems: this.headerinteractiveItems,
-      a: this.a,
-      masculinoLogo: this.masculinoLogo,
-      burger: this.burger,
-      block: this.block,
-      block1: this.block1,
-      block2: this.block2,
-      headerlists: this.headerlists,
-      headermenu: this.headermenu,
-      headeritem: this.headeritem,
-      headerbutton: this.headerbutton,
-      headeritem1: this.headeritem1,
-      headerbutton1: this.headerbutton1,
-      headeritem2: this.headeritem2,
-      headerbutton2: this.headerbutton2,
-      headeritem3: this.headeritem3,
-      headerbutton3: this.headerbutton3,
-      headermenu1: this.headermenu1,
-      headeritem4: this.headeritem4,
-      headerbutton4: this.headerbutton4,
-      svg: this.svg,
-      SVGRepoBgCarrier: this.SVGRepoBgCarrier,
-      SVGRepoTracerCarrier: this.SVGRepoTracerCarrier,
-      SVGRepoIconCarrier: this.SVGRepoIconCarrier,
-      path: this.path,
-      path1: this.path1,
-      headeritem5: this.headeritem5,
-      headerbutton5: this.headerbutton5,
-      fillCurrent: this.fillCurrent,
-      SVGRepoBgCarrier1: this.SVGRepoBgCarrier1,
-      SVGRepoTracerCarrier1: this.SVGRepoTracerCarrier1,
-      SVGRepoIconCarrier1: this.SVGRepoIconCarrier1,
-      path2: this.path2,
-      headeritem6: this.headeritem6,
-      headerbutton6: this.headerbutton6,
-      svg1: this.svg1,
-      SVGRepoBgCarrier2: this.SVGRepoBgCarrier2,
-      SVGRepoTracerCarrier2: this.SVGRepoTracerCarrier2,
-      SVGRepoIconCarrier2: this.SVGRepoIconCarrier2,
-      g: this.g,
-      rect: this.rect,
-      g1: this.g1,
-      path3: this.path3,
-      defs: this.defs,
-      filter0D1582: this.filter0D1582,
-      feflood: this.feflood,
-      fecolormatrix: this.fecolormatrix,
-      feoffset: this.feoffset,
-      fegaussianblur: this.fegaussianblur,
-      fecolormatrix1: this.fecolormatrix1,
-      feblend: this.feblend,
-      feblend1: this.feblend1,
-      clip01582: this.clip01582,
-      rect1: this.rect1,
-      headeritem7: this.headeritem7,
-      headerbutton7: this.headerbutton7,
-      totalCartQuantity: this.totalCartQuantity
-    };
-  }
-
-  mount(parent: Element): Header {
-    parent.appendChild(this.root);
-    return this;
-  }
-
-  getElement(name: string): HTMLElement | undefined {
-    return this._elements.get(name);
-  }
-
-  update(data: Record<string, any>): void {
-    Object.entries(data).forEach(([key, value]) => {
-      const element = this._elements.get(key);
-      if (element) {
-        element.textContent = value.toString();
-      }
-    });
+  private _createRootElement(): HTMLElement {
+    const root = document.createElement('header');
+    root.className = "header";
+    const el1 = document.createElement('nav');
+    el1.className = "custom-container header__nav";
+    root.appendChild(el1);
+        const el2 = document.createElement('div');
+        el2.className = "header__interactive-items";
+        el1.appendChild(el2);
+            const el3 = document.createElement('a');
+            el3.setAttribute("href", "/masculino/");
+            el2.appendChild(el3);
+                const el4 = document.createElement('img');
+                el4.className = "masculino_logo";
+                el4.setAttribute("src", "public/masculino_logo.svg");
+                el4.setAttribute("alt", "");
+                el3.appendChild(el4);
+            const el5 = document.createElement('button');
+            el5.setAttribute("id", "burger");
+            el5.setAttribute("data-element", "burger");
+            el5.setAttribute("aria-label", "Toggle menu");
+            el5.className = "burger-button";
+            el2.appendChild(el5);
+                const el6 = document.createElement('span');
+                el6.className = "block w-6 h-[2px] bg-gray-800 transition-transform duration-300";
+                el5.appendChild(el6);
+                const el7 = document.createElement('span');
+                el7.className = "block w-6 h-[2px] bg-gray-800 transition-opacity duration-300";
+                el5.appendChild(el7);
+                const el8 = document.createElement('span');
+                el8.className = "block w-6 h-[2px] bg-gray-800 transition-transform duration-300";
+                el5.appendChild(el8);
+        const el9 = document.createElement('div');
+        el9.className = "header__lists";
+        el9.setAttribute("data-element", "burger-menu");
+        el1.appendChild(el9);
+            const el10 = document.createElement('ul');
+            el10.className = "header__menu header__seasons";
+            el9.appendChild(el10);
+                const el11 = document.createElement('li');
+                el11.className = "header__item";
+                el10.appendChild(el11);
+                    const el12 = document.createElement('a');
+                    el12.className = "header__button filtr__button";
+                    el12.setAttribute("href", "/masculino/?categories=Зима");
+                    el11.appendChild(el12);
+                        el12.appendChild(document.createTextNode("Зима"));
+                const el13 = document.createElement('li');
+                el13.className = "header__item";
+                el10.appendChild(el13);
+                    const el14 = document.createElement('a');
+                    el14.className = "header__button filtr__button";
+                    el14.setAttribute("href", "/masculino/?categories=Весна");
+                    el13.appendChild(el14);
+                        el14.appendChild(document.createTextNode("Весна"));
+                const el15 = document.createElement('li');
+                el15.className = "header__item";
+                el10.appendChild(el15);
+                    const el16 = document.createElement('a');
+                    el16.className = "header__button filtr__button";
+                    el16.setAttribute("href", "/masculino/?categories=Лето");
+                    el15.appendChild(el16);
+                        el16.appendChild(document.createTextNode("Лето"));
+                const el17 = document.createElement('li');
+                el17.className = "header__item";
+                el10.appendChild(el17);
+                    const el18 = document.createElement('a');
+                    el18.className = "header__button filtr__button";
+                    el18.setAttribute("href", "/masculino/?categories=Осень");
+                    el17.appendChild(el18);
+                        el18.appendChild(document.createTextNode("Осень"));
+            const el19 = document.createElement('ul');
+            el19.className = "header__menu";
+            el9.appendChild(el19);
+                const el20 = document.createElement('li');
+                el20.className = "header__item";
+                el19.appendChild(el20);
+                    const el21 = document.createElement('button');
+                    el21.className = "header__button search";
+                    el20.appendChild(el21);
+                        const el22 = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                        el22.setAttribute('width', "24");
+                        el22.setAttribute('height', "24");
+                        el22.setAttribute('fill', "none");
+                        el22.setAttribute('xmlns', "http://www.w3.org/2000/svg");
+                        el21.appendChild(el22);
+                            const el23 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                            el23.setAttribute('id', "SVGRepo_bgCarrier");
+                            el23.setAttribute('stroke-width', "0");
+                            el22.appendChild(el23);
+                            const el24 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                            el24.setAttribute('id', "SVGRepo_tracerCarrier");
+                            el24.setAttribute('stroke-linecap', "round");
+                            el24.setAttribute('stroke-linejoin', "round");
+                            el22.appendChild(el24);
+                            const el25 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                            el25.setAttribute('id', "SVGRepo_iconCarrier");
+                            el22.appendChild(el25);
+                                const el26 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                                el26.setAttribute('d', "M17 17L21 21");
+                                el26.setAttribute('stroke', "currentColor");
+                                el26.setAttribute('stroke-width', "2");
+                                el26.setAttribute('stroke-linecap', "round");
+                                el26.setAttribute('stroke-linejoin', "round");
+                                el25.appendChild(el26);
+                                const el27 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                                el27.setAttribute('d', "M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z");
+                                el27.setAttribute('stroke', "currentColor");
+                                el27.setAttribute('stroke-width', "2");
+                                el25.appendChild(el27);
+                const el28 = document.createElement('li');
+                el28.className = "header__item";
+                el19.appendChild(el28);
+                    const el29 = document.createElement('button');
+                    el29.className = "header__button";
+                    el28.appendChild(el29);
+                        const el30 = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                        el30.setAttribute('class', "fill-current");
+                        el30.setAttribute('width', "24");
+                        el30.setAttribute('height', "24");
+                        el30.setAttribute('xmlns', "http://www.w3.org/2000/svg");
+                        el29.appendChild(el30);
+                            const el31 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                            el31.setAttribute('id', "SVGRepo_bgCarrier");
+                            el31.setAttribute('stroke-width', "0");
+                            el30.appendChild(el31);
+                            const el32 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                            el32.setAttribute('id', "SVGRepo_tracerCarrier");
+                            el32.setAttribute('stroke-linecap', "round");
+                            el32.setAttribute('stroke-linejoin', "round");
+                            el30.appendChild(el32);
+                            const el33 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                            el33.setAttribute('id', "SVGRepo_iconCarrier");
+                            el30.appendChild(el33);
+                                const el34 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                                el34.setAttribute('d', "M8.96173 18.9109L9.42605 18.3219L8.96173 18.9109ZM12 5.50063L11.4596 6.02073C11.601 6.16763 11.7961 6.25063 12 6.25063C12.2039 6.25063 12.399 6.16763 12.5404 6.02073L12 5.50063ZM15.0383 18.9109L15.5026 19.4999L15.0383 18.9109ZM9.42605 18.3219C7.91039 17.1271 6.25307 15.9603 4.93829 14.4798C3.64922 13.0282 2.75 11.3345 2.75 9.1371H1.25C1.25 11.8026 2.3605 13.8361 3.81672 15.4758C5.24723 17.0866 7.07077 18.3752 8.49742 19.4999L9.42605 18.3219ZM2.75 9.1371C2.75 6.98623 3.96537 5.18252 5.62436 4.42419C7.23607 3.68748 9.40166 3.88258 11.4596 6.02073L12.5404 4.98053C10.0985 2.44352 7.26409 2.02539 5.00076 3.05996C2.78471 4.07292 1.25 6.42503 1.25 9.1371H2.75ZM8.49742 19.4999C9.00965 19.9037 9.55954 20.3343 10.1168 20.6599C10.6739 20.9854 11.3096 21.25 12 21.25V19.75C11.6904 19.75 11.3261 19.6293 10.8736 19.3648C10.4213 19.1005 9.95208 18.7366 9.42605 18.3219L8.49742 19.4999ZM15.5026 19.4999C16.9292 18.3752 18.7528 17.0866 20.1833 15.4758C21.6395 13.8361 22.75 11.8026 22.75 9.1371H21.25C21.25 11.3345 20.3508 13.0282 19.0617 14.4798C17.7469 15.9603 16.0896 17.1271 14.574 18.3219L15.5026 19.4999ZM22.75 9.1371C22.75 6.42503 21.2153 4.07292 18.9992 3.05996C16.7359 2.02539 13.9015 2.44352 11.4596 4.98053L12.5404 6.02073C14.5983 3.88258 16.7639 3.68748 18.3756 4.42419C20.0346 5.18252 21.25 6.98623 21.25 9.1371H22.75ZM14.574 18.3219C14.0479 18.7366 13.5787 19.1005 13.1264 19.3648C12.6739 19.6293 12.3096 19.75 12 19.75V21.25C12.6904 21.25 13.3261 20.9854 13.8832 20.6599C14.4405 20.3343 14.9903 19.9037 15.5026 19.4999L14.574 18.3219Z");
+                                el34.setAttribute('fill', "currentColor");
+                                el33.appendChild(el34);
+                const el35 = document.createElement('li');
+                el35.className = "header__item";
+                el19.appendChild(el35);
+                    const el36 = document.createElement('button');
+                    el36.className = "header__button profile-open";
+                    el35.appendChild(el36);
+                        const el37 = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                        el37.setAttribute('width', "24");
+                        el37.setAttribute('height', "24");
+                        el37.setAttribute('fill', "currentColor");
+                        el37.setAttribute('xmlns', "http://www.w3.org/2000/svg");
+                        el36.appendChild(el37);
+                            const el38 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                            el38.setAttribute('id', "SVGRepo_bgCarrier");
+                            el38.setAttribute('stroke-width', "0");
+                            el37.appendChild(el38);
+                            const el39 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                            el39.setAttribute('id', "SVGRepo_tracerCarrier");
+                            el39.setAttribute('stroke-linecap', "round");
+                            el39.setAttribute('stroke-linejoin', "round");
+                            el37.appendChild(el39);
+                            const el40 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                            el40.setAttribute('id', "SVGRepo_iconCarrier");
+                            el37.appendChild(el40);
+                                const el41 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                                el41.setAttribute('clip-path', "url(#clip0_15_82)");
+                                el40.appendChild(el41);
+                                    const el42 = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                                    el42.setAttribute('width', "24");
+                                    el42.setAttribute('height', "24");
+                                    el42.setAttribute('fill', "none");
+                                    el41.appendChild(el42);
+                                    const el43 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                                    el43.setAttribute('filter', "url(#filter0_d_15_82)");
+                                    el41.appendChild(el43);
+                                        const el44 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                                        el44.setAttribute('d', "M14.3365 12.3466L14.0765 11.9195C13.9082 12.022 13.8158 12.2137 13.8405 12.4092C13.8651 12.6046 14.0022 12.7674 14.1907 12.8249L14.3365 12.3466ZM9.6634 12.3466L9.80923 12.8249C9.99769 12.7674 10.1348 12.6046 10.1595 12.4092C10.1841 12.2137 10.0917 12.022 9.92339 11.9195L9.6634 12.3466ZM4.06161 19.002L3.56544 18.9402L4.06161 19.002ZM19.9383 19.002L20.4345 18.9402L19.9383 19.002ZM16 8.5C16 9.94799 15.2309 11.2168 14.0765 11.9195L14.5965 12.7737C16.0365 11.8971 17 10.3113 17 8.5H16ZM12 4.5C14.2091 4.5 16 6.29086 16 8.5H17C17 5.73858 14.7614 3.5 12 3.5V4.5ZM7.99996 8.5C7.99996 6.29086 9.79082 4.5 12 4.5V3.5C9.23854 3.5 6.99996 5.73858 6.99996 8.5H7.99996ZM9.92339 11.9195C8.76904 11.2168 7.99996 9.948 7.99996 8.5H6.99996C6.99996 10.3113 7.96342 11.8971 9.40342 12.7737L9.92339 11.9195ZM9.51758 11.8683C6.36083 12.8309 3.98356 15.5804 3.56544 18.9402L4.55778 19.0637C4.92638 16.1018 7.02381 13.6742 9.80923 12.8249L9.51758 11.8683ZM3.56544 18.9402C3.45493 19.8282 4.19055 20.5 4.99996 20.5V19.5C4.70481 19.5 4.53188 19.2719 4.55778 19.0637L3.56544 18.9402ZM4.99996 20.5H19V19.5H4.99996V20.5ZM19 20.5C19.8094 20.5 20.545 19.8282 20.4345 18.9402L19.4421 19.0637C19.468 19.2719 19.2951 19.5 19 19.5V20.5ZM20.4345 18.9402C20.0164 15.5804 17.6391 12.8309 14.4823 11.8683L14.1907 12.8249C16.9761 13.6742 19.0735 16.1018 19.4421 19.0637L20.4345 18.9402Z");
+                                        el44.setAttribute('fill', "currentColor");
+                                        el43.appendChild(el44);
+                                const el45 = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+                                el40.appendChild(el45);
+                                    const el46 = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
+                                    el46.setAttribute('id', "filter0_d_15_82");
+                                    el46.setAttribute('x', "2.55444");
+                                    el46.setAttribute('y', "3.5");
+                                    el46.setAttribute('width', "18.8911");
+                                    el46.setAttribute('height', "19");
+                                    el46.setAttribute('filterUnits', "userSpaceOnUse");
+                                    el46.setAttribute('color-interpolation-filters', "sRGB");
+                                        const el47 = document.createElementNS('http://www.w3.org/2000/svg', 'feflood');
+                                        el47.setAttribute('flood-opacity', "0");
+                                        el47.setAttribute('result', "BackgroundImageFix");
+                                        el46.appendChild(el47);
+                                        const el48 = document.createElementNS('http://www.w3.org/2000/svg', 'fecolormatrix');
+                                        el48.setAttribute('in', "SourceAlpha");
+                                        el48.setAttribute('type', "matrix");
+                                        el48.setAttribute('values', "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0");
+                                        el48.setAttribute('result', "hardAlpha");
+                                        el46.appendChild(el48);
+                                        const el49 = document.createElementNS('http://www.w3.org/2000/svg', 'feoffset');
+                                        el49.setAttribute('dy', "1");
+                                        el46.appendChild(el49);
+                                        const el50 = document.createElementNS('http://www.w3.org/2000/svg', 'fegaussianblur');
+                                        el50.setAttribute('stdDeviation', "0.5");
+                                        el46.appendChild(el50);
+                                        const el51 = document.createElementNS('http://www.w3.org/2000/svg', 'fecolormatrix');
+                                        el51.setAttribute('type', "matrix");
+                                        el51.setAttribute('values', "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0");
+                                        el46.appendChild(el51);
+                                        const el52 = document.createElementNS('http://www.w3.org/2000/svg', 'feblend');
+                                        el52.setAttribute('mode', "normal");
+                                        el52.setAttribute('in2', "BackgroundImageFix");
+                                        el52.setAttribute('result', "effect1_dropShadow_15_82");
+                                        el46.appendChild(el52);
+                                        const el53 = document.createElementNS('http://www.w3.org/2000/svg', 'feblend');
+                                        el53.setAttribute('mode', "normal");
+                                        el53.setAttribute('in', "SourceGraphic");
+                                        el53.setAttribute('in2', "effect1_dropShadow_15_82");
+                                        el53.setAttribute('result', "shape");
+                                        el46.appendChild(el53);
+                                    const el54 = document.createElementNS('http://www.w3.org/2000/svg', 'clippath');
+                                    el54.setAttribute('id', "clip0_15_82");
+                                        const el55 = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                                        el55.setAttribute('width', "24");
+                                        el55.setAttribute('height', "24");
+                                        el55.setAttribute('fill', "currentColor");
+                                        el54.appendChild(el55);
+                const el56 = document.createElement('li');
+                el56.className = "header__item";
+                el19.appendChild(el56);
+                    const el57 = document.createElement('button');
+                    el57.className = "header__button open-cart";
+                    el56.appendChild(el57);
+                        el57.appendChild(document.createTextNode("\n              Cart"));
+                        const el58 = document.createElement('sup');
+                        el58.className = "total-cart-quantity";
+                        el57.appendChild(el58);
+                            el58.appendChild(document.createTextNode("0"));
+    return root;
   }
 }

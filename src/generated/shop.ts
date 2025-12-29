@@ -1,463 +1,250 @@
 // Автогенерированный класс для шаблона: shop
-export class Shop {
-  private _elements = new Map<string, HTMLElement>();
+import { BaseView } from './base-view';
 
-
+export class Shop extends BaseView {
   public root!: HTMLDivElement;
-  public div!: HTMLDivElement;
-  public sectionBreadcrumbs!: HTMLElement;
-  public breadCrumbs!: HTMLElement;
-  public breadCrumbslink!: HTMLAnchorElement;
-  public px3!: HTMLSpanElement;
-  public div1!: HTMLDivElement;
-  public prevPage!: HTMLAnchorElement;
-  public inlineFlex!: HTMLElement;
-  public block!: HTMLSpanElement;
-  public nextPage!: HTMLAnchorElement;
-  public inlineFlex1!: HTMLElement;
-  public block1!: HTMLSpanElement;
-  public productDescription!: HTMLElement;
-  public productDescriptionblock!: HTMLDivElement;
-  public div2!: HTMLDivElement;
-  public mainImage!: HTMLImageElement;
-  public imagesList!: HTMLUListElement;
-  public productDescriptionblock1!: HTMLDivElement;
-  public grid!: HTMLDivElement;
-  public productTitle!: HTMLHeadingElement;
-  public productPrice!: HTMLParagraphElement;
-  public wrap!: HTMLDivElement;
-  public productOptions!: HTMLUListElement;
-  public productOptionsoption!: HTMLLIElement;
-  public productColors!: HTMLDivElement;
-  public colorWrap!: HTMLDivElement;
-  public productSizes!: HTMLLIElement;
-  public productOptionspading!: HTMLDivElement;
-  public currentSizeButton!: HTMLButtonElement;
-  public currentSizeOption!: HTMLSpanElement;
-  public span!: HTMLSpanElement;
-  public productQuantity!: HTMLLIElement;
-  public productOptionspading1!: HTMLDivElement;
-  public flex!: HTMLDivElement;
-  public quantityMinusButton!: HTMLButtonElement;
-  public inlineFlex2!: HTMLElement;
-  public block2!: HTMLSpanElement;
-  public quantity!: HTMLSpanElement;
-  public quantityPlusButton!: HTMLButtonElement;
-  public inlineFlex3!: HTMLElement;
-  public block3!: HTMLSpanElement;
-  public btnWrap!: HTMLLIElement;
-  public addToCart!: HTMLButtonElement;
-  public AdditionalInformation!: HTMLElement;
-  public customContainer!: HTMLDivElement;
-  public h2!: HTMLHeadingElement;
-  public table!: HTMLTableElement;
-  public tbody!: HTMLElement;
-  public tr!: HTMLTableRowElement;
-  public py5!: HTMLTableCellElement;
-  public pl30!: HTMLTableCellElement;
-  public colors!: HTMLDivElement;
-  public tr1!: HTMLTableRowElement;
-  public py51!: HTMLTableCellElement;
-  public pl301!: HTMLTableCellElement;
-  public material!: HTMLDivElement;
-  public tr2!: HTMLTableRowElement;
-  public py52!: HTMLTableCellElement;
-  public pl302!: HTMLTableCellElement;
-  public sizes!: HTMLDivElement;
-  public borderB!: HTMLDivElement;
-  public customContainer1!: HTMLDivElement;
-  public div3!: HTMLDivElement;
-  public span1!: HTMLSpanElement;
-  public SKU!: HTMLSpanElement;
-  public span2!: HTMLSpanElement;
-  public categories!: HTMLSpanElement;
-  public customContainer2!: HTMLElement;
-  public h21!: HTMLHeadingElement;
-  public cards!: HTMLDivElement;
+  // Нет элементов с data-element
 
   constructor(data: Record<string, any> = {}) {
-    // Создаём элементы
-    this.div = document.createElement('div') as HTMLDivElement;
-    this.sectionBreadcrumbs = document.createElement('section') as HTMLElement;
-    this.breadCrumbs = document.createElement('nav') as HTMLElement;
-    this.breadCrumbslink = document.createElement('a') as HTMLAnchorElement;
-    this.px3 = document.createElement('span') as HTMLSpanElement;
-    this.div1 = document.createElement('div') as HTMLDivElement;
-    this.prevPage = document.createElement('a') as HTMLAnchorElement;
-    this.inlineFlex = document.createElement('i') as HTMLElement;
-    this.block = document.createElement('span') as HTMLSpanElement;
-    this.nextPage = document.createElement('a') as HTMLAnchorElement;
-    this.inlineFlex1 = document.createElement('i') as HTMLElement;
-    this.block1 = document.createElement('span') as HTMLSpanElement;
-    this.productDescription = document.createElement('section') as HTMLElement;
-    this.productDescriptionblock = document.createElement('div') as HTMLDivElement;
-    this.div2 = document.createElement('div') as HTMLDivElement;
-    this.mainImage = document.createElement('img') as HTMLImageElement;
-    this.imagesList = document.createElement('ul') as HTMLUListElement;
-    this.productDescriptionblock1 = document.createElement('div') as HTMLDivElement;
-    this.grid = document.createElement('div') as HTMLDivElement;
-    this.productTitle = document.createElement('h1') as HTMLHeadingElement;
-    this.productPrice = document.createElement('p') as HTMLParagraphElement;
-    this.wrap = document.createElement('div') as HTMLDivElement;
-    this.productOptions = document.createElement('ul') as HTMLUListElement;
-    this.productOptionsoption = document.createElement('li') as HTMLLIElement;
-    this.productColors = document.createElement('div') as HTMLDivElement;
-    this.colorWrap = document.createElement('div') as HTMLDivElement;
-    this.productSizes = document.createElement('li') as HTMLLIElement;
-    this.productOptionspading = document.createElement('div') as HTMLDivElement;
-    this.currentSizeButton = document.createElement('button') as HTMLButtonElement;
-    this.currentSizeOption = document.createElement('span') as HTMLSpanElement;
-    this.span = document.createElement('span') as HTMLSpanElement;
-    this.productQuantity = document.createElement('li') as HTMLLIElement;
-    this.productOptionspading1 = document.createElement('div') as HTMLDivElement;
-    this.flex = document.createElement('div') as HTMLDivElement;
-    this.quantityMinusButton = document.createElement('button') as HTMLButtonElement;
-    this.inlineFlex2 = document.createElement('i') as HTMLElement;
-    this.block2 = document.createElement('span') as HTMLSpanElement;
-    this.quantity = document.createElement('span') as HTMLSpanElement;
-    this.quantityPlusButton = document.createElement('button') as HTMLButtonElement;
-    this.inlineFlex3 = document.createElement('i') as HTMLElement;
-    this.block3 = document.createElement('span') as HTMLSpanElement;
-    this.btnWrap = document.createElement('li') as HTMLLIElement;
-    this.addToCart = document.createElement('button') as HTMLButtonElement;
-    this.AdditionalInformation = document.createElement('section') as HTMLElement;
-    this.customContainer = document.createElement('div') as HTMLDivElement;
-    this.h2 = document.createElement('h2') as HTMLHeadingElement;
-    this.table = document.createElement('table') as HTMLTableElement;
-    this.tbody = document.createElement('tbody') as HTMLElement;
-    this.tr = document.createElement('tr') as HTMLTableRowElement;
-    this.py5 = document.createElement('td') as HTMLTableCellElement;
-    this.pl30 = document.createElement('td') as HTMLTableCellElement;
-    this.colors = document.createElement('div') as HTMLDivElement;
-    this.tr1 = document.createElement('tr') as HTMLTableRowElement;
-    this.py51 = document.createElement('td') as HTMLTableCellElement;
-    this.pl301 = document.createElement('td') as HTMLTableCellElement;
-    this.material = document.createElement('div') as HTMLDivElement;
-    this.tr2 = document.createElement('tr') as HTMLTableRowElement;
-    this.py52 = document.createElement('td') as HTMLTableCellElement;
-    this.pl302 = document.createElement('td') as HTMLTableCellElement;
-    this.sizes = document.createElement('div') as HTMLDivElement;
-    this.borderB = document.createElement('div') as HTMLDivElement;
-    this.customContainer1 = document.createElement('div') as HTMLDivElement;
-    this.div3 = document.createElement('div') as HTMLDivElement;
-    this.span1 = document.createElement('span') as HTMLSpanElement;
-    this.SKU = document.createElement('span') as HTMLSpanElement;
-    this.span2 = document.createElement('span') as HTMLSpanElement;
-    this.categories = document.createElement('span') as HTMLSpanElement;
-    this.customContainer2 = document.createElement('section') as HTMLElement;
-    this.h21 = document.createElement('h2') as HTMLHeadingElement;
-    this.cards = document.createElement('div') as HTMLDivElement;
+    super();
+    
+    this.root = this._createRootElement() as HTMLDivElement;
+    
+    // Нет элементов для инициализации
 
-    // Настраиваем элементы (классы, текст и т.д.)
-    this.sectionBreadcrumbs.className = '\bsection\b-\bbreadcrumbs\b \bflex\b \bjustify\b-\bbetween\b \bitems\b-\bcenter\b \bcustom\b-\bcontainer\b';
-    this.breadCrumbs.className = '\bbread\b-\bcrumbs\b \bpy\b-\b5\b';
-    this.breadCrumbslink.className = '\bbread\b-\bcrumbs__link\b';
-    this.breadCrumbslink.textContent = '\bShop\b';
-    this.px3.className = '\bpx\b-\b3\b';
-    this.px3.textContent = '/';
-    this.prevPage.className = '\bprev\b-\bpage\b';
-    this.inlineFlex.className = '\binline\b-\bflex\b \bitems\b-\bcenter\b \bjustify\b-\bcenter\b \bw\b-\b10\b \bh\b-\b10\b \brounded\b-\bfull\b \btransition\b-\bcolors\b';
-    this.block.className = '\bblock\b \bw\b-\b0\b \bh\b-\b0\b \bborder\b-\bl\b-[\b10px\b] \bborder\b-\bl\b-\bwhite\b \bborder\b-\bt\b-[\b7px\b] \bborder\b-\bb\b-[\b7px\b] \bborder\b-\bt\b-\btransparent\b \bborder\b-\bb\b-\btransparent\b \bml\b-[\b2px\b]';
-    this.nextPage.className = '\bnext\b-\bpage\b';
-    this.inlineFlex1.className = '\binline\b-\bflex\b \bitems\b-\bcenter\b \bjustify\b-\bcenter\b \bw\b-\b10\b \bh\b-\b10\b \brounded\b-\bful\b \btransition\b-\bcolors\b';
-    this.block1.className = '\bblock\b \bw\b-\b0\b \bh\b-\b0\b \bborder\b-\bl\b-[\b10px\b] \bborder\b-\bl\b-\bwhite\b \bborder\b-\bt\b-[\b7px\b] \bborder\b-\bb\b-[\b7px\b] \bborder\b-\bt\b-\btransparent\b \bborder\b-\bb\b-\btransparent\b \bml\b-[\b2px\b]';
-    this.productDescription.className = '\bproduct\b-\bdescription\b \bcustom\b-\bcontainer\b';
-    this.productDescriptionblock.className = '\bproduct\b-\bdescription__block\b';
-    this.mainImage.className = '\bmain\b-\bimage\b';
-    this.imagesList.className = '\bimages\b-\blist\b';
-    this.productDescriptionblock1.className = '\bproduct\b-\bdescription__block\b \bproduct\b-\bdescriptionright__block\b';
-    this.grid.className = '\bgrid\b \bgap\b-\b3\b';
-    this.productTitle.className = '\bproduct\b-\btitle\b \bfont\b-\bbold\b \btext\b-\b2xl\b';
-    this.productPrice.className = '\bproduct\b-\bprice\b \btext\b-\blg\b';
-    this.wrap.className = '\bwrap\b';
-    this.productOptions.className = '\bproduct\b-\boptions\b';
-    this.productOptionsoption.className = '\bproduct\b-\boptions__option\b \brounded\b-\bt\b-\bmd\b';
-    this.productColors.className = '\bproduct\b-\bcolors\b \bproduct\b-\boptions__pading\b';
-    this.colorWrap.className = '\bcolor\b-\bwrap\b';
-    this.productSizes.className = '\bproduct\b-\bsizes\b \bproduct\b-\boptions__option\b';
-    this.productOptionspading.className = '\bproduct\b-\boptions__pading\b \bflex\b \bjustify\b-\bbetween\b \bitems\b-\bcenter\b';
-    this.currentSizeButton.className = '\bcurrent\b-\bsize\b-\bbutton\b \bflex\b \bitems\b-\bcenter\b \bgap\b-\b1\b \bcursor\b-\bpointer\b';
-    this.currentSizeOption.className = '\bcurrent\b-\bsize\b-\boption\b';
-    this.span.textContent = '▼';
-    this.productQuantity.className = '\bproduct\b-\bquantity\b \bproduct\b-\boptions__option\b';
-    this.productOptionspading1.className = '\bproduct\b-\boptions__pading\b \bflex\b \bjustify\b-\bbetween\b \bitems\b-\bcenter\b';
-    this.flex.className = '\bflex\b \bitems\b-\bcenter\b';
-    this.quantityMinusButton.className = '\bquantity\b-\bminus\b-\bbutton\b \bcursor\b-\bpointer\b';
-    this.inlineFlex2.className = '\binline\b-\bflex\b \bitems\b-\bcenter\b \bjustify\b-\bcenter\b \bw\b-\b10\b \bh\b-\b10\b \brounded\b-\bfull\b \btransition\b-\bcolors\b';
-    this.block2.className = '\bblock\b \bw\b-\b0\b \bh\b-\b0\b \bborder\b-\bl\b-[\b10px\b] \bborder\b-\bl\b-\bwhite\b \bborder\b-\bt\b-[\b7px\b] \bborder\b-\bb\b-[\b7px\b] \bborder\b-\bt\b-\btransparent\b \bborder\b-\bb\b-\btransparent\b \bml\b-[\b2px\b]';
-    this.quantity.className = '\bquantity\b';
-    this.quantity.textContent = '\b1\b';
-    this.quantityPlusButton.className = '\bquantity\b-\bplus\b-\bbutton\b \bcursor\b-\bpointer\b';
-    this.inlineFlex3.className = '\binline\b-\bflex\b \bitems\b-\bcenter\b \bjustify\b-\bcenter\b \bw\b-\b10\b \bh\b-\b10\b \brounded\b-\bful\b \btransition\b-\bcolors\b';
-    this.block3.className = '\bblock\b \bw\b-\b0\b \bh\b-\b0\b \bborder\b-\bl\b-[\b10px\b] \bborder\b-\bl\b-\bwhite\b \bborder\b-\bt\b-[\b7px\b] \bborder\b-\bb\b-[\b7px\b] \bborder\b-\bt\b-\btransparent\b \bborder\b-\bb\b-\btransparent\b \bml\b-[\b2px\b]';
-    this.btnWrap.className = '\bbtn\b-\bwrap\b';
-    this.addToCart.className = '\badd\b-\bto\b-\bcart\b \bitems\b-\bcenter\b';
-    this.addToCart.textContent = 'Добавить в корзину';
-    this.AdditionalInformation.className = '\bAdditional\b-\binformation\b \bmt\b-\b20\b';
-    this.customContainer.className = '\bcustom\b-\bcontainer\b \bflex\b \bitems\b-\bcenter\b \bjustify\b-\bcenter\b \bflex\b-\bcol\b \bpy\b-\b10\b';
-    this.h2.textContent = '\bAdditional\b \binformation\b';
-    this.py5.className = '\bpy\b-\b5\b';
-    this.py5.textContent = 'Цвет';
-    this.pl30.className = '\bpl\b-\b30\b';
-    this.colors.className = '\bcolors\b';
-    this.py51.className = '\bpy\b-\b5\b';
-    this.py51.textContent = 'Материал';
-    this.pl301.className = '\bpl\b-\b30\b';
-    this.material.className = '\bmaterial\b';
-    this.py52.className = '\bpy\b-\b5\b';
-    this.py52.textContent = 'Размер';
-    this.pl302.className = '\bpl\b-\b30\b';
-    this.sizes.className = '\bsizes\b';
-    this.borderB.className = '\bborder\b-\bb\b \bborder\b-\bt\b \bpy\b-\b5\b \bw\b';
-    this.customContainer1.className = '\bcustom\b-\bcontainer\b \bflex\b \bitems\b-\bcenter\b \bjustify\b-\bcenter\b \bflex\b-\bcol\b';
-    this.SKU.className = '\bSKU\b';
-    this.categories.className = '\bcategories\b';
-    this.customContainer2.className = '\bcustom\b-\bcontainer\b';
-    this.h21.textContent = '\bRelated\b \bproducts\b';
-    this.cards.className = '\bcards\b \bcards\b-\bshop\b';
-
-
-    // Строим иерархию
-    this.root = this.div;
-    this.div.appendChild(this.sectionBreadcrumbs);
-    this.sectionBreadcrumbs.appendChild(this.breadCrumbs);
-    this.breadCrumbs.appendChild(this.breadCrumbslink);
-    this.breadCrumbs.appendChild(this.px3);
-    this.sectionBreadcrumbs.appendChild(this.div);
-    this.div.appendChild(this.prevPage);
-    this.prevPage.appendChild(this.inlineFlex);
-    this.inlineFlex.appendChild(this.block);
-    this.div.appendChild(this.nextPage);
-    this.nextPage.appendChild(this.inlineFlex);
-    this.inlineFlex.appendChild(this.block);
-    this.div.appendChild(this.productDescription);
-    this.productDescription.appendChild(this.productDescriptionblock);
-    this.productDescriptionblock.appendChild(this.div);
-    this.div.appendChild(this.mainImage);
-    this.productDescriptionblock.appendChild(this.imagesList);
-    this.productDescription.appendChild(this.productDescriptionblock);
-    this.productDescriptionblock.appendChild(this.grid);
-    this.grid.appendChild(this.productTitle);
-    this.grid.appendChild(this.productPrice);
-    this.grid.appendChild(this.wrap);
-    this.wrap.appendChild(this.productOptions);
-    this.productOptions.appendChild(this.productOptionsoption);
-    this.productOptionsoption.appendChild(this.productColors);
-    this.productColors.appendChild(this.colorWrap);
-    this.productOptions.appendChild(this.productSizes);
-    this.productSizes.appendChild(this.productOptionspading);
-    this.productOptionspading.appendChild(this.currentSizeButton);
-    this.currentSizeButton.appendChild(this.currentSizeOption);
-    this.currentSizeButton.appendChild(this.span);
-    this.productOptions.appendChild(this.productQuantity);
-    this.productQuantity.appendChild(this.productOptionspading);
-    this.productOptionspading.appendChild(this.flex);
-    this.flex.appendChild(this.quantityMinusButton);
-    this.quantityMinusButton.appendChild(this.inlineFlex);
-    this.inlineFlex.appendChild(this.block);
-    this.flex.appendChild(this.quantity);
-    this.flex.appendChild(this.quantityPlusButton);
-    this.quantityPlusButton.appendChild(this.inlineFlex);
-    this.inlineFlex.appendChild(this.block);
-    this.productOptions.appendChild(this.btnWrap);
-    this.btnWrap.appendChild(this.addToCart);
-    this.div.appendChild(this.AdditionalInformation);
-    this.AdditionalInformation.appendChild(this.customContainer);
-    this.customContainer.appendChild(this.h2);
-    this.customContainer.appendChild(this.table);
-    this.table.appendChild(this.tbody);
-    this.tbody.appendChild(this.tr);
-    this.tr.appendChild(this.py5);
-    this.tr.appendChild(this.pl30);
-    this.pl30.appendChild(this.colors);
-    this.tbody.appendChild(this.tr);
-    this.tr.appendChild(this.py5);
-    this.tr.appendChild(this.pl30);
-    this.pl30.appendChild(this.material);
-    this.tbody.appendChild(this.tr);
-    this.tr.appendChild(this.py5);
-    this.tr.appendChild(this.pl30);
-    this.pl30.appendChild(this.sizes);
-    this.AdditionalInformation.appendChild(this.borderB);
-    this.borderB.appendChild(this.customContainer);
-    this.customContainer.appendChild(this.div);
-    this.div.appendChild(this.span);
-    this.span.appendChild(this.SKU);
-    this.div.appendChild(this.span);
-    this.span.appendChild(this.categories);
-    this.div.appendChild(this.customContainer);
-    this.customContainer.appendChild(this.h2);
-    this.customContainer.appendChild(this.cards);
-
-
-    // Регистрируем элементы
     this._elements.set('root', this.root);
-    this._elements.set('div', this.div);
-    this._elements.set('sectionBreadcrumbs', this.sectionBreadcrumbs);
-    this._elements.set('breadCrumbs', this.breadCrumbs);
-    this._elements.set('breadCrumbslink', this.breadCrumbslink);
-    this._elements.set('px3', this.px3);
-    this._elements.set('div1', this.div1);
-    this._elements.set('prevPage', this.prevPage);
-    this._elements.set('inlineFlex', this.inlineFlex);
-    this._elements.set('block', this.block);
-    this._elements.set('nextPage', this.nextPage);
-    this._elements.set('inlineFlex1', this.inlineFlex1);
-    this._elements.set('block1', this.block1);
-    this._elements.set('productDescription', this.productDescription);
-    this._elements.set('productDescriptionblock', this.productDescriptionblock);
-    this._elements.set('div2', this.div2);
-    this._elements.set('mainImage', this.mainImage);
-    this._elements.set('imagesList', this.imagesList);
-    this._elements.set('productDescriptionblock1', this.productDescriptionblock1);
-    this._elements.set('grid', this.grid);
-    this._elements.set('productTitle', this.productTitle);
-    this._elements.set('productPrice', this.productPrice);
-    this._elements.set('wrap', this.wrap);
-    this._elements.set('productOptions', this.productOptions);
-    this._elements.set('productOptionsoption', this.productOptionsoption);
-    this._elements.set('productColors', this.productColors);
-    this._elements.set('colorWrap', this.colorWrap);
-    this._elements.set('productSizes', this.productSizes);
-    this._elements.set('productOptionspading', this.productOptionspading);
-    this._elements.set('currentSizeButton', this.currentSizeButton);
-    this._elements.set('currentSizeOption', this.currentSizeOption);
-    this._elements.set('span', this.span);
-    this._elements.set('productQuantity', this.productQuantity);
-    this._elements.set('productOptionspading1', this.productOptionspading1);
-    this._elements.set('flex', this.flex);
-    this._elements.set('quantityMinusButton', this.quantityMinusButton);
-    this._elements.set('inlineFlex2', this.inlineFlex2);
-    this._elements.set('block2', this.block2);
-    this._elements.set('quantity', this.quantity);
-    this._elements.set('quantityPlusButton', this.quantityPlusButton);
-    this._elements.set('inlineFlex3', this.inlineFlex3);
-    this._elements.set('block3', this.block3);
-    this._elements.set('btnWrap', this.btnWrap);
-    this._elements.set('addToCart', this.addToCart);
-    this._elements.set('AdditionalInformation', this.AdditionalInformation);
-    this._elements.set('customContainer', this.customContainer);
-    this._elements.set('h2', this.h2);
-    this._elements.set('table', this.table);
-    this._elements.set('tbody', this.tbody);
-    this._elements.set('tr', this.tr);
-    this._elements.set('py5', this.py5);
-    this._elements.set('pl30', this.pl30);
-    this._elements.set('colors', this.colors);
-    this._elements.set('tr1', this.tr1);
-    this._elements.set('py51', this.py51);
-    this._elements.set('pl301', this.pl301);
-    this._elements.set('material', this.material);
-    this._elements.set('tr2', this.tr2);
-    this._elements.set('py52', this.py52);
-    this._elements.set('pl302', this.pl302);
-    this._elements.set('sizes', this.sizes);
-    this._elements.set('borderB', this.borderB);
-    this._elements.set('customContainer1', this.customContainer1);
-    this._elements.set('div3', this.div3);
-    this._elements.set('span1', this.span1);
-    this._elements.set('SKU', this.SKU);
-    this._elements.set('span2', this.span2);
-    this._elements.set('categories', this.categories);
-    this._elements.set('customContainer2', this.customContainer2);
-    this._elements.set('h21', this.h21);
-    this._elements.set('cards', this.cards);
+    // Нет элементов для регистрации
 
-    // Применяем начальные данные
     this.update(data);
   }
 
-  // Иерархическая структура
-  get structure(): Record<string, any> {
-    return {
-      div: this.div,
-      sectionBreadcrumbs: this.sectionBreadcrumbs,
-      breadCrumbs: this.breadCrumbs,
-      breadCrumbslink: this.breadCrumbslink,
-      px3: this.px3,
-      div1: this.div1,
-      prevPage: this.prevPage,
-      inlineFlex: this.inlineFlex,
-      block: this.block,
-      nextPage: this.nextPage,
-      inlineFlex1: this.inlineFlex1,
-      block1: this.block1,
-      productDescription: this.productDescription,
-      productDescriptionblock: this.productDescriptionblock,
-      div2: this.div2,
-      mainImage: this.mainImage,
-      imagesList: this.imagesList,
-      productDescriptionblock1: this.productDescriptionblock1,
-      grid: this.grid,
-      productTitle: this.productTitle,
-      productPrice: this.productPrice,
-      wrap: this.wrap,
-      productOptions: this.productOptions,
-      productOptionsoption: this.productOptionsoption,
-      productColors: this.productColors,
-      colorWrap: this.colorWrap,
-      productSizes: this.productSizes,
-      productOptionspading: this.productOptionspading,
-      currentSizeButton: this.currentSizeButton,
-      currentSizeOption: this.currentSizeOption,
-      span: this.span,
-      productQuantity: this.productQuantity,
-      productOptionspading1: this.productOptionspading1,
-      flex: this.flex,
-      quantityMinusButton: this.quantityMinusButton,
-      inlineFlex2: this.inlineFlex2,
-      block2: this.block2,
-      quantity: this.quantity,
-      quantityPlusButton: this.quantityPlusButton,
-      inlineFlex3: this.inlineFlex3,
-      block3: this.block3,
-      btnWrap: this.btnWrap,
-      addToCart: this.addToCart,
-      AdditionalInformation: this.AdditionalInformation,
-      customContainer: this.customContainer,
-      h2: this.h2,
-      table: this.table,
-      tbody: this.tbody,
-      tr: this.tr,
-      py5: this.py5,
-      pl30: this.pl30,
-      colors: this.colors,
-      tr1: this.tr1,
-      py51: this.py51,
-      pl301: this.pl301,
-      material: this.material,
-      tr2: this.tr2,
-      py52: this.py52,
-      pl302: this.pl302,
-      sizes: this.sizes,
-      borderB: this.borderB,
-      customContainer1: this.customContainer1,
-      div3: this.div3,
-      span1: this.span1,
-      SKU: this.SKU,
-      span2: this.span2,
-      categories: this.categories,
-      customContainer2: this.customContainer2,
-      h21: this.h21,
-      cards: this.cards
-    };
-  }
-
-  mount(parent: Element): Shop {
-    parent.appendChild(this.root);
-    return this;
-  }
-
-  getElement(name: string): HTMLElement | undefined {
-    return this._elements.get(name);
-  }
-
-  update(data: Record<string, any>): void {
-    Object.entries(data).forEach(([key, value]) => {
-      const element = this._elements.get(key);
-      if (element) {
-        element.textContent = value.toString();
-      }
-    });
+  private _createRootElement(): HTMLElement {
+    const root = document.createElement('div');
+    const el1 = document.createElement('section');
+    el1.className = "section-breadcrumbs flex justify-between items-center custom-container";
+    root.appendChild(el1);
+        const el2 = document.createElement('nav');
+        el2.className = "bread-crumbs py-5";
+        el1.appendChild(el2);
+            const el3 = document.createElement('a');
+            el3.className = "bread-crumbs__link";
+            el3.setAttribute("href", "/masculino/");
+            el2.appendChild(el3);
+                el3.appendChild(document.createTextNode("Shop"));
+            const el4 = document.createElement('span');
+            el4.className = "px-3";
+            el2.appendChild(el4);
+                el4.appendChild(document.createTextNode("/"));
+        const el5 = document.createElement('div');
+        el1.appendChild(el5);
+            const el6 = document.createElement('a');
+            el6.className = "prev-page";
+            el6.setAttribute("href", "#");
+            el5.appendChild(el6);
+                const el7 = document.createElement('i');
+                el7.className = "inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors";
+                el7.setAttribute("role", "button");
+                el7.setAttribute("aria-label", "Play");
+                el6.appendChild(el7);
+                    const el8 = document.createElement('span');
+                    el8.className = "block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]";
+                    el8.style.cssText = "transform: rotate(180deg)";
+                    el7.appendChild(el8);
+            const el9 = document.createElement('a');
+            el9.className = "next-page";
+            el9.setAttribute("href", "#");
+            el5.appendChild(el9);
+                const el10 = document.createElement('i');
+                el10.className = "inline-flex items-center justify-center w-10 h-10 rounded-ful transition-colors";
+                el10.setAttribute("role", "button");
+                el10.setAttribute("aria-label", "Play");
+                el9.appendChild(el10);
+                    const el11 = document.createElement('span');
+                    el11.className = "block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]";
+                    el10.appendChild(el11);
+    const el12 = document.createElement('section');
+    el12.className = "product-description custom-container";
+    root.appendChild(el12);
+        const el13 = document.createElement('div');
+        el13.className = "product-description__block";
+        el12.appendChild(el13);
+            const el14 = document.createElement('div');
+            el13.appendChild(el14);
+                const el15 = document.createElement('img');
+                el15.className = "main-image";
+                el15.setAttribute("src", "");
+                el15.setAttribute("alt", "");
+                el14.appendChild(el15);
+            const el16 = document.createElement('ul');
+            el16.className = "images-list";
+            el13.appendChild(el16);
+        const el17 = document.createElement('div');
+        el17.className = "product-description__block product-descriptionright__block";
+        el12.appendChild(el17);
+            const el18 = document.createElement('div');
+            el18.className = "grid gap-3";
+            el17.appendChild(el18);
+                const el19 = document.createElement('h1');
+                el19.className = "product-title font-bold text-2xl";
+                el18.appendChild(el19);
+                const el20 = document.createElement('p');
+                el20.className = "product-price text-lg";
+                el18.appendChild(el20);
+                const el21 = document.createElement('div');
+                el21.className = "wrap";
+                el18.appendChild(el21);
+                    const el22 = document.createElement('ul');
+                    el22.className = "product-options";
+                    el21.appendChild(el22);
+                        const el23 = document.createElement('li');
+                        el23.className = "product-options__option rounded-t-md";
+                        el22.appendChild(el23);
+                            const el24 = document.createElement('div');
+                            el24.className = "product-colors product-options__pading";
+                            el23.appendChild(el24);
+                                el24.appendChild(document.createTextNode("\n                  Цвет\n                  "));
+                                const el25 = document.createElement('div');
+                                el25.className = "color-wrap";
+                                el24.appendChild(el25);
+                        const el26 = document.createElement('li');
+                        el26.className = "product-sizes product-options__option";
+                        el22.appendChild(el26);
+                            const el27 = document.createElement('div');
+                            el27.className = "product-options__pading flex justify-between items-center";
+                            el26.appendChild(el27);
+                                el27.appendChild(document.createTextNode("\n                  Размер\n                  "));
+                                const el28 = document.createElement('button');
+                                el28.className = "current-size-button flex items-center gap-1 cursor-pointer";
+                                el27.appendChild(el28);
+                                    const el29 = document.createElement('span');
+                                    el29.className = "current-size-option";
+                                    el28.appendChild(el29);
+                                    const el30 = document.createElement('span');
+                                    el28.appendChild(el30);
+                                        el30.appendChild(document.createTextNode("▼"));
+                        const el31 = document.createElement('li');
+                        el31.className = "product-quantity product-options__option";
+                        el22.appendChild(el31);
+                            const el32 = document.createElement('div');
+                            el32.className = "product-options__pading flex justify-between items-center";
+                            el31.appendChild(el32);
+                                el32.appendChild(document.createTextNode("\n                  Количество\n                  "));
+                                const el33 = document.createElement('div');
+                                el33.className = "flex items-center";
+                                el32.appendChild(el33);
+                                    const el34 = document.createElement('button');
+                                    el34.className = "quantity-minus-button cursor-pointer";
+                                    el33.appendChild(el34);
+                                        const el35 = document.createElement('i');
+                                        el35.className = "inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors";
+                                        el35.setAttribute("role", "button");
+                                        el35.setAttribute("aria-label", "Play");
+                                        el34.appendChild(el35);
+                                            const el36 = document.createElement('span');
+                                            el36.className = "block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]";
+                                            el36.style.cssText = "transform: rotate(180deg)";
+                                            el35.appendChild(el36);
+                                    const el37 = document.createElement('span');
+                                    el37.className = "quantity";
+                                    el33.appendChild(el37);
+                                        el37.appendChild(document.createTextNode("1"));
+                                    const el38 = document.createElement('button');
+                                    el38.className = "quantity-plus-button cursor-pointer";
+                                    el33.appendChild(el38);
+                                        const el39 = document.createElement('i');
+                                        el39.className = "inline-flex items-center justify-center w-10 h-10 rounded-ful transition-colors";
+                                        el39.setAttribute("role", "button");
+                                        el39.setAttribute("aria-label", "Play");
+                                        el38.appendChild(el39);
+                                            const el40 = document.createElement('span');
+                                            el40.className = "block w-0 h-0 border-l-[10px] border-l-white border-t-[7px] border-b-[7px] border-t-transparent border-b-transparent ml-[2px]";
+                                            el39.appendChild(el40);
+                        const el41 = document.createElement('li');
+                        el41.className = "btn-wrap";
+                        el22.appendChild(el41);
+                            const el42 = document.createElement('button');
+                            el42.className = "add-to-cart items-center";
+                            el41.appendChild(el42);
+                                el42.appendChild(document.createTextNode("\n                  Добавить в корзину\n                "));
+    const el43 = document.createElement('section');
+    el43.className = "Additional-information mt-20";
+    root.appendChild(el43);
+        const el44 = document.createElement('div');
+        el44.className = "custom-container flex items-center justify-center flex-col py-10";
+        el43.appendChild(el44);
+            const el45 = document.createElement('h2');
+            el45.className = "";
+            el44.appendChild(el45);
+                el45.appendChild(document.createTextNode("Additional information"));
+            const el46 = document.createElement('table');
+            el44.appendChild(el46);
+                const el47 = document.createElement('tbody');
+                el46.appendChild(el47);
+                    const el48 = document.createElement('tr');
+                    el47.appendChild(el48);
+                        const el49 = document.createElement('td');
+                        el49.className = "py-5";
+                        el48.appendChild(el49);
+                            el49.appendChild(document.createTextNode("Цвет"));
+                        const el50 = document.createElement('td');
+                        el50.className = "pl-30";
+                        el48.appendChild(el50);
+                            const el51 = document.createElement('div');
+                            el51.className = "colors";
+                            el50.appendChild(el51);
+                    const el52 = document.createElement('tr');
+                    el47.appendChild(el52);
+                        const el53 = document.createElement('td');
+                        el53.className = "py-5";
+                        el52.appendChild(el53);
+                            el53.appendChild(document.createTextNode("Материал"));
+                        const el54 = document.createElement('td');
+                        el54.className = "pl-30";
+                        el52.appendChild(el54);
+                            const el55 = document.createElement('div');
+                            el55.className = "material";
+                            el54.appendChild(el55);
+                    const el56 = document.createElement('tr');
+                    el47.appendChild(el56);
+                        const el57 = document.createElement('td');
+                        el57.className = "py-5";
+                        el56.appendChild(el57);
+                            el57.appendChild(document.createTextNode("Размер"));
+                        const el58 = document.createElement('td');
+                        el58.className = "pl-30";
+                        el56.appendChild(el58);
+                            const el59 = document.createElement('div');
+                            el59.className = "sizes";
+                            el58.appendChild(el59);
+        const el60 = document.createElement('div');
+        el60.className = "border-b border-t py-5 w";
+        el43.appendChild(el60);
+            const el61 = document.createElement('div');
+            el61.className = "custom-container flex items-center justify-center flex-col";
+            el60.appendChild(el61);
+                const el62 = document.createElement('div');
+                el61.appendChild(el62);
+                    const el63 = document.createElement('span');
+                    el62.appendChild(el63);
+                        el63.appendChild(document.createTextNode("SKU: "));
+                        const el64 = document.createElement('span');
+                        el64.className = "SKU";
+                        el63.appendChild(el64);
+                    const el65 = document.createElement('span');
+                    el62.appendChild(el65);
+                        el65.appendChild(document.createTextNode("Categories: "));
+                        const el66 = document.createElement('span');
+                        el66.className = "categories";
+                        el65.appendChild(el66);
+    const el67 = document.createElement('section');
+    el67.className = "custom-container";
+    root.appendChild(el67);
+        const el68 = document.createElement('h2');
+        el67.appendChild(el68);
+            el68.appendChild(document.createTextNode("Related products"));
+        const el69 = document.createElement('div');
+        el69.className = "cards cards-shop";
+        el67.appendChild(el69);
+    return root;
   }
 }

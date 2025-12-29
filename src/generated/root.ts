@@ -1,65 +1,32 @@
 // Автогенерированный класс для шаблона: root
-export class Root {
-  private _elements = new Map<string, HTMLElement>();
+import { BaseView } from './base-view';
 
-
+export class Root extends BaseView {
   public root!: HTMLDivElement;
-  public customContainer!: HTMLDivElement;
-  public aside!: HTMLElement;
-  public cards!: HTMLDivElement;
+  // Нет элементов с data-element
 
   constructor(data: Record<string, any> = {}) {
-    // Создаём элементы
-    this.customContainer = document.createElement('div') as HTMLDivElement;
-    this.aside = document.createElement('aside') as HTMLElement;
-    this.cards = document.createElement('div') as HTMLDivElement;
+    super();
+    
+    this.root = this._createRootElement() as HTMLDivElement;
+    
+    // Нет элементов для инициализации
 
-    // Настраиваем элементы (классы, текст и т.д.)
-    this.customContainer.className = '\bcustom\b-\bcontainer\b \broot\b-\bcontainer\b \bmain\b \bflex\b \bgap\b-\b10\b';
-    this.aside.className = '\baside\b';
-    this.cards.className = '\bcards\b \bflex\b';
-
-
-    // Строим иерархию
-    this.root = this.customContainer;
-    this.customContainer.appendChild(this.aside);
-    this.customContainer.appendChild(this.cards);
-
-
-    // Регистрируем элементы
     this._elements.set('root', this.root);
-    this._elements.set('customContainer', this.customContainer);
-    this._elements.set('aside', this.aside);
-    this._elements.set('cards', this.cards);
+    // Нет элементов для регистрации
 
-    // Применяем начальные данные
     this.update(data);
   }
 
-  // Иерархическая структура
-  get structure(): Record<string, any> {
-    return {
-      customContainer: this.customContainer,
-      aside: this.aside,
-      cards: this.cards
-    };
-  }
-
-  mount(parent: Element): Root {
-    parent.appendChild(this.root);
-    return this;
-  }
-
-  getElement(name: string): HTMLElement | undefined {
-    return this._elements.get(name);
-  }
-
-  update(data: Record<string, any>): void {
-    Object.entries(data).forEach(([key, value]) => {
-      const element = this._elements.get(key);
-      if (element) {
-        element.textContent = value.toString();
-      }
-    });
+  private _createRootElement(): HTMLElement {
+    const root = document.createElement('div');
+    root.className = "custom-container root-container main flex gap-10";
+    const el1 = document.createElement('aside');
+    el1.className = "aside";
+    root.appendChild(el1);
+    const el2 = document.createElement('div');
+    el2.className = "cards flex";
+    root.appendChild(el2);
+    return root;
   }
 }
